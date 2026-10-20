@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ekspor — MochiTs Docs</title>
+  <meta name="description" content="Ekspor proyek MochiTs ke PNG, JPEG, atau WEBP, atur kualitas dan folder tujuan, atau simpan bundel .mts yang bisa diedit lagi.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-in">
+      <a class="brand" href="index.html" aria-label="MochiTs Docs">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-word">Mochi<span>Ts</span></span>
+      </a>
+      <nav class="nav" aria-label="Utama">
+        <a href="mulai.html">Mulai</a>
+        <a href="script.html">Script</a>
+        <a href="tester.html">Tester</a>
+        <a href="faq.html">FAQ</a>
+        <a class="cta" href="https://github.com/Mochizhouuu/MochiTs" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-nav">Menu</button>
+    </div>
+    <div class="mobile-nav" id="mobile-nav">
+      <div class="wrap">
+        <a href="mulai.html">Mulai &amp; instalasi</a>
+        <a href="folder-zip.html">Folder &amp; impor ZIP</a>
+        <a href="teks.html">Teks &amp; spasi</a>
+        <a href="script.html">Format script TL</a>
+        <a href="tester.html">Tester script</a>
+        <a href="ekspor.html">Ekspor</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap docs">
+    <aside class="sidebar">
+      <div class="side-title">Panduan</div>
+      <a href="mulai.html">Mulai &amp; instalasi</a>
+      <a href="folder-zip.html">Folder &amp; impor ZIP</a>
+      <a href="teks.html">Teks &amp; spasi</a>
+      <a href="script.html">Format script TL</a>
+      <a href="ekspor.html">Ekspor</a>
+      <div class="side-title">Alat</div>
+      <a href="tester.html">Tester script</a>
+      <a href="faq.html">FAQ</a>
+    </aside>
+
+    <main class="docs-main">
+      <div class="doc-head">
+        <div class="breadcrumb"><a href="index.html">Docs</a> / Ekspor</div>
+        <h1>Ekspor</h1>
+        <p>Simpan hasil sebagai gambar siap unggah, atau sebagai bundel proyek yang bisa dibuka dan diedit lagi.</p>
+      </div>
+
+      <h2 id="dialog">Dialog Simpan Sebagai</h2>
+      <p>Ketuk ikon ekspor di Editor. Dialog berisi:</p>
+      <ul>
+        <li><strong>Nama Output / Nama Proyek</strong> — dipakai sebagai nama file sekaligus mengganti judul proyek bila berbeda.</li>
+        <li><strong>Format</strong> — PNG, JPEG, WEBP, atau MTS.</li>
+        <li><strong>Kualitas</strong> — hanya muncul untuk JPEG dan WEBP, rentang 10–100%.</li>
+        <li><strong>Folder tujuan</strong> — folder default dari Settings, atau pilih folder saat menekan <em>Simpan &amp; Ekspor</em> jika belum diatur.</li>
+      </ul>
+
+      <h2 id="format">Memilih format</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Format</th><th>Cocok untuk</th><th>Catatan</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><strong>PNG</strong></td>
+              <td>Hasil akhir dengan area transparan, teks tajam, atau garis tipis.</td>
+              <td>Lossless; slider kualitas tidak ditampilkan. Ukuran file paling besar.</td>
+            </tr>
+            <tr>
+              <td><strong>JPEG</strong></td>
+              <td>Unggahan umum, ukuran file lebih kecil.</td>
+              <td>Lossy; tidak mendukung transparansi. Kualitas 10–100%.</td>
+            </tr>
+            <tr>
+              <td><strong>WEBP</strong></td>
+              <td>Ukuran kecil dengan kualitas baik untuk web.</td>
+              <td>Lossy pada Android 11+; kualitas 10–100%.</td>
+            </tr>
+            <tr>
+              <td><strong>MTS</strong></td>
+              <td>Arsip proyek, pindah perangkat, atau melanjutkan editing nanti.</td>
+              <td>Bundel proyek, bukan gambar. Bisa diimpor kembali lewat ZIP atau dibuka langsung.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout">
+        <strong>Resolusi.</strong> Gambar diekspor pada ukuran kanvas proyek, bukan ukuran layar saat zoom. Periksa lebar/tinggi proyek bila hasil terasa kecil.
+      </div>
+
+      <h2 id="folder">Folder tujuan</h2>
+      <p>Atur folder default di <strong>Settings → Folder Output Default (Export)</strong>. MochiTs memakai Storage Access Framework, jadi tidak perlu izin penyimpanan penuh.</p>
+      <ul>
+        <li>Jika folder default masih valid, ekspor langsung ditulis ke sana.</li>
+        <li>Jika belum diatur atau aksesnya dicabut, pemilih folder Android terbuka setiap kali ekspor.</li>
+        <li>File dengan nama yang sama di folder tujuan akan <strong>ditimpa</strong>. Ganti nama output bila ingin menyimpan beberapa versi.</li>
+        <li>File ditulis lewat file sementara di cache, lalu disalin ke folder tujuan dan dibersihkan.</li>
+      </ul>
+      <div class="callout warn">
+        <strong>Nama file.</strong> Ekstensi mengikuti format yang dipilih: <code>.png</code>, <code>.jpeg</code>, <code>.webp</code>, atau <code>.mts</code>. Hindari karakter <code>/</code> dan <code>:</code> pada nama output.
+      </div>
+
+      <h2 id="mts">Bundel .mts</h2>
+      <p>Format MTS menyimpan proyek lengkap: gambar dasar, layer, dan data editing. Gunakan untuk:</p>
+      <ul>
+        <li>mencadangkan proyek sebelum eksperimen besar,</li>
+        <li>memindahkan proyek ke perangkat lain,</li>
+        <li>mengirim proyek ke rekan tanpa kehilangan layer.</li>
+      </ul>
+      <p>Bundel bisa dibuka dari file manager (langsung menjadi proyek) atau dimasukkan ke ZIP bersama gambar lain; saat ZIP diimpor, bundel tetap dikenali sebagai proyek editable.</p>
+
+      <h2 id="tips">Tips kualitas</h2>
+      <ol>
+        <li>Gunakan PNG untuk teks berukuran kecil agar tepi huruf tetap tajam.</li>
+        <li>Untuk WEBP/JPEG, kualitas 85–95% biasanya cukup; di bawah 70% tepi teks mulai terlihat pecah.</li>
+        <li>Ekspor versi PNG dulu sebagai arsip, lalu versi WEBP untuk diunggah.</li>
+        <li>Jika hasil terlihat berbeda dari kanvas, periksa layer yang tersembunyi atau terpotong di luar batas kanvas.</li>
+      </ol>
+
+      <div class="next-prev">
+        <a href="teks.html"><span class="lbl">Sebelumnya</span>Teks &amp; spasi</a>
+        <a href="faq.html"><span class="lbl">Selanjutnya</span>FAQ</a>
+      </div>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <div class="wrap footer-in">
+      <div>MochiTs — editor typeset komik untuk Android. Dokumentasi ini statis dan bisa dibaca offline setelah dimuat.</div>
+      <div class="footer-links">
+        <a href="index.html">Beranda</a>
+        <a href="mulai.html">Panduan</a>
+        <a href="https://github.com/Mochizhouuu/MochiTs" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://github.com/Mochizhouuu/MochiTs-Docs" target="_blank" rel="noopener">Sumber docs</a>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MochiTs — Editor Typeset Komik Android</title>
+  <meta name="description" content="MochiTs adalah editor komik Android: impor ZIP, typeset teks dengan kontrol spasi, dan ekspor PNG/JPEG/WEBP. Panduan lengkap dan tester script TL.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-in">
+      <a class="brand" href="index.html" aria-label="MochiTs Docs">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-word">Mochi<span>Ts</span></span>
+      </a>
+      <nav class="nav" aria-label="Utama">
+        <a href="mulai.html">Mulai</a>
+        <a href="script.html">Script</a>
+        <a href="tester.html">Tester</a>
+        <a href="faq.html">FAQ</a>
+        <a class="cta" href="https://github.com/Mochizhouuu/MochiTs" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-nav">Menu</button>
+    </div>
+    <div class="mobile-nav" id="mobile-nav">
+      <div class="wrap">
+        <a href="mulai.html">Mulai &amp; instalasi</a>
+        <a href="folder-zip.html">Folder &amp; impor ZIP</a>
+        <a href="teks.html">Teks &amp; spasi</a>
+        <a href="script.html">Format script TL</a>
+        <a href="tester.html">Tester script</a>
+        <a href="ekspor.html">Ekspor</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="kicker"><span class="dot"></span> Dokumentasi MochiTs</span>
+          <h1>Typeset komik,<br><em>tanpa ribet.</em></h1>
+          <p class="lead">Impor halaman, tempel naskah TL, atur font dan spasi, lalu ekspor. Semua dari HP Android — tanpa pindah-pindah aplikasi.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="mulai.html">Mulai dalam 2 menit</a>
+            <a class="btn btn-ghost" href="tester.html">Coba tester script</a>
+          </div>
+          <p class="hero-note">Android 10+ · Data proyek tersimpan di perangkat · Panduan berbahasa Indonesia</p>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="phone">
+            <div class="phone-screen">
+              <div class="phone-top"><span>9:41</span><span>MochiTs</span></div>
+              <div class="phone-title">Proyek Saya</div>
+              <div class="mock-folders">
+                <span class="mock-chip active">Semua</span>
+                <span class="mock-chip">Ch 12</span>
+                <span class="mock-chip">ZIP</span>
+              </div>
+              <div class="mock-card"></div>
+              <div class="mock-card alt"></div>
+              <p class="mock-caption">7 halaman · tersimpan otomatis</p>
+            </div>
+          </div>
+          <div class="float-card">
+            <strong>Impor ZIP selesai</strong>
+            <span class="float-badge">12 halaman · 2 folder</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Fitur utama</div>
+            <h2>Dari naskah mentah ke halaman jadi</h2>
+          </div>
+          <p>Alur typesetting lengkap: seleksi objek, inpainting, teks, layer, sampai ekspor.</p>
+        </div>
+        <div class="features">
+          <article class="card">
+            <div class="card-icon">[]</div>
+            <h3>Naskah TL langsung jadi balon</h3>
+            <p>Tempel script, pilih simbol, dan MochiTs memecahnya per halaman. Dukung <code>//-</code>/<code>//[]</code> untuk entri terhubung dan impor <code>.docx</code>.</p>
+            <a class="more" href="script.html">Format script →</a>
+          </article>
+          <article class="card">
+            <div class="card-icon">ZIP</div>
+            <h3>Impor folder &amp; ZIP</h3>
+            <p>Pilih banyak gambar sekaligus atau impor ZIP. Subfolder jadi folder proyek, <code>.mts</code> di dalamnya tetap bisa diedit.</p>
+            <a class="more" href="folder-zip.html">Cara impor →</a>
+          </article>
+          <article class="card">
+            <div class="card-icon">Aa</div>
+            <h3>Kontrol teks detail</h3>
+            <p>BOX/OVAL, font kustom, alignment, gradient, stroke, glow, huruf vertikal, reflow, plus slider jarak huruf dan jarak baris.</p>
+            <a class="more" href="teks.html">Atur teks →</a>
+          </article>
+          <article class="card">
+            <div class="card-icon">FX</div>
+            <h3>Hapus teks lama</h3>
+            <p>Brush, eraser, lasso, magic wand, lalu inpainting Telea offline atau LaMa AI dengan fallback otomatis.</p>
+            <a class="more" href="teks.html#inpainting">Tentang inpainting →</a>
+          </article>
+          <article class="card">
+            <div class="card-icon">PNG</div>
+            <h3>Ekspor fleksibel</h3>
+            <p>PNG, JPEG, atau WEBP dengan kualitas yang bisa diatur, langsung ke folder pilihan lewat Storage Access Framework.</p>
+            <a class="more" href="ekspor.html">Opsi ekspor →</a>
+          </article>
+          <article class="card">
+            <div class="card-icon">↺</div>
+            <h3>Autosave &amp; undo</h3>
+            <p>Riwayat undo/redo tetap ada setelah aplikasi ditutup. Proyek tersimpan otomatis tanpa tombol simpan.</p>
+            <a class="more" href="mulai.html#proyek">Kelola proyek →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Panduan</div>
+            <h2>Langsung ke bagian yang kamu butuh</h2>
+          </div>
+          <p>Semua halaman bisa dibaca berurutan, kok. Mulai dari yang paling dekat dengan masalahmu.</p>
+        </div>
+        <div class="quick">
+          <a href="mulai.html">Mulai &amp; instalasi<span>Pasang APK, buat proyek pertama</span></a>
+          <a href="folder-zip.html">Folder &amp; ZIP<span>Rapikan proyek dan impor massal</span></a>
+          <a href="teks.html">Teks &amp; spasi<span>Font, ukuran, jarak huruf/baris</span></a>
+          <a href="script.html">Script TL<span>Simbol, halaman, entri terhubung</span></a>
+          <a href="tester.html">Tester script<span>Uji naskah tanpa install</span></a>
+          <a href="ekspor.html">Ekspor<span>PNG, JPEG, WEBP, kualitas</span></a>
+          <a href="faq.html">FAQ<span>Pertanyaan yang sering muncul</span></a>
+          <a href="https://github.com/Mochizhouuu/MochiTs" target="_blank" rel="noopener">Kode sumber<span>Lihat repo di GitHub</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-in">
+      <div>MochiTs — editor typeset komik untuk Android. Dokumentasi ini statis dan bisa dibaca offline setelah dimuat.</div>
+      <div class="footer-links">
+        <a href="index.html">Beranda</a>
+        <a href="mulai.html">Panduan</a>
+        <a href="https://github.com/Mochizhouuu/MochiTs" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://github.com/Mochizhouuu/MochiTs-Docs" target="_blank" rel="noopener">Sumber docs</a>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/app.js"></script>
+</body>
+</html>

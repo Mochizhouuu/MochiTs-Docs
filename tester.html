@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tester Script TL — MochiTs Docs</title>
+  <meta name="description" content="Uji format script TL MochiTs langsung di browser: pemisah halaman, simbol, entri terhubung, dan lab regex.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-in">
+      <a class="brand" href="index.html" aria-label="MochiTs Docs">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-word">Mochi<span>Ts</span></span>
+      </a>
+      <nav class="nav" aria-label="Utama">
+        <a href="mulai.html">Mulai</a>
+        <a href="script.html">Script</a>
+        <a href="tester.html">Tester</a>
+        <a href="faq.html">FAQ</a>
+        <a class="cta" href="https://github.com/Mochizhouuu/MochiTs" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-nav">Menu</button>
+    </div>
+    <div class="mobile-nav" id="mobile-nav">
+      <div class="wrap">
+        <a href="mulai.html">Mulai &amp; instalasi</a>
+        <a href="folder-zip.html">Folder &amp; impor ZIP</a>
+        <a href="teks.html">Teks &amp; spasi</a>
+        <a href="script.html">Format script TL</a>
+        <a href="tester.html">Tester script</a>
+        <a href="ekspor.html">Ekspor</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap docs">
+    <aside class="sidebar">
+      <div class="side-title">Panduan</div>
+      <a href="mulai.html">Mulai &amp; instalasi</a>
+      <a href="folder-zip.html">Folder &amp; impor ZIP</a>
+      <a href="teks.html">Teks &amp; spasi</a>
+      <a href="script.html">Format script TL</a>
+      <a href="ekspor.html">Ekspor</a>
+      <div class="side-title">Alat</div>
+      <a href="tester.html">Tester script</a>
+      <a href="faq.html">FAQ</a>
+    </aside>
+
+    <main class="docs-main">
+      <div class="doc-head">
+        <div class="breadcrumb"><a href="index.html">Docs</a> / Tester script</div>
+        <h1>Tester script</h1>
+        <p>Uji naskah TL langsung di browser. Tidak ada data yang diunggah; semuanya diproses di perangkatmu.</p>
+      </div>
+
+      <div class="callout">
+        <strong>Bagaimana ini bekerja?</strong> Tester memakai aturan yang sama dengan <code>ScriptParser.kt</code>: normalisasi karakter, pemisah halaman regex full-match, pencocokan simbol terpanjang, entri gabung/terhubung, dan indentasi sambungan. Hasil akhir di aplikasi tetap diproses oleh Kotlin.
+      </div>
+
+      <h2 id="parser">Parser naskah</h2>
+      <div class="tester">
+        <div class="panel">
+          <h3>Input</h3>
+          <div class="field">
+            <label for="script-input">Naskah TL</label>
+            <textarea id="script-input" spellcheck="false">P1
+[] Di sebuah kota yang selalu hujan,
+   ada toko buku kecil di ujung gang.
+- Aku datang lagi hari ini.
+//- Balon sambungan tanpa ekor.
+# Catatan kecil di pinggir halaman.
+P2
+- Lama sekali kita tidak bertemu.
+* Kamu masih menulis cerita?</textarea>
+            <div class="hint">Tempel naskah asli. Tab, CRLF, BOM, dan NBSP dinormalisasi otomatis.</div>
+          </div>
+          <div class="field">
+            <label for="script-separator">Regex pemisah halaman</label>
+            <input type="text" id="script-separator" value="P\d+" spellcheck="false" placeholder="P\d+">
+            <div class="hint">Harus cocok dengan seluruh baris. Kosongkan untuk menonaktifkan pemisah.</div>
+          </div>
+          <div class="field">
+            <label for="script-mappings">Simbol (= gabung / = terhubung)</label>
+            <textarea id="script-mappings" spellcheck="false" style="min-height:150px">[]
+-
+//- = terhubung
+//[] = terhubung
+#
+*
+**
+&lt;&gt;</textarea>
+            <div class="hint">Satu simbol per baris. Tanpa keterangan berarti mode normal.</div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3>Hasil</h3>
+          <div class="tester-summary" id="script-stats"></div>
+          <div class="result" id="script-output"></div>
+          <div class="warnings" id="script-warnings"></div>
+        </div>
+      </div>
+
+      <h2 id="regex">Lab regex pemisah</h2>
+      <p>Coba pola lain untuk memastikan baris pemisah cocok persis. Lab ini memakai <code>RegExp</code> JavaScript; aplikasi memakai regex Kotlin/Java, yang umumnya sama untuk pola sederhana.</p>
+      <div class="tester">
+        <div class="panel">
+          <div class="field">
+            <label for="regex-pattern">Pola</label>
+            <input type="text" id="regex-pattern" value="P\d+" spellcheck="false">
+          </div>
+          <div class="field">
+            <label>Flag</label>
+            <div style="display:flex;gap:16px;flex-wrap:wrap;font-family:var(--font-mono);font-size:12px">
+              <label style="display:flex;align-items:center;gap:6px;margin:0"><input type="checkbox" id="flag-i"> i (abaikan besar-kecil)</label>
+              <label style="display:flex;align-items:center;gap:6px;margin:0"><input type="checkbox" id="flag-m"> m (multibaris)</label>
+              <label style="display:flex;align-items:center;gap:6px;margin:0"><input type="checkbox" id="flag-s"> s (titik = baris baru)</label>
+            </div>
+          </div>
+          <div class="field">
+            <label for="regex-input">Teks uji</label>
+            <textarea id="regex-input" spellcheck="false">P1
+P2
+P12 catatan
+p3
+===
+Halaman 4</textarea>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>Kecocokan</h3>
+          <div id="regex-output" style="font-family:var(--font-mono);font-size:13px;white-space:pre-wrap;word-break:break-word;max-height:220px;overflow:auto"></div>
+          <div class="hint" style="margin-top:12px">Daftar match:</div>
+          <div class="match-list" id="regex-matches" style="white-space:pre-wrap"></div>
+        </div>
+      </div>
+      <div class="callout warn">
+        <strong>Perbedaan mesin regex.</strong> Fitur khusus seperti lookbehind, named group, atau <code>\p{...}</code> bisa berbeda antara JavaScript dan Java. Untuk pemisah halaman, gunakan pola sederhana seperti <code>P\d+</code>, <code>===</code>, atau <code>Halaman \d+</code>.
+      </div>
+      <div class="callout ok">
+        <strong>Privasi.</strong> Halaman ini statis. Naskah yang ditempel tidak dikirim ke server mana pun dan hilang saat halaman ditutup.
+      </div>
+
+      <div class="next-prev">
+        <a href="script.html"><span class="lbl">Sebelumnya</span>Format script TL</a>
+        <a href="ekspor.html"><span class="lbl">Selanjutnya</span>Ekspor</a>
+      </div>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <div class="wrap footer-in">
+      <div>MochiTs — editor typeset komik untuk Android. Dokumentasi ini statis dan bisa dibaca offline setelah dimuat.</div>
+      <div class="footer-links">
+        <a href="index.html">Beranda</a>
+        <a href="mulai.html">Panduan</a>
+        <a href="https://github.com/Mochizhouuu/MochiTs" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://github.com/Mochizhouuu/MochiTs-Docs" target="_blank" rel="noopener">Sumber docs</a>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/app.js"></script>
+</body>
+</html>

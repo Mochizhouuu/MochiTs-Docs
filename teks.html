@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Teks &amp; Spasi — MochiTs Docs</title>
+  <meta name="description" content="Kontrol layer teks MochiTs: font kustom, ukuran, stroke, glow, gradient, huruf vertikal, jarak huruf, dan jarak baris.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-in">
+      <a class="brand" href="index.html" aria-label="MochiTs Docs">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-word">Mochi<span>Ts</span></span>
+      </a>
+      <nav class="nav" aria-label="Utama">
+        <a href="mulai.html">Mulai</a>
+        <a href="script.html">Script</a>
+        <a href="tester.html">Tester</a>
+        <a href="faq.html">FAQ</a>
+        <a class="cta" href="https://github.com/Mochizhouuu/MochiTs" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-nav">Menu</button>
+    </div>
+    <div class="mobile-nav" id="mobile-nav">
+      <div class="wrap">
+        <a href="mulai.html">Mulai &amp; instalasi</a>
+        <a href="folder-zip.html">Folder &amp; impor ZIP</a>
+        <a href="teks.html">Teks &amp; spasi</a>
+        <a href="script.html">Format script TL</a>
+        <a href="tester.html">Tester script</a>
+        <a href="ekspor.html">Ekspor</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap docs">
+    <aside class="sidebar">
+      <div class="side-title">Panduan</div>
+      <a href="mulai.html">Mulai &amp; instalasi</a>
+      <a href="folder-zip.html">Folder &amp; impor ZIP</a>
+      <a href="teks.html">Teks &amp; spasi</a>
+      <a href="script.html">Format script TL</a>
+      <a href="ekspor.html">Ekspor</a>
+      <div class="side-title">Alat</div>
+      <a href="tester.html">Tester script</a>
+      <a href="faq.html">FAQ</a>
+    </aside>
+
+    <main class="docs-main">
+      <div class="doc-head">
+        <div class="breadcrumb"><a href="index.html">Docs</a> / Teks &amp; spasi</div>
+        <h1>Teks &amp; spasi</h1>
+        <p>Semua yang bisa diatur pada layer teks, termasuk dua slider yang paling sering dipakai untuk merapikan balon.</p>
+      </div>
+
+      <h2 id="dasar">Membuat dan mengedit teks</h2>
+      <ul>
+        <li>Pilih alat teks di toolbar, lalu ketuk kanvas untuk membuat layer baru.</li>
+        <li>Ketuk dua kali layer teks untuk membuka editor isi.</li>
+        <li>Layer teks punya bentuk <strong>BOX</strong> (kotak) atau <strong>OVAL</strong>; pilihan bentuk memengaruhi area pembungkusan baris.</li>
+        <li>Teks dibungkus ulang (reflow) saat lebar kotak berubah, dengan dukungan hyphenation Indonesia dan Inggris.</li>
+      </ul>
+
+      <h2 id="font">Font dan ukuran</h2>
+      <p>Font bawaan bisa diganti lewat panel teks. Untuk font kustom:</p>
+      <div class="steps">
+        <div class="step">
+          <strong>Buka Settings → Font</strong>
+          <p>Impor file <code>.ttf</code> atau <code>.otf</code> dari penyimpanan.</p>
+        </div>
+        <div class="step">
+          <strong>Pilih font di panel teks</strong>
+          <p>Font kustom muncul bersama font bawaan. Gaya Regular, Bold, Italic, dan Bold Italic mengikuti file yang tersedia.</p>
+        </div>
+        <div class="step">
+          <strong>Hapus jika tidak dipakai</strong>
+          <p>Font kustom bisa dihapus dari Settings. Proyek yang memakai font tersebut perlu mengganti fontnya.</p>
+        </div>
+      </div>
+
+      <h2 id="spasi">Jarak huruf dan jarak baris</h2>
+      <p>Di panel teks, bagian <em>Style &amp; Size</em> berisi dua slider spasi. Keduanya bekerja per layer dan langsung terlihat di kanvas.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Slider</th><th>Rentang</th><th>Arti nilai</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><strong>Jarak huruf</strong></td>
+              <td>−5% sampai 20%</td>
+              <td>Ditampilkan sebagai persen dari ukuran font (<code>em</code>). 0% = normal, 10% = tiap huruf diberi ruang tambahan 0,1 em.</td>
+            </tr>
+            <tr>
+              <td><strong>Jarak baris</strong></td>
+              <td>80% sampai 200%</td>
+              <td>Pengali tinggi baris. 100% = normal, 120% = baris lebih renggang, 80% = lebih rapat.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <ul>
+        <li>Nilai jarak baris ≤ 0 dianggap tidak valid dan otomatis kembali ke 100% saat dirender.</li>
+        <li>Jarak huruf ikut diperhitungkan saat mengukur lebar minimum kotak dan saat menggambar, jadi teks tidak terpotong.</li>
+        <li>Tombol <strong>Reset jarak</strong> mengembalikan keduanya ke 0% dan 100%.</li>
+      </ul>
+      <div class="callout">
+        <strong>Kapan dipakai?</strong> Jarak huruf membantu teks kapital yang terasa sempit; jarak baris membantu balon dengan banyak baris agar tidak menempel. Untuk teks vertikal, kedua nilai tetap diterapkan mengikuti arah aliran.
+      </div>
+
+      <h2 id="gaya">Warna, stroke, glow, dan gradient</h2>
+      <ul>
+        <li><strong>Warna &amp; opasitas</strong> — warna isi teks dan transparansinya.</li>
+        <li><strong>Stroke</strong> — ketebalan dan opasitas garis tepi; berguna untuk teks di atas latar ramai.</li>
+        <li><strong>Drop shadow</strong> — radius serta offset X/Y.</li>
+        <li><strong>Glow</strong> — radius dan warna cahaya di belakang teks.</li>
+        <li><strong>Gradient</strong> — dua warna atau lebih, arah horizontal/vertikal, atau sudut bebas. Minimal dua stop agar aman.</li>
+        <li><strong>Motion blur</strong> — blur searah sudut tertentu untuk kesan gerak.</li>
+      </ul>
+
+      <h2 id="inpainting">Menghapus teks lama (inpainting)</h2>
+      <p>Sebelum menempel teks baru, bersihkan teks asli memakai tool seleksi:</p>
+      <ul>
+        <li><strong>Brush</strong> dan <strong>Eraser</strong> — melukis/menghapus mask.</li>
+        <li><strong>Lasso</strong> — seleksi area bebas.</li>
+        <li><strong>Magic Wand</strong> — flood fill berdasarkan toleransi warna, dengan opsi pelebaran margin (<em>expand</em>) dan invert mask.</li>
+      </ul>
+      <p>Setelah mask siap, jalankan inpainting:</p>
+      <ul>
+        <li><strong>Telea (OpenCV)</strong> — cepat dan sepenuhnya offline. Cocok untuk latar sederhana.</li>
+        <li><strong>LaMa AI</strong> — model ONNX ±196 MB, diunduh sekali dari HuggingFace ke folder model aplikasi. Jika model belum ada atau gagal dimuat, MochiTs otomatis memakai Telea.</li>
+      </ul>
+      <div class="callout warn">
+        <strong>Unduhan model.</strong> Sediakan koneksi stabil untuk unduhan pertama. Setelah tersimpan di perangkat, LaMa bisa dipakai offline. Unduhan yang terputus disimpan sebagai file <code>.tmp</code> dan tidak dipakai sampai selesai.
+      </div>
+
+      <div class="next-prev">
+        <a href="folder-zip.html"><span class="lbl">Sebelumnya</span>Folder &amp; impor ZIP</a>
+        <a href="script.html"><span class="lbl">Selanjutnya</span>Format script TL</a>
+      </div>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <div class="wrap footer-in">
+      <div>MochiTs — editor typeset komik untuk Android. Dokumentasi ini statis dan bisa dibaca offline setelah dimuat.</div>
+      <div class="footer-links">
+        <a href="index.html">Beranda</a>
+        <a href="mulai.html">Panduan</a>
+        <a href="https://github.com/Mochizhouuu/MochiTs" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://github.com/Mochizhouuu/MochiTs-Docs" target="_blank" rel="noopener">Sumber docs</a>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/app.js"></script>
+</body>
+</html>

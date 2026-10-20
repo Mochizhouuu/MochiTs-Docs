@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Format Script TL — MochiTs Docs</title>
+  <meta name="description" content="Panduan lengkap format script TL MochiTs: pemisah halaman, simbol, entri terhubung, baris sambungan, dan impor .docx.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-in">
+      <a class="brand" href="index.html" aria-label="MochiTs Docs">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-word">Mochi<span>Ts</span></span>
+      </a>
+      <nav class="nav" aria-label="Utama">
+        <a href="mulai.html">Mulai</a>
+        <a href="script.html">Script</a>
+        <a href="tester.html">Tester</a>
+        <a href="faq.html">FAQ</a>
+        <a class="cta" href="https://github.com/Mochizhouuu/MochiTs" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-nav">Menu</button>
+    </div>
+    <div class="mobile-nav" id="mobile-nav">
+      <div class="wrap">
+        <a href="mulai.html">Mulai &amp; instalasi</a>
+        <a href="folder-zip.html">Folder &amp; impor ZIP</a>
+        <a href="teks.html">Teks &amp; spasi</a>
+        <a href="script.html">Format script TL</a>
+        <a href="tester.html">Tester script</a>
+        <a href="ekspor.html">Ekspor</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap docs">
+    <aside class="sidebar">
+      <div class="side-title">Panduan</div>
+      <a href="mulai.html">Mulai &amp; instalasi</a>
+      <a href="folder-zip.html">Folder &amp; impor ZIP</a>
+      <a href="teks.html">Teks &amp; spasi</a>
+      <a href="script.html">Format script TL</a>
+      <a href="ekspor.html">Ekspor</a>
+      <div class="side-title">Alat</div>
+      <a href="tester.html">Tester script</a>
+      <a href="faq.html">FAQ</a>
+    </aside>
+
+    <main class="docs-main">
+      <div class="doc-head">
+        <div class="breadcrumb"><a href="index.html">Docs</a> / Script TL</div>
+        <h1>Format script TL</h1>
+        <p>Ubah naskah terjemahan menjadi antrean balon: satu baris simbol, satu entri teks, satu halaman.</p>
+      </div>
+
+      <h2 id="contoh">Contoh singkat</h2>
+      <pre><code>P1
+[] Di sebuah kota yang selalu hujan,
+   ada toko buku kecil di ujung gang.
+- Aku datang lagi hari ini.
+//- Balon sambungan tanpa ekor.
+# Catatan kecil di pinggir halaman.
+P2
+- Lama sekali kita tidak bertemu.
+* Kamu masih menulis cerita?</code></pre>
+      <p>Hasilnya: dua halaman, enam entri. Baris pertama setelah <code>P1</code> menjadi entri <code>[]</code>, baris berspasi di bawahnya disambungkan ke entri yang sama, dan <code>//-</code> menjadi entri baru yang terhubung ke balon <code>-</code>.</p>
+      <div class="callout">
+        <strong>Coba langsung.</strong> Buka <a href="tester.html">tester script</a> untuk melihat hasil parsing tanpa memasang aplikasi.
+      </div>
+
+      <h2 id="halaman">Pemisah halaman</h2>
+      <p>Pemisah halaman adalah <strong>regex</strong> yang harus cocok dengan seluruh baris (setelah spasi tepi dibuang). Nilai bawaan:</p>
+      <pre><code>P\d+</code></pre>
+      <p>Dengan pola ini, baris <code>P1</code>, <code>P12</code>, dan seterusnya dianggap pemisah. Karena dicocokkan penuh, baris seperti <code>P1 catatan</code> bukan pemisah.</p>
+      <ul>
+        <li>Label halaman diambil dari baris pemisah itu sendiri.</li>
+        <li>Semua baris <strong>sebelum pemisah pertama dibuang</strong>. Ini memungkinkan kepala file berisi judul, nick, atau legenda simbol tanpa ikut menjadi entri.</li>
+        <li>Jika tidak ada baris yang cocok, seluruh isi dianggap satu halaman dan tidak ada baris yang dibuang.</li>
+        <li>Halaman yang tidak punya entri tidak ditampilkan.</li>
+        <li>Regex tidak valid diabaikan; naskah tetap dibaca sebagai satu halaman.</li>
+      </ul>
+      <p>Contoh alternatif: isi pemisah dengan <code>===</code> bila naskah memakai baris <code>===</code>, atau <code>Halaman \d+</code> untuk format lain.</p>
+
+      <h2 id="simbol">Simbol dan mode</h2>
+      <p>Setiap baris yang dimulai dengan simbol terdaftar menjadi entri baru. Simbol dicocokkan sebagai <strong>awalan</strong>, dan yang terpanjang menang — jadi <code>**</code> dipilih sebelum <code>*</code>.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Mode</th><th>Perilaku</th><th>Contoh pemakaian</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Normal</strong></td><td>Membuat entri baru dengan teks setelah simbol.</td><td><code>- Halo.</code></td></tr>
+            <tr><td><strong>Gabung</strong></td><td>Menambahkan teks ke entri sebelumnya, dipisah baris baru. Jika belum ada entri, simbol ini tetap membuat entri baru.</td><td>Dua baris dialog dalam satu balon.</td></tr>
+            <tr><td><strong>Terhubung</strong></td><td>Membuat entri <em>baru</em> untuk balon/kotak berikutnya, sambil menandai induknya. Entri tidak digabung.</td><td><code>//-</code> untuk balon sambungan, <code>//[]</code> untuk kotak sambungan.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Simbol bawaan: <code>[]</code>, <code>-</code>, <code>//-</code>, <code>//[]</code>, <code>#</code>, <code>*</code>, <code>**</code>, <code>&lt;&gt;</code>. Kamu bisa menambah, menghapus, atau mengganti mode lewat <strong>Settings → Script</strong>.</p>
+
+      <h3>Induk entri terhubung</h3>
+      <p>Untuk simbol berawalan <code>//</code>, induk ditentukan dari sisa simbolnya: <code>//-</code> terhubung ke <code>-</code>, dan <code>//[]</code> terhubung ke <code>[]</code>. Jika simbol hanya <code>//</code> tanpa sisa, induk diambil dari entri sebelumnya (atau induk entri itu, bila sebelumnya juga terhubung).</p>
+      <p>Induk dipakai untuk mewarisi <strong>preset gaya</strong>: gaya milik simbol sendiri dipakai lebih dulu; jika kosong, gaya simbol induk yang dipakai. Preset mencakup font, gaya font, alignment, dan bentuk kotak — bukan ukuran font atau spasi.</p>
+
+      <h2 id="sambungan">Baris sambungan dan indentasi</h2>
+      <p>Baris tanpa simbol tidak dibuang selama sudah ada entri sebelumnya. Baris itu disambungkan ke entri terakhir, dengan aturan indentasi:</p>
+      <ul>
+        <li>Spasi sejajar sampai kolom awal teks simbol dibuang. Contoh: <code>- Halo</code> punya teks mulai kolom 2; baris berikutnya yang diindentasi 2 spasi akan kehilangan 2 spasi itu.</li>
+        <li>Indentasi yang lebih dalam dari kolom teks dipertahankan, sehingga baris menjorok tetap menjorok.</li>
+        <li>Baris tanpa simbol sebelum entri pertama diabaikan.</li>
+      </ul>
+      <pre><code>- Aku tidak percaya
+    kita benar-benar bertemu
+    di tempat ini lagi.</code></pre>
+      <p>Pada contoh di atas, baris kedua dan ketiga menjadi bagian entri <code>-</code>, dengan indentasi 4 spasi yang dipertahankan relatif terhadap teks simbol.</p>
+
+      <h2 id="normalisasi">Normalisasi otomatis</h2>
+      <p>Sebelum diproses, karakter berikut dibersihkan agar naskah hasil salin-tempel tetap aman:</p>
+      <ul>
+        <li>BOM (<code>U+FEFF</code>) dan zero-width space (<code>U+200B</code>) dihapus.</li>
+        <li>Non-breaking space (<code>U+00A0</code>) diubah menjadi spasi biasa.</li>
+        <li>CRLF dan CR diubah menjadi LF.</li>
+        <li>Tab diubah menjadi empat spasi.</li>
+      </ul>
+
+      <h2 id="alur">Alur kerja di aplikasi</h2>
+      <div class="steps">
+        <div class="step">
+          <strong>Atur simbol dan pemisah</strong>
+          <p>Buka <em>Settings → Script</em>. Tambahkan simbol yang dipakai naskah, tentukan mode, dan pasangkan preset gaya bila perlu.</p>
+        </div>
+        <div class="step">
+          <strong>Muat naskah di Editor</strong>
+          <p>Buka panel <em>Script TL</em>, lalu ketuk <em>Muat file .txt / .docx</em>. MochiTs membaca teks dari TXT (UTF-8/UTF-16 dengan BOM) atau <code>word/document.xml</code> dari DOCX.</p>
+        </div>
+        <div class="step">
+          <strong>Kerjakan antrean</strong>
+          <p>Panel menampilkan halaman, baris kini, dan pratinjau. Pilih layer teks lalu ketuk <em>Masukkan</em>; tanpa seleksi, tombol menjadi <em>Buat baru</em>. Gunakan <em>Lewati</em> untuk melewati baris.</p>
+        </div>
+        <div class="step">
+          <strong>Pindah halaman</strong>
+          <p>Tombol panah di bawah antrean berpindah halaman. Ketuk baris mana pun di pratinjau untuk melompat ke baris tersebut.</p>
+        </div>
+      </div>
+
+      <h2 id="autosave">Memuat ulang otomatis</h2>
+      <p>Secara bawaan, file script terakhir dan posisi halaman/barisnya dimuat lagi saat proyek dibuka. Matikan opsi <em>Muat ulang file TL otomatis</em> di Settings bila tidak diinginkan. Data ini disimpan per proyek.</p>
+
+      <h2 id="tes">Tes file sebelum mengedit</h2>
+      <p>Di <em>Settings → Script</em>, tombol <strong>Tes file script (.txt/.docx)</strong> membaca file dan menampilkan ringkasan: jumlah halaman, entri, entri terhubung, hitungan per simbol, dan peringatan (misalnya simbol <code>//-</code> dipakai tetapi belum terdaftar). Tes ini tidak mengubah antrean proyek.</p>
+
+      <div class="next-prev">
+        <a href="teks.html"><span class="lbl">Sebelumnya</span>Teks &amp; spasi</a>
+        <a href="tester.html"><span class="lbl">Selanjutnya</span>Tester script</a>
+      </div>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <div class="wrap footer-in">
+      <div>MochiTs — editor typeset komik untuk Android. Dokumentasi ini statis dan bisa dibaca offline setelah dimuat.</div>
+      <div class="footer-links">
+        <a href="index.html">Beranda</a>
+        <a href="mulai.html">Panduan</a>
+        <a href="https://github.com/Mochizhouuu/MochiTs" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://github.com/Mochizhouuu/MochiTs-Docs" target="_blank" rel="noopener">Sumber docs</a>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/app.js"></script>
+</body>
+</html>

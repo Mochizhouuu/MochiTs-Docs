@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Folder &amp; Impor ZIP — MochiTs Docs</title>
+  <meta name="description" content="Kelola folder proyek, impor banyak gambar sekaligus, dan impor ZIP berisi halaman atau subfolder di MochiTs.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-in">
+      <a class="brand" href="index.html" aria-label="MochiTs Docs">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-word">Mochi<span>Ts</span></span>
+      </a>
+      <nav class="nav" aria-label="Utama">
+        <a href="mulai.html">Mulai</a>
+        <a href="script.html">Script</a>
+        <a href="tester.html">Tester</a>
+        <a href="faq.html">FAQ</a>
+        <a class="cta" href="https://github.com/Mochizhouuu/MochiTs" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-nav">Menu</button>
+    </div>
+    <div class="mobile-nav" id="mobile-nav">
+      <div class="wrap">
+        <a href="mulai.html">Mulai &amp; instalasi</a>
+        <a href="folder-zip.html">Folder &amp; impor ZIP</a>
+        <a href="teks.html">Teks &amp; spasi</a>
+        <a href="script.html">Format script TL</a>
+        <a href="tester.html">Tester script</a>
+        <a href="ekspor.html">Ekspor</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap docs">
+    <aside class="sidebar">
+      <div class="side-title">Panduan</div>
+      <a href="mulai.html">Mulai &amp; instalasi</a>
+      <a href="folder-zip.html">Folder &amp; impor ZIP</a>
+      <a href="teks.html">Teks &amp; spasi</a>
+      <a href="script.html">Format script TL</a>
+      <a href="ekspor.html">Ekspor</a>
+      <div class="side-title">Alat</div>
+      <a href="tester.html">Tester script</a>
+      <a href="faq.html">FAQ</a>
+    </aside>
+
+    <main class="docs-main">
+      <div class="doc-head">
+        <div class="breadcrumb"><a href="index.html">Docs</a> / Folder &amp; ZIP</div>
+        <h1>Folder &amp; impor ZIP</h1>
+        <p>Rapikan puluhan proyek dan masukkan satu chapter penuh dalam sekali impor.</p>
+      </div>
+
+      <h2 id="folder">Folder proyek</h2>
+      <p>Folder di MochiTs bersifat virtual: proyek tetap berupa file terpisah, hanya dikelompokkan lewat <code>folderId</code>. Satu proyek berada di paling banyak satu folder.</p>
+      <ul>
+        <li><strong>Buat folder</strong> — chip <em>Kelola</em> di Home, lalu tambahkan nama folder. Nama yang sudah dipakai akan diberi akhiran otomatis, misalnya <code>Chapter 1 (2)</code>.</li>
+        <li><strong>Pindahkan proyek</strong> — buka dialog proyek (ketuk lama), pilih <em>Pindahkan</em>, lalu tentukan folder atau <em>Tanpa folder</em>.</li>
+        <li><strong>Ganti nama</strong> — dari dialog Kelola. Proyek tidak terpengaruh.</li>
+        <li><strong>Hapus folder</strong> — proyek di dalamnya <strong>tidak dihapus</strong>, hanya kembali ke <em>Tanpa folder</em>.</li>
+      </ul>
+      <p>Chip <code>Semua</code> menampilkan seluruh proyek, sedangkan chip nama folder menyaring daftar. Urutan proyek tetap berdasarkan aktivitas terakhir.</p>
+
+      <h2 id="banyak-gambar">Impor banyak gambar</h2>
+      <div class="steps">
+        <div class="step">
+          <strong>Ketuk ikon galeri</strong>
+          <p>Picker Android terbuka. Pilih hingga 100 gambar sekaligus (batas dari aplikasi).</p>
+        </div>
+        <div class="step">
+          <strong>Folder otomatis</strong>
+          <p>Jika memilih lebih dari satu gambar tanpa folder tujuan, MochiTs membuat folder <code>Impor YYYYMMDD_HHMMSS</code>. Satu gambar tidak dibuatkan folder.</p>
+        </div>
+        <div class="step">
+          <strong>Periksa hasilnya</strong>
+          <p>Setiap gambar menjadi proyek dengan judul dari nama file. Gambar yang gagal dibaca dilewati; sisanya tetap diimpor.</p>
+        </div>
+      </div>
+      <div class="callout">
+        <strong>Fallback picker.</strong> Jika pemilih galeri tidak tersedia, MochiTs memakai pemilih dokumen Android. Hasilnya sama.
+      </div>
+
+      <h2 id="zip">Impor ZIP</h2>
+      <p>Struktur ZIP menentukan struktur folder. MochiTs membaca arsip dalam dua lintasan: pertama memetakan isi, lalu mengekstrak hanya file yang relevan.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Isi ZIP</th><th>Hasil di MochiTs</th></tr></thead>
+          <tbody>
+            <tr><td><code>001.jpg</code>, <code>002.jpg</code>, … di root</td><td>Proyek-proyek di dalam satu folder bernama file ZIP.</td></tr>
+            <tr><td>Subfolder <code>Ch 1/</code>, <code>Ch 2/</code></td><td>Satu folder per subfolder tingkat atas; gambar di dalamnya menjadi proyek.</td></tr>
+            <tr><td>Campuran gambar root + subfolder</td><td>Gambar root masuk folder ZIP; setiap subfolder menjadi folder sendiri.</td></tr>
+            <tr><td>Bundel <code>.mts</code></td><td>Diimpor sebagai proyek yang bisa diedit, lengkap dengan layer dan riwayatnya.</td></tr>
+            <tr><td><code>__MACOSX/</code>, file tersembunyi, non-gambar</td><td>Diabaikan.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Urutan halaman di dalam satu folder mengikuti <em>natural sort</em>: <code>2</code> sebelum <code>10</code>, dan nama file dinormalisasi menjadi judul proyek.</p>
+
+      <h3>Batas keamanan impor</h3>
+      <ul>
+        <li>Maksimal <strong>300 item</strong> diimpor dan <strong>5.000 entri</strong> dipindai per ZIP.</li>
+        <li>Maksimal <strong>64 MB per entri</strong> dan <strong>512 MB total</strong> data yang diekstrak.</li>
+        <li>Path dengan <code>..</code> (traversal) serta file tersembunyi tidak diproses.</li>
+        <li>File sementara di cache dihapus setelah setiap entri selesai diimpor.</li>
+      </ul>
+      <div class="callout warn">
+        <strong>ZIP rusak atau terenkripsi.</strong> Jika arsip tidak bisa dibaca, impor dibatalkan dan dicatat sebagai gagal. Coba ekstrak ulang ZIP dengan aplikasi arsip lain, lalu impor kembali.
+      </div>
+
+      <h2 id="share">Membuka ZIP dari file manager</h2>
+      <p>MochiTs terdaftar sebagai pembuka untuk <code>application/zip</code> dan <code>application/x-zip-compressed</code>. Saat ZIP dibuka dari luar:</p>
+      <ol>
+        <li>Aplikasi menampilkan dialog pratinjau berisi nama file ZIP.</li>
+        <li>Ketuk <strong>Impor</strong> untuk memproses, atau <strong>Batal</strong> untuk membatalkan.</li>
+        <li>Salinan sementara di cache dihapus setelah impor atau pembatalan.</li>
+      </ol>
+      <p>Pratinjau ini sengaja dipakai agar ZIP tidak langsung diekstrak tanpa persetujuan. File <code>.mts</code> yang dibuka dari luar tetap langsung masuk sebagai proyek.</p>
+
+      <div class="next-prev">
+        <a href="mulai.html"><span class="lbl">Sebelumnya</span>Mulai &amp; instalasi</a>
+        <a href="teks.html"><span class="lbl">Selanjutnya</span>Teks &amp; spasi</a>
+      </div>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <div class="wrap footer-in">
+      <div>MochiTs — editor typeset komik untuk Android. Dokumentasi ini statis dan bisa dibaca offline setelah dimuat.</div>
+      <div class="footer-links">
+        <a href="index.html">Beranda</a>
+        <a href="mulai.html">Panduan</a>
+        <a href="https://github.com/Mochizhouuu/MochiTs" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://github.com/Mochizhouuu/MochiTs-Docs" target="_blank" rel="noopener">Sumber docs</a>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mulai &amp; Instalasi — MochiTs Docs</title>
+  <meta name="description" content="Pasang MochiTs di Android, buat proyek pertama, dan kenali tata letak Home serta Editor.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-in">
+      <a class="brand" href="index.html" aria-label="MochiTs Docs">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-word">Mochi<span>Ts</span></span>
+      </a>
+      <nav class="nav" aria-label="Utama">
+        <a href="mulai.html">Mulai</a>
+        <a href="script.html">Script</a>
+        <a href="tester.html">Tester</a>
+        <a href="faq.html">FAQ</a>
+        <a class="cta" href="https://github.com/Mochizhouuu/MochiTs" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-nav">Menu</button>
+    </div>
+    <div class="mobile-nav" id="mobile-nav">
+      <div class="wrap">
+        <a href="mulai.html">Mulai &amp; instalasi</a>
+        <a href="folder-zip.html">Folder &amp; impor ZIP</a>
+        <a href="teks.html">Teks &amp; spasi</a>
+        <a href="script.html">Format script TL</a>
+        <a href="tester.html">Tester script</a>
+        <a href="ekspor.html">Ekspor</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap docs">
+    <aside class="sidebar">
+      <div class="side-title">Panduan</div>
+      <a href="mulai.html">Mulai &amp; instalasi</a>
+      <a href="folder-zip.html">Folder &amp; impor ZIP</a>
+      <a href="teks.html">Teks &amp; spasi</a>
+      <a href="script.html">Format script TL</a>
+      <a href="ekspor.html">Ekspor</a>
+      <div class="side-title">Alat</div>
+      <a href="tester.html">Tester script</a>
+      <a href="faq.html">FAQ</a>
+    </aside>
+
+    <main class="docs-main">
+      <div class="doc-head">
+        <div class="breadcrumb"><a href="index.html">Docs</a> / Mulai</div>
+        <h1>Mulai &amp; instalasi</h1>
+        <p>Dari memasang APK sampai proyek pertamamu siap diedit. Tidak ada akun, tidak ada langganan.</p>
+      </div>
+
+      <h2 id="instalasi">Memasang aplikasi</h2>
+      <p>MochiTs adalah aplikasi Android native (Kotlin + Compose) dengan minimum Android 10 (API 29). Ada dua cara mendapatkan APK:</p>
+      <ul>
+        <li><strong>Artifact dari CI</strong> — buka <a href="https://github.com/Mochizhouuu/MochiTs/actions" target="_blank" rel="noopener">GitHub Actions</a>, pilih workflow terbaru yang hijau, lalu unduh artifact <code>app-debug</code>. Perlu login GitHub.</li>
+        <li><strong>Build sendiri</strong> — clone repo, lalu jalankan <code>./gradlew assembleDebug</code> dengan JDK 17. APK ada di <code>app/build/outputs/apk/debug/</code>.</li>
+      </ul>
+      <div class="callout">
+        <strong>Instal dari file.</strong> Setelah APK diunduh, buka lewat file manager. Jika Android memblokir, izinkan <em>Install unknown apps</em> untuk aplikasi file manager tersebut, lalu coba lagi.
+      </div>
+      <div class="callout warn">
+        <strong>Build debug.</strong> Artifact CI adalah build debug: ukurannya lebih besar, dan data bisa hilang jika aplikasi di-uninstall. Jangan gunakan untuk distribusi publik.
+      </div>
+
+      <h2 id="proyek">Membuat proyek pertama</h2>
+      <div class="steps">
+        <div class="step">
+          <strong>Buka Home</strong>
+          <p>Semua proyek muncul di daftar, diurutkan dari yang terakhir dibuka. Folder ditampilkan sebagai chip di bagian atas.</p>
+        </div>
+        <div class="step">
+          <strong>Ketuk tombol buat proyek</strong>
+          <p>Isi nama, lebar, dan tinggi kanvas dalam piksel. Centang <em>Kanvas Transparan</em> bila ingin latar kosong; jika tidak, pilih warna latar.</p>
+        </div>
+        <div class="step">
+          <strong>Pilih gambar atau mulai kosong</strong>
+          <p>Kamu bisa langsung membuat kanvas kosong, atau mengimpor gambar dari galeri sebagai halaman pertama.</p>
+        </div>
+        <div class="step">
+          <strong>Mulai mengedit</strong>
+          <p>Editor terbuka dengan toolbar kiri, kanvas di tengah, dan panel properti untuk layer yang sedang dipilih.</p>
+        </div>
+      </div>
+
+      <h2 id="home">Mengenal Home</h2>
+      <p>Home adalah pusat proyek. Beberapa elemen penting:</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Elemen</th><th>Fungsi</th></tr></thead>
+          <tbody>
+            <tr><td>Chip folder</td><td>Menyaring proyek. <code>Semua</code> menampilkan seluruh proyek, <code>Tanpa folder</code> hanya proyek yang belum dikelompokkan.</td></tr>
+            <tr><td>Kelola</td><td>Membuat, mengganti nama, dan menghapus folder. Proyek di folder yang dihapus tidak ikut terhapus.</td></tr>
+            <tr><td>Ikon ZIP</td><td>Mengimpor arsip ZIP berisi gambar halaman dan/atau subfolder.</td></tr>
+            <tr><td>Ikon galeri</td><td>Memilih beberapa gambar sekaligus. Lebih dari satu gambar otomatis dibuatkan folder.</td></tr>
+            <tr><td>Ketuk lama proyek</td><td>Membuka dialog proyek: buka, pindahkan ke folder, ganti nama, atau hapus.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="editor">Mengenal Editor</h2>
+      <ul>
+        <li><strong>Kanvas</strong> — cubit untuk zoom, geser dua jari untuk pan. Ketuk dua kali layer teks untuk mengedit isinya.</li>
+        <li><strong>Toolbar</strong> — pilih alat (brush, eraser, lasso, magic wand), teks, atau layer gambar.</li>
+        <li><strong>Panel layer</strong> — urutkan, sembunyikan, kunci, dan hapus layer.</li>
+        <li><strong>Panel properti</strong> — pengaturan khusus layer terpilih: font, warna, stroke, spasi, dan lainnya.</li>
+        <li><strong>Undo/redo</strong> — riwayat disimpan ke disk, jadi tetap tersedia setelah aplikasi ditutup.</li>
+      </ul>
+      <div class="callout ok">
+        <strong>Autosave.</strong> Tidak ada tombol simpan. Setiap perubahan disimpan otomatis; kembali ke Home kapan saja.
+      </div>
+
+      <h2 id="tips">Tiga kebiasaan yang menghemat waktu</h2>
+      <ol>
+        <li>Kelompokkan proyek per judul atau chapter memakai folder sejak awal.</li>
+        <li>Simpan naskah TL dalam satu file teks, lalu gunakan <a href="script.html">format script</a> agar balon terisi otomatis.</li>
+        <li>Atur jarak huruf/baris di panel teks sebelum menyalin gaya ke balon lain.</li>
+      </ol>
+
+      <div class="next-prev">
+        <a href="index.html"><span class="lbl">Sebelumnya</span>Beranda</a>
+        <a href="folder-zip.html"><span class="lbl">Selanjutnya</span>Folder &amp; impor ZIP</a>
+      </div>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <div class="wrap footer-in">
+      <div>MochiTs — editor typeset komik untuk Android. Dokumentasi ini statis dan bisa dibaca offline setelah dimuat.</div>
+      <div class="footer-links">
+        <a href="index.html">Beranda</a>
+        <a href="mulai.html">Panduan</a>
+        <a href="https://github.com/Mochizhouuu/MochiTs" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://github.com/Mochizhouuu/MochiTs-Docs" target="_blank" rel="noopener">Sumber docs</a>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/app.js"></script>
+</body>
+</html>

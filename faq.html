@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FAQ — MochiTs Docs</title>
+  <meta name="description" content="Pertanyaan umum MochiTs: script TL, impor ZIP, folder, font, LaMa, ekspor, dan penyimpanan data.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-in">
+      <a class="brand" href="index.html" aria-label="MochiTs Docs">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-word">Mochi<span>Ts</span></span>
+      </a>
+      <nav class="nav" aria-label="Utama">
+        <a href="mulai.html">Mulai</a>
+        <a href="script.html">Script</a>
+        <a href="tester.html">Tester</a>
+        <a href="faq.html">FAQ</a>
+        <a class="cta" href="https://github.com/Mochizhouuu/MochiTs" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-nav">Menu</button>
+    </div>
+    <div class="mobile-nav" id="mobile-nav">
+      <div class="wrap">
+        <a href="mulai.html">Mulai &amp; instalasi</a>
+        <a href="folder-zip.html">Folder &amp; impor ZIP</a>
+        <a href="teks.html">Teks &amp; spasi</a>
+        <a href="script.html">Format script TL</a>
+        <a href="tester.html">Tester script</a>
+        <a href="ekspor.html">Ekspor</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap docs">
+    <aside class="sidebar">
+      <div class="side-title">Panduan</div>
+      <a href="mulai.html">Mulai &amp; instalasi</a>
+      <a href="folder-zip.html">Folder &amp; impor ZIP</a>
+      <a href="teks.html">Teks &amp; spasi</a>
+      <a href="script.html">Format script TL</a>
+      <a href="ekspor.html">Ekspor</a>
+      <div class="side-title">Alat</div>
+      <a href="tester.html">Tester script</a>
+      <a href="faq.html">FAQ</a>
+    </aside>
+
+    <main class="docs-main">
+      <div class="doc-head">
+        <div class="breadcrumb"><a href="index.html">Docs</a> / FAQ</div>
+        <h1>FAQ</h1>
+        <p>Jawaban singkat untuk masalah yang paling sering muncul. Untuk detail, ikuti tautan ke halaman terkait.</p>
+      </div>
+
+      <h2 id="script">Script TL</h2>
+
+      <h3>Kenapa judul dan legenda di awal file hilang?</h3>
+      <p>Itu disengaja. Semua baris sebelum pemisah halaman pertama dibuang agar kepala file tidak menjadi entri. Jika tidak ada pemisah yang cocok, tidak ada baris yang dibuang.</p>
+
+      <h3>Kenapa <code>P1</code> tidak memisahkan halaman?</h3>
+      <p>Pemisah harus cocok dengan <strong>seluruh baris</strong>. Periksa spasi, karakter tak terlihat, dan pola regex di Settings. Coba paste naskah ke <a href="tester.html">tester</a> dengan pola yang sama untuk melihat hasilnya.</p>
+
+      <h3>Apa bedanya mode gabung dan terhubung?</h3>
+      <p><strong>Gabung</strong> menambahkan teks ke entri sebelumnya (satu balon, dua baris). <strong>Terhubung</strong> membuat entri baru untuk balon berikutnya, tetapi entri itu mewarisi preset gaya dari simbol induknya, misalnya <code>//-</code> dari <code>-</code>.</p>
+
+      <h3>Kenapa baris sambungan kehilangan sebagian spasi?</h3>
+      <p>Spasi indentasi yang sejajar dengan kolom teks simbol dibuang; sisanya dipertahankan. Ini membuat baris menjorok tetap konsisten tanpa menyalin indentasi sumber. Lihat <a href="script.html#sambungan">aturan indentasi</a>.</p>
+
+      <h3>Kenapa preset tidak mengubah ukuran font atau spasi?</h3>
+      <p>Preset hanya menyimpan font, gaya font, alignment, dan bentuk kotak. Ukuran diatur lewat resize kanvas, sedangkan jarak huruf/baris diatur per layer di panel teks.</p>
+
+      <h3>Apakah file DOCX didukung penuh?</h3>
+      <p>MochiTs membaca teks dari <code>word/document.xml</code>; format paragraf, tabel, dan gambar di dalam DOCX tidak dipertahankan. Untuk hasil paling dapat diprediksi, gunakan TXT.</p>
+
+      <h3>Kenapa posisi script kembali saat proyek dibuka?</h3>
+      <p>Fitur <em>Muat ulang file TL otomatis</em> aktif secara bawaan dan menyimpan file serta posisi halaman/baris per proyek. Matikan di Settings bila tidak diinginkan.</p>
+
+      <h2 id="zip">Folder dan impor</h2>
+
+      <h3>Kenapa beberapa gambar di ZIP tidak masuk?</h3>
+      <p>Periksa batas impor: maksimal 300 item, 5.000 entri dipindai, 64 MB per entri, dan 512 MB total. File non-gambar, file tersembunyi, folder <code>__MACOSX</code>, dan path traversal juga diabaikan.</p>
+
+      <h3>Kenapa nama folder ZIP berbeda dari yang diharapkan?</h3>
+      <p>Nama folder root diambil dari nama file ZIP. Setiap subfolder tingkat atas menjadi folder sendiri. Nama yang bentrok dengan folder yang sudah ada akan diberi akhiran otomatis seperti <code>(2)</code>.</p>
+
+      <h3>Apakah menghapus folder menghapus proyek?</h3>
+      <p>Tidak. Proyek di dalamnya kembali ke <em>Tanpa folder</em>. Hapus proyek secara terpisah jika memang ingin membuangnya.</p>
+
+      <h3>ZIP dibuka dari file manager tetapi tidak terjadi apa-apa?</h3>
+      <p>MochiTs menampilkan dialog pratinjau lebih dulu; ketuk <strong>Impor</strong>. Jika dialog tidak muncul, pastikan aplikasi versi terbaru terpasang dan ZIP bertipe <code>application/zip</code> atau <code>application/x-zip-compressed</code>.</p>
+
+      <h3>Kenapa impor banyak gambar membuat folder baru?</h3>
+      <p>Memilih lebih dari satu gambar tanpa folder tujuan otomatis membuat folder <code>Impor YYYYMMDD_HHMMSS</code> agar proyek tidak tercampur. Satu gambar tidak dibuatkan folder.</p>
+
+      <h2 id="teks">Teks, font, dan inpainting</h2>
+
+      <h3>Font kustom tidak muncul</h3>
+      <p>Pastikan file berformat <code>.ttf</code> atau <code>.otf</code> dan tidak rusak. Setelah diimpor dari Settings, font muncul di panel teks. Font yang dihapus membuat layer terkait kembali ke font default.</p>
+
+      <h3>Jarak huruf/baris terasa tidak berubah</h3>
+      <p>Kedua slider bekerja per layer teks yang sedang dipilih. Pastikan layer teks aktif. Nilai jarak baris ≤ 0 otomatis dianggap 100%; gunakan tombol <em>Reset jarak</em> untuk kembali ke nilai normal.</p>
+
+      <h3>LaMa gagal diunduh atau gagal dipakai</h3>
+      <p>Model berukuran ±196 MB dan diunduh sekali dari HuggingFace. Jika unduhan gagal, coba koneksi stabil dan ruang penyimpanan cukup. Saat model tidak tersedia atau gagal dimuat, inpainting otomatis memakai Telea yang offline.</p>
+
+      <h3>Hasil inpainting masih terlihat belang</h3>
+      <p>Perluas area mask sedikit melewati teks, lalu ulangi. Telea cocok untuk latar sederhana; untuk latar kompleks, gunakan LaMa. Coba beberapa kali dengan mask yang lebih rapi.</p>
+
+      <h2 id="ekspor">Ekspor dan penyimpanan</h2>
+
+      <h3>Di mana proyek disimpan?</h3>
+      <p>Di penyimpanan internal aplikasi: database Room dan folder <code>filesDir/projects/{id}/</code> berisi gambar dasar, layer, serta riwayat. Data hilang jika aplikasi di-uninstall atau data aplikasi dibersihkan.</p>
+
+      <h3>Bagaimana cara backup proyek?</h3>
+      <p>Ekspor sebagai <strong>MTS</strong>. Bundel ini menyimpan proyek lengkap dan bisa dibuka kembali atau dimasukkan ke ZIP. Menyalin folder internal secara manual tidak didukung tanpa akses root.</p>
+
+      <h3>Ekspor gagal menulis ke folder</h3>
+      <p>Izin folder bisa dicabut setelah aplikasi dipasang ulang atau penyimpanan diubah. Buka Settings, pilih ulang folder output default, lalu ekspor lagi.</p>
+
+      <h3>File lama tertimpa</h3>
+      <p>Ekspor dengan nama yang sama akan mengganti file di folder tujuan. Ganti nama output untuk menyimpan versi lain.</p>
+
+      <h3>Kenapa hasil JPEG berbeda dari PNG?</h3>
+      <p>JPEG lossy dan tidak menyimpan transparansi. Gunakan PNG untuk teks tajam atau area transparan, dan kualitas 85–95% untuk JPEG/WEBP.</p>
+
+      <h2 id="lain">Lainnya</h2>
+
+      <h3>Apakah aplikasi butuh internet?</h3>
+      <p>Editing, impor, dan ekspor berjalan offline. Internet hanya dibutuhkan untuk mengunduh model LaMa pertama kali.</p>
+
+      <h3>Apakah data dikirim ke server?</h3>
+      <p>Tidak. Proyek dan naskah diproses di perangkat. Halaman tester script ini juga berjalan sepenuhnya di browser.</p>
+
+      <h3>Aplikasi versi apa yang saya pakai?</h3>
+      <p>Versi saat ini <code>1.0</code> (versionName). Build dari CI adalah build debug; pasang ulang APK terbaru untuk mendapatkan perbaikan.</p>
+
+      <div class="next-prev">
+        <a href="ekspor.html"><span class="lbl">Sebelumnya</span>Ekspor</a>
+        <a href="index.html"><span class="lbl">Kembali ke</span>Beranda</a>
+      </div>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <div class="wrap footer-in">
+      <div>MochiTs — editor typeset komik untuk Android. Dokumentasi ini statis dan bisa dibaca offline setelah dimuat.</div>
+      <div class="footer-links">
+        <a href="index.html">Beranda</a>
+        <a href="mulai.html">Panduan</a>
+        <a href="https://github.com/Mochizhouuu/MochiTs" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://github.com/Mochizhouuu/MochiTs-Docs" target="_blank" rel="noopener">Sumber docs</a>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/app.js"></script>
+</body>
+</html>
