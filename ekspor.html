@@ -3,69 +3,145 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ekspor — MochiTs Docs</title>
+  <title>Ekspor | MochiTs Docs</title>
   <meta name="description" content="Ekspor proyek MochiTs ke PNG, JPEG, atau WEBP, atur kualitas dan folder tujuan, atau simpan bundel .mts yang bisa diedit lagi.">
+  <meta name="theme-color" content="#f4efe5">
+  <link rel="canonical" href="https://mochits-docs.pages.dev/ekspor.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Ekspor | MochiTs Docs">
+  <meta property="og:description" content="Ekspor proyek MochiTs ke PNG, JPEG, atau WEBP, atur kualitas dan folder tujuan, atau simpan bundel .mts yang bisa diedit lagi.">
+  <meta property="og:url" content="https://mochits-docs.pages.dev/ekspor.html">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=JetBrains+Mono:wght@400;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css">
 </head>
-<body>
+<body class="has-progress" data-page="ekspor.html">
+  <a class="skip-link" href="#main">Lewati ke konten</a>
   <header class="site-header">
-    <div class="wrap header-in">
+    <div class="header-in">
       <a class="brand" href="index.html" aria-label="MochiTs Docs">
-        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-mark" aria-hidden="true">M</span>
         <span class="brand-word">Mochi<span>Ts</span></span>
+        <span class="brand-tag">Docs</span>
       </a>
-      <nav class="nav" aria-label="Utama">
+      <nav class="site-nav" aria-label="Utama">
         <a href="mulai.html">Mulai</a>
         <a href="script.html">Script</a>
         <a href="tester.html">Tester</a>
         <a href="faq.html">FAQ</a>
-        <a class="cta" href="https://github.com/Mochizhouuu/MochiTs" target="_blank" rel="noopener">GitHub</a>
       </nav>
-      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-nav">Menu</button>
-    </div>
-    <div class="mobile-nav" id="mobile-nav">
-      <div class="wrap">
-        <a href="mulai.html">Mulai &amp; instalasi</a>
-        <a href="folder-zip.html">Folder &amp; impor ZIP</a>
-        <a href="teks.html">Teks &amp; spasi</a>
-        <a href="script.html">Format script TL</a>
-        <a href="tester.html">Tester script</a>
-        <a href="ekspor.html">Ekspor</a>
-        <a href="faq.html">FAQ</a>
+      <div class="header-tools">
+        <button class="search-btn" type="button" aria-label="Cari dokumentasi">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>
+          <span>Cari</span>
+          <kbd>/</kbd>
+        </button>
+        <a class="header-link" href="https://github.com/Mochizhouuu/MochiTs" target="_blank" rel="noopener">GitHub</a>
+        <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Buka menu">
+          <span class="menu-btn-lines" aria-hidden="true"></span>
+        </button>
       </div>
+      <div class="reading-progress" aria-hidden="true"><span></span></div>
     </div>
   </header>
 
-  <div class="wrap docs">
-    <aside class="sidebar">
-      <div class="side-title">Panduan</div>
-      <a href="mulai.html">Mulai &amp; instalasi</a>
-      <a href="folder-zip.html">Folder &amp; impor ZIP</a>
-      <a href="teks.html">Teks &amp; spasi</a>
-      <a href="script.html">Format script TL</a>
-      <a href="ekspor.html">Ekspor</a>
-      <div class="side-title">Alat</div>
-      <a href="tester.html">Tester script</a>
-      <a href="faq.html">FAQ</a>
-    </aside>
-
-    <main class="docs-main">
-      <div class="doc-head">
-        <div class="breadcrumb"><a href="index.html">Docs</a> / Ekspor</div>
-        <h1>Ekspor</h1>
-        <p>Simpan hasil sebagai gambar siap unggah, atau sebagai bundel proyek yang bisa dibuka dan diedit lagi.</p>
+  <div class="site-menu" id="site-menu" hidden>
+    <div class="site-menu-in">
+      <nav class="menu-group" aria-label="Isi manual">
+        <div class="menu-label">Isi manual</div>
+        <a href="mulai.html"><span class="no">01</span><span>Mulai</span><span class="desc">Pasang, buat proyek, kenali kanvas.</span></a>
+        <a href="folder-zip.html"><span class="no">02</span><span>Folder &amp; ZIP</span><span class="desc">Rapikan proyek dan impor satu chapter.</span></a>
+        <a href="teks.html"><span class="no">03</span><span>Teks &amp; spasi</span><span class="desc">Font, warna, stroke, jarak huruf dan baris.</span></a>
+        <a href="script.html"><span class="no">04</span><span>Script TL</span><span class="desc">Ubah naskah terjemahan jadi antrean balon.</span></a>
+        <a href="tester.html"><span class="no">05</span><span>Tester</span><span class="desc">Uji parser dan regex langsung di browser.</span></a>
+        <a href="ekspor.html" aria-current="page"><span class="no">06</span><span>Ekspor</span><span class="desc">PNG, JPEG, WEBP, atau bundel proyek.</span></a>
+        <a href="faq.html"><span class="no">07</span><span>FAQ</span><span class="desc">Jawaban singkat untuk masalah umum.</span></a>
+      </nav>
+      <div class="menu-foot">
+        <button class="search-wide" type="button" aria-label="Buka pencarian">
+          <span>Cari di dokumentasi</span>
+          <span aria-hidden="true">/</span>
+        </button>
+        <a href="https://github.com/Mochizhouuu/MochiTs" target="_blank" rel="noopener">Kode aplikasi di GitHub</a>
+        <a href="https://github.com/Mochizhouuu/MochiTs-Docs" target="_blank" rel="noopener">Sumber dokumentasi</a>
+        <p class="menu-note">Semua halaman bisa dibaca tanpa akun. Proyek tetap tersimpan di perangkatmu.</p>
       </div>
+    </div>
+  </div>
 
-      <h2 id="dialog">Dialog Simpan Sebagai</h2>
+  <div class="search-overlay" id="search-overlay" hidden>
+    <div class="search-box" role="dialog" aria-modal="true" aria-labelledby="search-title">
+      <div class="search-head">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>
+        <h2 class="visually-hidden" id="search-title">Cari dokumentasi</h2>
+        <input id="search-input" type="search" aria-label="Cari dokumentasi" placeholder="Cari bab, fitur, atau masalah..." autocomplete="off" spellcheck="false">
+        <button class="search-close" type="button" data-search-close aria-label="Tutup pencarian">Esc</button>
+      </div>
+      <div class="search-results" id="search-results" aria-live="polite"></div>
+      <div class="search-foot">
+        <span id="search-summary">Mulai dari sini</span>
+        <span>↑↓ pilih · ↵ buka · esc tutup</span>
+      </div>
+    </div>
+  </div>
+
+  <main class="docs-shell" id="main">
+      <aside class="docs-side">
+        <div class="side-label">Panduan</div>
+        <nav class="side-nav" aria-label="Bab panduan">
+        <a href="mulai.html"><span class="no">01</span><span>Mulai</span></a>
+        <a href="folder-zip.html"><span class="no">02</span><span>Folder &amp; ZIP</span></a>
+        <a href="teks.html"><span class="no">03</span><span>Teks &amp; spasi</span></a>
+        <a href="script.html"><span class="no">04</span><span>Script TL</span></a>
+        </nav>
+        <div class="side-label">Alat &amp; output</div>
+        <nav class="side-nav" aria-label="Alat dan output">
+        <a href="tester.html"><span class="no">05</span><span>Tester</span></a>
+        <a href="ekspor.html" class="active" aria-current="page"><span class="no">06</span><span>Ekspor</span></a>
+        <a href="faq.html"><span class="no">07</span><span>FAQ</span></a>
+        </nav>
+        <div class="side-help">
+          <strong>Baru mulai?</strong>
+          Baca berurutan dari Bab 01 agar alur impor, teks, dan ekspor tidak terlewat.
+          <a href="mulai.html">Mulai dari awal</a>
+        </div>
+      </aside>
+
+    <article class="docs-article" aria-labelledby="doc-title">
+      <header class="doc-masthead">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Manual</a><span class="sep">/</span><span>Ekspor</span>
+        </nav>
+        <h1 id="doc-title">Ekspor</h1>
+        <p class="doc-lead">Simpan hasil sebagai gambar siap unggah, atau sebagai bundel proyek yang bisa dibuka dan diedit lagi.</p>
+        <div class="doc-meta"><span>Bab 06</span><span>5 bagian</span><span>±2 menit baca</span><span>Edisi 1.0</span></div>
+      </header>
+
+        <details class="mobile-toc">
+          <summary>Daftar isi</summary>
+          <div class="m-toc-body">
+            <div class="m-toc-group">
+              <span class="m-toc-label">Bagian</span>
+            <a href="#dialog">Dialog Simpan Sebagai</a>
+            <a href="#format">Memilih format</a>
+            <a href="#folder">Folder tujuan</a>
+            <a href="#mts">Bundel .mts</a>
+            <a href="#tips">Tips kualitas</a>
+
+            </div>
+          </div>
+        </details>
+
+      <div class="doc-body">
+<h2 id="dialog">Dialog Simpan Sebagai</h2>
       <p>Ketuk ikon ekspor di Editor. Dialog berisi:</p>
       <ul>
-        <li><strong>Nama Output / Nama Proyek</strong> — dipakai sebagai nama file sekaligus mengganti judul proyek bila berbeda.</li>
-        <li><strong>Format</strong> — PNG, JPEG, WEBP, atau MTS.</li>
-        <li><strong>Kualitas</strong> — hanya muncul untuk JPEG dan WEBP, rentang 10–100%.</li>
-        <li><strong>Folder tujuan</strong> — folder default dari Settings, atau pilih folder saat menekan <em>Simpan &amp; Ekspor</em> jika belum diatur.</li>
+        <li><strong>Nama Output / Nama Proyek</strong>: dipakai sebagai nama file sekaligus mengganti judul proyek bila berbeda.</li>
+        <li><strong>Format</strong>: PNG, JPEG, WEBP, atau MTS.</li>
+        <li><strong>Kualitas</strong>: hanya muncul untuk JPEG dan WEBP, rentang 10 sampai 100%.</li>
+        <li><strong>Folder tujuan</strong>: folder default dari Settings, atau pilih folder saat menekan <em>Simpan &amp; Ekspor</em> jika belum diatur.</li>
       </ul>
 
       <h2 id="format">Memilih format</h2>
@@ -81,12 +157,12 @@
             <tr>
               <td><strong>JPEG</strong></td>
               <td>Unggahan umum, ukuran file lebih kecil.</td>
-              <td>Lossy; tidak mendukung transparansi. Kualitas 10–100%.</td>
+              <td>Lossy; tidak mendukung transparansi. Kualitas 10 sampai 100%.</td>
             </tr>
             <tr>
               <td><strong>WEBP</strong></td>
               <td>Ukuran kecil dengan kualitas baik untuk web.</td>
-              <td>Lossy pada Android 11+; kualitas 10–100%.</td>
+              <td>Lossy pada Android 11+; kualitas 10 sampai 100%.</td>
             </tr>
             <tr>
               <td><strong>MTS</strong></td>
@@ -124,26 +200,46 @@
       <h2 id="tips">Tips kualitas</h2>
       <ol>
         <li>Gunakan PNG untuk teks berukuran kecil agar tepi huruf tetap tajam.</li>
-        <li>Untuk WEBP/JPEG, kualitas 85–95% biasanya cukup; di bawah 70% tepi teks mulai terlihat pecah.</li>
+        <li>Untuk WEBP/JPEG, kualitas 85 sampai 95% biasanya cukup; di bawah 70% tepi teks mulai terlihat pecah.</li>
         <li>Ekspor versi PNG dulu sebagai arsip, lalu versi WEBP untuk diunggah.</li>
         <li>Jika hasil terlihat berbeda dari kanvas, periksa layer yang tersembunyi atau terpotong di luar batas kanvas.</li>
       </ol>
-
-      <div class="next-prev">
-        <a href="teks.html"><span class="lbl">Sebelumnya</span>Teks &amp; spasi</a>
-        <a href="faq.html"><span class="lbl">Selanjutnya</span>FAQ</a>
       </div>
-    </main>
-  </div>
+
+      <nav class="doc-pager" aria-label="Navigasi bab">
+        <a class="prev" href="tester.html"><span class="lbl">Sebelumnya</span><span class="ttl">Tester script</span></a>
+        <a class="next" href="faq.html"><span class="lbl">Selanjutnya</span><span class="ttl">FAQ</span></a>
+      </nav>
+    </article>
+
+    <aside class="docs-toc">
+      <div class="side-label">Di halaman ini</div>
+      <nav class="toc-nav" aria-label="Di halaman ini">
+          <a href="#dialog">Dialog Simpan Sebagai</a>
+          <a href="#format">Memilih format</a>
+          <a href="#folder">Folder tujuan</a>
+          <a href="#mts">Bundel .mts</a>
+          <a href="#tips">Tips kualitas</a>
+      </nav>
+      <a class="toc-top" href="#main">Kembali ke atas ↑</a>
+    </aside>
+  </main>
 
   <footer class="site-footer">
-    <div class="wrap footer-in">
-      <div>MochiTs — editor typeset komik untuk Android. Dokumentasi ini statis dan bisa dibaca offline setelah dimuat.</div>
-      <div class="footer-links">
-        <a href="index.html">Beranda</a>
-        <a href="mulai.html">Panduan</a>
-        <a href="https://github.com/Mochizhouuu/MochiTs" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://github.com/Mochizhouuu/MochiTs-Docs" target="_blank" rel="noopener">Sumber docs</a>
+    <div class="wrap">
+      <div class="footer-in">
+        <div class="footer-brand">MochiTs <span>Manual pengguna</span></div>
+        <div class="footer-links">
+          <a href="index.html">Beranda</a>
+          <a href="mulai.html">Mulai</a>
+          <a href="script.html">Script</a>
+          <a href="tester.html">Tester</a>
+          <a href="https://github.com/Mochizhouuu/MochiTs" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <div class="footer-note">
+        <span>Dokumentasi edisi 1.0 / Bahasa Indonesia</span>
+        <span>Dibuat untuk Android 10+</span>
       </div>
     </div>
   </footer>

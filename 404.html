@@ -3,46 +3,112 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Halaman tidak ditemukan — MochiTs Docs</title>
+  <title>Halaman tidak ditemukan | MochiTs Docs</title>
+  <meta name="description" content="Halaman yang dicari tidak ada, sudah dipindah, atau salah ketik alamat.">
   <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#f4efe5">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=JetBrains+Mono:wght@400;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css">
 </head>
-<body>
+<body class="error">
+  <a class="skip-link" href="#main">Lewati ke konten</a>
   <header class="site-header">
-    <div class="wrap header-in">
+    <div class="header-in">
       <a class="brand" href="index.html" aria-label="MochiTs Docs">
-        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-mark" aria-hidden="true">M</span>
         <span class="brand-word">Mochi<span>Ts</span></span>
+        <span class="brand-tag">Docs</span>
       </a>
-      <nav class="nav" aria-label="Utama">
+      <nav class="site-nav" aria-label="Utama">
         <a href="mulai.html">Mulai</a>
         <a href="script.html">Script</a>
         <a href="tester.html">Tester</a>
         <a href="faq.html">FAQ</a>
-        <a class="cta" href="https://github.com/Mochizhouuu/MochiTs" target="_blank" rel="noopener">GitHub</a>
       </nav>
+      <div class="header-tools">
+        <button class="search-btn" type="button" aria-label="Cari dokumentasi">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>
+          <span>Cari</span>
+          <kbd>/</kbd>
+        </button>
+        <a class="header-link" href="https://github.com/Mochizhouuu/MochiTs" target="_blank" rel="noopener">GitHub</a>
+        <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Buka menu">
+          <span class="menu-btn-lines" aria-hidden="true"></span>
+        </button>
+      </div>
+      <div class="reading-progress" aria-hidden="true"><span></span></div>
     </div>
   </header>
 
-  <main class="wrap" style="padding:90px 0 120px;text-align:center">
-    <div class="eyebrow">Error 404</div>
-    <h1 style="font-family:var(--font-display);font-size:clamp(52px,9vw,110px);font-weight:400;line-height:.95;margin:14px 0 16px">Balon ini kosong.</h1>
-    <p class="lead" style="margin:0 auto 28px">Halaman yang kamu cari tidak ada, sudah dipindah, atau salah ketik alamat.</p>
-    <div class="actions" style="justify-content:center">
+  <div class="site-menu" id="site-menu" hidden>
+    <div class="site-menu-in">
+      <nav class="menu-group" aria-label="Isi manual">
+        <div class="menu-label">Isi manual</div>
+        <a href="mulai.html"><span class="no">01</span><span>Mulai</span><span class="desc">Pasang, buat proyek, kenali kanvas.</span></a>
+        <a href="folder-zip.html"><span class="no">02</span><span>Folder &amp; ZIP</span><span class="desc">Rapikan proyek dan impor satu chapter.</span></a>
+        <a href="teks.html"><span class="no">03</span><span>Teks &amp; spasi</span><span class="desc">Font, warna, stroke, jarak huruf dan baris.</span></a>
+        <a href="script.html"><span class="no">04</span><span>Script TL</span><span class="desc">Ubah naskah terjemahan jadi antrean balon.</span></a>
+        <a href="tester.html"><span class="no">05</span><span>Tester</span><span class="desc">Uji parser dan regex langsung di browser.</span></a>
+        <a href="ekspor.html"><span class="no">06</span><span>Ekspor</span><span class="desc">PNG, JPEG, WEBP, atau bundel proyek.</span></a>
+        <a href="faq.html"><span class="no">07</span><span>FAQ</span><span class="desc">Jawaban singkat untuk masalah umum.</span></a>
+      </nav>
+      <div class="menu-foot">
+        <button class="search-wide" type="button" aria-label="Buka pencarian">
+          <span>Cari di dokumentasi</span>
+          <span aria-hidden="true">/</span>
+        </button>
+        <a href="https://github.com/Mochizhouuu/MochiTs" target="_blank" rel="noopener">Kode aplikasi di GitHub</a>
+        <a href="https://github.com/Mochizhouuu/MochiTs-Docs" target="_blank" rel="noopener">Sumber dokumentasi</a>
+        <p class="menu-note">Semua halaman bisa dibaca tanpa akun. Proyek tetap tersimpan di perangkatmu.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="search-overlay" id="search-overlay" hidden>
+    <div class="search-box" role="dialog" aria-modal="true" aria-labelledby="search-title">
+      <div class="search-head">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>
+        <h2 class="visually-hidden" id="search-title">Cari dokumentasi</h2>
+        <input id="search-input" type="search" aria-label="Cari dokumentasi" placeholder="Cari bab, fitur, atau masalah..." autocomplete="off" spellcheck="false">
+        <button class="search-close" type="button" data-search-close aria-label="Tutup pencarian">Esc</button>
+      </div>
+      <div class="search-results" id="search-results" aria-live="polite"></div>
+      <div class="search-foot">
+        <span id="search-summary">Mulai dari sini</span>
+        <span>↑↓ pilih · ↵ buka · esc tutup</span>
+      </div>
+    </div>
+  </div>
+
+
+  <main class="wrap error-page" id="main">
+    <span class="eyebrow">Error 404 / Halaman hilang</span>
+    <h1>Balon ini <em>kosong.</em></h1>
+    <p>Alamat yang kamu buka tidak ada, sudah dipindah, atau salah ketik. Coba kembali ke daftar bab atau buka panduan dari awal.</p>
+    <div class="actions">
       <a class="btn btn-primary" href="index.html">Kembali ke beranda</a>
-      <a class="btn btn-ghost" href="mulai.html">Baca panduan</a>
+      <a class="btn btn-ghost" href="mulai.html">Baca Bab 01</a>
     </div>
   </main>
 
   <footer class="site-footer">
-    <div class="wrap footer-in">
-      <div>MochiTs — editor typeset komik untuk Android.</div>
-      <div class="footer-links">
-        <a href="index.html">Beranda</a>
-        <a href="https://github.com/Mochizhouuu/MochiTs" target="_blank" rel="noopener">GitHub</a>
+    <div class="wrap">
+      <div class="footer-in">
+        <div class="footer-brand">MochiTs <span>Manual pengguna</span></div>
+        <div class="footer-links">
+          <a href="index.html">Beranda</a>
+          <a href="mulai.html">Mulai</a>
+          <a href="script.html">Script</a>
+          <a href="tester.html">Tester</a>
+          <a href="https://github.com/Mochizhouuu/MochiTs" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <div class="footer-note">
+        <span>Dokumentasi edisi 1.0 / Bahasa Indonesia</span>
+        <span>Dibuat untuk Android 10+</span>
       </div>
     </div>
   </footer>

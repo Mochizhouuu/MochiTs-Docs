@@ -3,159 +3,318 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MochiTs — Editor Typeset Komik Android</title>
-  <meta name="description" content="MochiTs adalah editor komik Android: impor ZIP, typeset teks dengan kontrol spasi, dan ekspor PNG/JPEG/WEBP. Panduan lengkap dan tester script TL.">
+  <title>MochiTs, editor typeset komik Android</title>
+  <meta name="description" content="Manual MochiTs: impor halaman, tempel naskah TL, atur teks dan spasi, lalu ekspor. Panduan lengkap dan tester script yang berjalan di browser.">
+  <meta name="theme-color" content="#f4efe5">
+  <link rel="canonical" href="https://mochits-docs.pages.dev/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="MochiTs, editor typeset komik Android">
+  <meta property="og:description" content="Panduan typeset komik dari naskah mentah sampai halaman jadi. Berbahasa Indonesia dan berjalan offline.">
+  <meta property="og:url" content="https://mochits-docs.pages.dev/">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=JetBrains+Mono:wght@400;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css">
 </head>
-<body>
+<body class="home">
+  <a class="skip-link" href="#main">Lewati ke konten</a>
   <header class="site-header">
-    <div class="wrap header-in">
+    <div class="header-in">
       <a class="brand" href="index.html" aria-label="MochiTs Docs">
-        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-mark" aria-hidden="true">M</span>
         <span class="brand-word">Mochi<span>Ts</span></span>
+        <span class="brand-tag">Docs</span>
       </a>
-      <nav class="nav" aria-label="Utama">
+      <nav class="site-nav" aria-label="Utama">
         <a href="mulai.html">Mulai</a>
         <a href="script.html">Script</a>
         <a href="tester.html">Tester</a>
         <a href="faq.html">FAQ</a>
-        <a class="cta" href="https://github.com/Mochizhouuu/MochiTs" target="_blank" rel="noopener">GitHub</a>
       </nav>
-      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-nav">Menu</button>
-    </div>
-    <div class="mobile-nav" id="mobile-nav">
-      <div class="wrap">
-        <a href="mulai.html">Mulai &amp; instalasi</a>
-        <a href="folder-zip.html">Folder &amp; impor ZIP</a>
-        <a href="teks.html">Teks &amp; spasi</a>
-        <a href="script.html">Format script TL</a>
-        <a href="tester.html">Tester script</a>
-        <a href="ekspor.html">Ekspor</a>
-        <a href="faq.html">FAQ</a>
+      <div class="header-tools">
+        <button class="search-btn" type="button" aria-label="Cari dokumentasi">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>
+          <span>Cari</span>
+          <kbd>/</kbd>
+        </button>
+        <a class="header-link" href="https://github.com/Mochizhouuu/MochiTs" target="_blank" rel="noopener">GitHub</a>
+        <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Buka menu">
+          <span class="menu-btn-lines" aria-hidden="true"></span>
+        </button>
       </div>
+      <div class="reading-progress" aria-hidden="true"><span></span></div>
     </div>
   </header>
 
-  <main>
+  <div class="site-menu" id="site-menu" hidden>
+    <div class="site-menu-in">
+      <nav class="menu-group" aria-label="Isi manual">
+        <div class="menu-label">Isi manual</div>
+        <a href="mulai.html"><span class="no">01</span><span>Mulai</span><span class="desc">Pasang, buat proyek, kenali kanvas.</span></a>
+        <a href="folder-zip.html"><span class="no">02</span><span>Folder &amp; ZIP</span><span class="desc">Rapikan proyek dan impor satu chapter.</span></a>
+        <a href="teks.html"><span class="no">03</span><span>Teks &amp; spasi</span><span class="desc">Font, warna, stroke, jarak huruf dan baris.</span></a>
+        <a href="script.html"><span class="no">04</span><span>Script TL</span><span class="desc">Ubah naskah terjemahan jadi antrean balon.</span></a>
+        <a href="tester.html"><span class="no">05</span><span>Tester</span><span class="desc">Uji parser dan regex langsung di browser.</span></a>
+        <a href="ekspor.html"><span class="no">06</span><span>Ekspor</span><span class="desc">PNG, JPEG, WEBP, atau bundel proyek.</span></a>
+        <a href="faq.html"><span class="no">07</span><span>FAQ</span><span class="desc">Jawaban singkat untuk masalah umum.</span></a>
+      </nav>
+      <div class="menu-foot">
+        <button class="search-wide" type="button" aria-label="Buka pencarian">
+          <span>Cari di dokumentasi</span>
+          <span aria-hidden="true">/</span>
+        </button>
+        <a href="https://github.com/Mochizhouuu/MochiTs" target="_blank" rel="noopener">Kode aplikasi di GitHub</a>
+        <a href="https://github.com/Mochizhouuu/MochiTs-Docs" target="_blank" rel="noopener">Sumber dokumentasi</a>
+        <p class="menu-note">Semua halaman bisa dibaca tanpa akun. Proyek tetap tersimpan di perangkatmu.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="search-overlay" id="search-overlay" hidden>
+    <div class="search-box" role="dialog" aria-modal="true" aria-labelledby="search-title">
+      <div class="search-head">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>
+        <h2 class="visually-hidden" id="search-title">Cari dokumentasi</h2>
+        <input id="search-input" type="search" aria-label="Cari dokumentasi" placeholder="Cari bab, fitur, atau masalah..." autocomplete="off" spellcheck="false">
+        <button class="search-close" type="button" data-search-close aria-label="Tutup pencarian">Esc</button>
+      </div>
+      <div class="search-results" id="search-results" aria-live="polite"></div>
+      <div class="search-foot">
+        <span id="search-summary">Mulai dari sini</span>
+        <span>↑↓ pilih · ↵ buka · esc tutup</span>
+      </div>
+    </div>
+  </div>
+
+  <main id="main">
     <section class="hero">
       <div class="wrap hero-grid">
-        <div>
-          <span class="kicker"><span class="dot"></span> Dokumentasi MochiTs</span>
-          <h1>Typeset komik,<br><em>tanpa ribet.</em></h1>
-          <p class="lead">Impor halaman, tempel naskah TL, atur font dan spasi, lalu ekspor. Semua dari HP Android — tanpa pindah-pindah aplikasi.</p>
-          <div class="actions">
-            <a class="btn btn-primary" href="mulai.html">Mulai dalam 2 menit</a>
+        <div class="hero-meta">
+          <span>Manual pengguna / Edisi 1.0</span>
+          <span>Bahasa Indonesia</span>
+          <span>Android 10+ / Offline</span>
+        </div>
+        <h1 class="hero-title">Typeset komik,<br><em>tanpa ribet.</em></h1>
+        <div class="hero-copy">
+          <p class="lead">Impor halaman, tempel naskah TL, atur font dan spasi, lalu ekspor. Semua dari HP Android, tanpa pindah-pindah aplikasi.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="mulai.html">Baca manual <span aria-hidden="true">→</span></a>
             <a class="btn btn-ghost" href="tester.html">Coba tester script</a>
           </div>
-          <p class="hero-note">Android 10+ · Data proyek tersimpan di perangkat · Panduan berbahasa Indonesia</p>
+          <p class="hero-note">Tanpa akun / Autosave / Data di perangkat</p>
         </div>
-        <div class="hero-art" aria-hidden="true">
-          <div class="phone">
-            <div class="phone-screen">
-              <div class="phone-top"><span>9:41</span><span>MochiTs</span></div>
-              <div class="phone-title">Proyek Saya</div>
-              <div class="mock-folders">
-                <span class="mock-chip active">Semua</span>
-                <span class="mock-chip">Ch 12</span>
-                <span class="mock-chip">ZIP</span>
-              </div>
-              <div class="mock-card"></div>
-              <div class="mock-card alt"></div>
-              <p class="mock-caption">7 halaman · tersimpan otomatis</p>
+        <div class="hero-specimen" aria-hidden="true">
+          <div class="specimen-sheet">
+            <div class="sheet-head"><span>Lembar uji 01</span><span>Fraunces / Manrope</span></div>
+            <div class="specimen-stage">
+              <span class="specimen-glyph">Aa<span>.</span></span>
+              <div class="specimen-bubble">Satu naskah. Satu antrean. Satu halaman.</div>
             </div>
+            <div class="specimen-notes"><span>Ukuran 12 pt</span><span>Jarak <em>+4%</em></span><span>Baris <em>120%</em></span></div>
           </div>
-          <div class="float-card">
-            <strong>Impor ZIP selesai</strong>
-            <span class="float-badge">12 halaman · 2 folder</span>
+          <p class="specimen-caption">Spesimen tipe edisi pertama</p>
+        </div>
+        <div class="hero-rail">Typesetting / Android / Offline</div>
+      </div>
+    </section>
+
+    <section class="manual-index" id="isi">
+      <div class="wrap">
+        <div class="section-heading">
+          <div>
+            <span class="label">Daftar bab</span>
+            <h2>Tujuh bab, satu alur kerja.</h2>
+          </div>
+          <p>Baca berurutan untuk memahami seluruh alur, atau lompat ke bab yang sedang kamu butuhkan.</p>
+        </div>
+        <div class="chapter-list">
+          <a class="chapter-row" href="mulai.html">
+            <span class="chapter-no">01</span>
+            <span class="chapter-title">Mulai</span>
+            <span class="chapter-desc">Pasang aplikasi, buat proyek pertama, dan kenali kanvas.</span>
+            <span class="chapter-arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="chapter-row" href="folder-zip.html">
+            <span class="chapter-no">02</span>
+            <span class="chapter-title">Folder &amp; ZIP</span>
+            <span class="chapter-desc">Rapikan proyek per judul dan impor satu chapter sekaligus.</span>
+            <span class="chapter-arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="chapter-row" href="teks.html">
+            <span class="chapter-no">03</span>
+            <span class="chapter-title">Teks &amp; spasi</span>
+            <span class="chapter-desc">Font kustom, warna, stroke, glow, inpainting, dan jarak.</span>
+            <span class="chapter-arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="chapter-row" href="script.html">
+            <span class="chapter-no">04</span>
+            <span class="chapter-title">Script TL</span>
+            <span class="chapter-desc">Ubah naskah terjemahan menjadi antrean balon yang rapi.</span>
+            <span class="chapter-arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="chapter-row" href="tester.html">
+            <span class="chapter-no">05</span>
+            <span class="chapter-title">Tester</span>
+            <span class="chapter-desc">Uji parser dan regex di browser sebelum membuka proyek.</span>
+            <span class="chapter-arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="chapter-row" href="ekspor.html">
+            <span class="chapter-no">06</span>
+            <span class="chapter-title">Ekspor</span>
+            <span class="chapter-desc">Simpan sebagai PNG, JPEG, WEBP, atau bundel proyek.</span>
+            <span class="chapter-arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="chapter-row" href="faq.html">
+            <span class="chapter-no">07</span>
+            <span class="chapter-title">FAQ</span>
+            <span class="chapter-desc">Jawaban singkat untuk masalah yang paling sering muncul.</span>
+            <span class="chapter-arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="spread">
+      <div class="wrap spread-grid">
+        <div class="spread-copy">
+          <span class="label">Bab 04 / Naskah</span>
+          <h2>Naskah jadi antrean balon.</h2>
+          <p>Tempel naskah TL, pilih simbol, dan MochiTs memecahnya per halaman. Entri terhubung menjaga balon sambungan tetap menyatu dengan gaya induknya.</p>
+          <a class="text-link" href="script.html">Pelajari format script <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+        <div class="spread-visual">
+          <div class="visual-frame" aria-hidden="true">
+            <div class="frame-head"><span>script-tl.txt</span><span class="tag">UTF-8</span></div>
+            <div class="source-code"><span class="c-muted">P1</span><br><span class="c-sym">[]</span> Di sebuah kota yang selalu hujan,<br>&nbsp;&nbsp;&nbsp;ada toko buku kecil di ujung gang.<br><span class="c-sym">-</span> Aku datang lagi hari ini.<br><span class="c-sym">//-</span> Balon sambungan tanpa ekor.<br><span class="c-muted">P2</span><br><span class="c-sym">-</span> Lama sekali kita tidak bertemu.</div>
+            <div class="parse-bridge">parser</div>
+            <div class="queue-mini">
+              <div class="queue-mini-row"><span class="sym">[]</span><span>Di sebuah kota yang selalu hujan, ada toko buku kecil di ujung gang.</span></div>
+              <div class="queue-mini-row"><span class="sym">-</span><span>Aku datang lagi hari ini.</span></div>
+              <div class="queue-mini-row"><span class="sym linked">//-</span><span>Balon sambungan tanpa ekor.</span></div>
+            </div>
+            <div class="frame-note"><span>2 halaman</span><span>6 entri</span><span>1 terhubung</span></div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <div class="eyebrow">Fitur utama</div>
-            <h2>Dari naskah mentah ke halaman jadi</h2>
-          </div>
-          <p>Alur typesetting lengkap: seleksi objek, inpainting, teks, layer, sampai ekspor.</p>
+    <section class="spread flip">
+      <div class="wrap spread-grid">
+        <div class="spread-copy">
+          <span class="label">Bab 02 / Berkas</span>
+          <h2>Satu ZIP, semua halaman.</h2>
+          <p>Subfolder di dalam ZIP menjadi folder proyek. Urutan halaman mengikuti natural sort, dan bundel <code>.mts</code> tetap bisa diedit setelah diimpor.</p>
+          <a class="text-link" href="folder-zip.html">Aturan impor ZIP <span class="arrow" aria-hidden="true">→</span></a>
         </div>
-        <div class="features">
-          <article class="card">
-            <div class="card-icon">[]</div>
-            <h3>Naskah TL langsung jadi balon</h3>
-            <p>Tempel script, pilih simbol, dan MochiTs memecahnya per halaman. Dukung <code>//-</code>/<code>//[]</code> untuk entri terhubung dan impor <code>.docx</code>.</p>
-            <a class="more" href="script.html">Format script →</a>
-          </article>
-          <article class="card">
-            <div class="card-icon">ZIP</div>
-            <h3>Impor folder &amp; ZIP</h3>
-            <p>Pilih banyak gambar sekaligus atau impor ZIP. Subfolder jadi folder proyek, <code>.mts</code> di dalamnya tetap bisa diedit.</p>
-            <a class="more" href="folder-zip.html">Cara impor →</a>
-          </article>
-          <article class="card">
-            <div class="card-icon">Aa</div>
-            <h3>Kontrol teks detail</h3>
-            <p>BOX/OVAL, font kustom, alignment, gradient, stroke, glow, huruf vertikal, reflow, plus slider jarak huruf dan jarak baris.</p>
-            <a class="more" href="teks.html">Atur teks →</a>
-          </article>
-          <article class="card">
-            <div class="card-icon">FX</div>
-            <h3>Hapus teks lama</h3>
-            <p>Brush, eraser, lasso, magic wand, lalu inpainting Telea offline atau LaMa AI dengan fallback otomatis.</p>
-            <a class="more" href="teks.html#inpainting">Tentang inpainting →</a>
-          </article>
-          <article class="card">
-            <div class="card-icon">PNG</div>
-            <h3>Ekspor fleksibel</h3>
-            <p>PNG, JPEG, atau WEBP dengan kualitas yang bisa diatur, langsung ke folder pilihan lewat Storage Access Framework.</p>
-            <a class="more" href="ekspor.html">Opsi ekspor →</a>
-          </article>
-          <article class="card">
-            <div class="card-icon">↺</div>
-            <h3>Autosave &amp; undo</h3>
-            <p>Riwayat undo/redo tetap ada setelah aplikasi ditutup. Proyek tersimpan otomatis tanpa tombol simpan.</p>
-            <a class="more" href="mulai.html#proyek">Kelola proyek →</a>
-          </article>
+        <div class="spread-visual">
+          <div class="visual-frame" aria-hidden="true">
+            <div class="frame-head"><span>chapter-12.zip</span><span class="tag">328 MB</span></div>
+            <div class="file-tree"><span class="folder">Chapter 12/</span><br>├─ 001.jpg<br>├─ 002.jpg<br>├─ 003.jpg<br>├─ <span class="folder">Ekstra/</span><br>│&nbsp;&nbsp;└─ 001.png<br>└─ <span class="folder">Bundel/</span><br>&nbsp;&nbsp;&nbsp;&nbsp;└─ halaman-04.mts<br><span class="note">__MACOSX / file tersembunyi diabaikan</span></div>
+            <div class="folder-chips"><span class="folder-chip">Chapter 12</span><span class="folder-chip">Ekstra</span><span class="folder-chip">Bundel</span></div>
+            <div class="frame-note"><span>Maks. 300 item</span><span>64 MB / entri</span><span>Natural sort</span></div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <div class="eyebrow">Panduan</div>
-            <h2>Langsung ke bagian yang kamu butuh</h2>
-          </div>
-          <p>Semua halaman bisa dibaca berurutan, kok. Mulai dari yang paling dekat dengan masalahmu.</p>
+    <section class="spread dark">
+      <div class="wrap spread-grid">
+        <div class="spread-copy">
+          <span class="label">Bab 03 / Ketik</span>
+          <h2>Huruf rapat, baris lega.</h2>
+          <p>Atur bentuk BOX atau OVAL, lalu geser jarak huruf dan jarak baris per layer. Perubahan langsung terlihat di kanvas sebelum kamu menyalin gayanya ke balon lain.</p>
+          <a class="text-link" href="teks.html">Kontrol teks lengkap <span class="arrow" aria-hidden="true">→</span></a>
         </div>
-        <div class="quick">
-          <a href="mulai.html">Mulai &amp; instalasi<span>Pasang APK, buat proyek pertama</span></a>
-          <a href="folder-zip.html">Folder &amp; ZIP<span>Rapikan proyek dan impor massal</span></a>
-          <a href="teks.html">Teks &amp; spasi<span>Font, ukuran, jarak huruf/baris</span></a>
-          <a href="script.html">Script TL<span>Simbol, halaman, entri terhubung</span></a>
-          <a href="tester.html">Tester script<span>Uji naskah tanpa install</span></a>
-          <a href="ekspor.html">Ekspor<span>PNG, JPEG, WEBP, kualitas</span></a>
-          <a href="faq.html">FAQ<span>Pertanyaan yang sering muncul</span></a>
-          <a href="https://github.com/Mochizhouuu/MochiTs" target="_blank" rel="noopener">Kode sumber<span>Lihat repo di GitHub</span></a>
+        <div class="spread-visual">
+          <div class="visual-frame" aria-hidden="true">
+            <div class="frame-head"><span>Layer teks 07</span><span class="tag">BOX / aktif</span></div>
+            <div class="type-demo">
+              <span class="type-demo-kicker">Tengah / rata kanan-kiri</span>
+              <p class="type-demo-line">Hujan belum juga reda.</p>
+              <div class="type-control">
+                <div class="type-control-head"><span>Jarak huruf</span><b>+4%</b></div>
+                <div class="type-slider"><i style="width:54%"></i></div>
+              </div>
+              <div class="type-control">
+                <div class="type-control-head"><span>Jarak baris</span><b>120%</b></div>
+                <div class="type-slider"><i style="width:38%"></i></div>
+              </div>
+            </div>
+            <div class="frame-note"><span>Reset jarak</span><span>0%</span><span>100%</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="workflow">
+      <div class="wrap">
+        <div class="section-heading">
+          <div>
+            <span class="label">Alur kerja</span>
+            <h2>Empat langkah, tanpa file tercecer.</h2>
+          </div>
+          <p>Alur yang sama dipakai untuk satu halaman latihan maupun satu chapter penuh.</p>
+        </div>
+        <ol class="workflow-list">
+          <li class="workflow-row">
+            <span class="workflow-no">01</span>
+            <h3>Impor halaman</h3>
+            <p>Pilih gambar dari galeri atau masukkan ZIP. Subfolder langsung menjadi folder proyek.</p>
+            <span class="workflow-meta">Galeri / ZIP / MTS</span>
+          </li>
+          <li class="workflow-row">
+            <span class="workflow-no">02</span>
+            <h3>Bersihkan balon</h3>
+            <p>Brush, lasso, atau magic wand untuk mask. Telea berjalan offline, LaMa dipakai bila model tersedia.</p>
+            <span class="workflow-meta">Inpainting</span>
+          </li>
+          <li class="workflow-row">
+            <span class="workflow-no">03</span>
+            <h3>Isi teks</h3>
+            <p>Muat naskah TL, pilih layer, lalu masukkan entri. Atur font, stroke, dan spasi di panel teks.</p>
+            <span class="workflow-meta">Script / tipografi</span>
+          </li>
+          <li class="workflow-row">
+            <span class="workflow-no">04</span>
+            <h3>Ekspor</h3>
+            <p>Simpan PNG, JPEG, atau WEBP ke folder tujuan. Gunakan MTS untuk arsip yang masih bisa diedit.</p>
+            <span class="workflow-meta">PNG / JPEG / WEBP</span>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div class="wrap closing-grid">
+        <div>
+          <span class="label">Mulai dari sini</span>
+          <h2>Buka proyek pertamamu, <em>tanpa akun.</em></h2>
+        </div>
+        <div class="closing-side">
+          <p>Manual ini ditulis untuk penerjemah dan typesetter yang ingin bekerja cepat di Android.</p>
+          <a class="btn btn-primary" href="mulai.html">Baca bab 01 <span aria-hidden="true">→</span></a>
+          <span class="note">Edisi 1.0 / Bahasa Indonesia</span>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="wrap footer-in">
-      <div>MochiTs — editor typeset komik untuk Android. Dokumentasi ini statis dan bisa dibaca offline setelah dimuat.</div>
-      <div class="footer-links">
-        <a href="index.html">Beranda</a>
-        <a href="mulai.html">Panduan</a>
-        <a href="https://github.com/Mochizhouuu/MochiTs" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://github.com/Mochizhouuu/MochiTs-Docs" target="_blank" rel="noopener">Sumber docs</a>
+    <div class="wrap">
+      <div class="footer-in">
+        <div class="footer-brand">MochiTs <span>Manual pengguna</span></div>
+        <div class="footer-links">
+          <a href="index.html">Beranda</a>
+          <a href="mulai.html">Mulai</a>
+          <a href="script.html">Script</a>
+          <a href="tester.html">Tester</a>
+          <a href="https://github.com/Mochizhouuu/MochiTs" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <div class="footer-note">
+        <span>Dokumentasi edisi 1.0 / Bahasa Indonesia</span>
+        <span>Dibuat untuk Android 10+</span>
       </div>
     </div>
   </footer>

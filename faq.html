@@ -3,159 +3,279 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FAQ — MochiTs Docs</title>
+  <title>FAQ | MochiTs Docs</title>
   <meta name="description" content="Pertanyaan umum MochiTs: script TL, impor ZIP, folder, font, LaMa, ekspor, dan penyimpanan data.">
+  <meta name="theme-color" content="#f4efe5">
+  <link rel="canonical" href="https://mochits-docs.pages.dev/faq.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="FAQ | MochiTs Docs">
+  <meta property="og:description" content="Pertanyaan umum MochiTs: script TL, impor ZIP, folder, font, LaMa, ekspor, dan penyimpanan data.">
+  <meta property="og:url" content="https://mochits-docs.pages.dev/faq.html">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=JetBrains+Mono:wght@400;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css">
 </head>
-<body>
+<body class="has-progress" data-page="faq.html">
+  <a class="skip-link" href="#main">Lewati ke konten</a>
   <header class="site-header">
-    <div class="wrap header-in">
+    <div class="header-in">
       <a class="brand" href="index.html" aria-label="MochiTs Docs">
-        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-mark" aria-hidden="true">M</span>
         <span class="brand-word">Mochi<span>Ts</span></span>
+        <span class="brand-tag">Docs</span>
       </a>
-      <nav class="nav" aria-label="Utama">
+      <nav class="site-nav" aria-label="Utama">
         <a href="mulai.html">Mulai</a>
         <a href="script.html">Script</a>
         <a href="tester.html">Tester</a>
-        <a href="faq.html">FAQ</a>
-        <a class="cta" href="https://github.com/Mochizhouuu/MochiTs" target="_blank" rel="noopener">GitHub</a>
+        <a href="faq.html" aria-current="page">FAQ</a>
       </nav>
-      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-nav">Menu</button>
-    </div>
-    <div class="mobile-nav" id="mobile-nav">
-      <div class="wrap">
-        <a href="mulai.html">Mulai &amp; instalasi</a>
-        <a href="folder-zip.html">Folder &amp; impor ZIP</a>
-        <a href="teks.html">Teks &amp; spasi</a>
-        <a href="script.html">Format script TL</a>
-        <a href="tester.html">Tester script</a>
-        <a href="ekspor.html">Ekspor</a>
-        <a href="faq.html">FAQ</a>
+      <div class="header-tools">
+        <button class="search-btn" type="button" aria-label="Cari dokumentasi">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>
+          <span>Cari</span>
+          <kbd>/</kbd>
+        </button>
+        <a class="header-link" href="https://github.com/Mochizhouuu/MochiTs" target="_blank" rel="noopener">GitHub</a>
+        <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Buka menu">
+          <span class="menu-btn-lines" aria-hidden="true"></span>
+        </button>
       </div>
+      <div class="reading-progress" aria-hidden="true"><span></span></div>
     </div>
   </header>
 
-  <div class="wrap docs">
-    <aside class="sidebar">
-      <div class="side-title">Panduan</div>
-      <a href="mulai.html">Mulai &amp; instalasi</a>
-      <a href="folder-zip.html">Folder &amp; impor ZIP</a>
-      <a href="teks.html">Teks &amp; spasi</a>
-      <a href="script.html">Format script TL</a>
-      <a href="ekspor.html">Ekspor</a>
-      <div class="side-title">Alat</div>
-      <a href="tester.html">Tester script</a>
-      <a href="faq.html">FAQ</a>
-    </aside>
-
-    <main class="docs-main">
-      <div class="doc-head">
-        <div class="breadcrumb"><a href="index.html">Docs</a> / FAQ</div>
-        <h1>FAQ</h1>
-        <p>Jawaban singkat untuk masalah yang paling sering muncul. Untuk detail, ikuti tautan ke halaman terkait.</p>
+  <div class="site-menu" id="site-menu" hidden>
+    <div class="site-menu-in">
+      <nav class="menu-group" aria-label="Isi manual">
+        <div class="menu-label">Isi manual</div>
+        <a href="mulai.html"><span class="no">01</span><span>Mulai</span><span class="desc">Pasang, buat proyek, kenali kanvas.</span></a>
+        <a href="folder-zip.html"><span class="no">02</span><span>Folder &amp; ZIP</span><span class="desc">Rapikan proyek dan impor satu chapter.</span></a>
+        <a href="teks.html"><span class="no">03</span><span>Teks &amp; spasi</span><span class="desc">Font, warna, stroke, jarak huruf dan baris.</span></a>
+        <a href="script.html"><span class="no">04</span><span>Script TL</span><span class="desc">Ubah naskah terjemahan jadi antrean balon.</span></a>
+        <a href="tester.html"><span class="no">05</span><span>Tester</span><span class="desc">Uji parser dan regex langsung di browser.</span></a>
+        <a href="ekspor.html"><span class="no">06</span><span>Ekspor</span><span class="desc">PNG, JPEG, WEBP, atau bundel proyek.</span></a>
+        <a href="faq.html" aria-current="page"><span class="no">07</span><span>FAQ</span><span class="desc">Jawaban singkat untuk masalah umum.</span></a>
+      </nav>
+      <div class="menu-foot">
+        <button class="search-wide" type="button" aria-label="Buka pencarian">
+          <span>Cari di dokumentasi</span>
+          <span aria-hidden="true">/</span>
+        </button>
+        <a href="https://github.com/Mochizhouuu/MochiTs" target="_blank" rel="noopener">Kode aplikasi di GitHub</a>
+        <a href="https://github.com/Mochizhouuu/MochiTs-Docs" target="_blank" rel="noopener">Sumber dokumentasi</a>
+        <p class="menu-note">Semua halaman bisa dibaca tanpa akun. Proyek tetap tersimpan di perangkatmu.</p>
       </div>
+    </div>
+  </div>
 
-      <h2 id="script">Script TL</h2>
+  <div class="search-overlay" id="search-overlay" hidden>
+    <div class="search-box" role="dialog" aria-modal="true" aria-labelledby="search-title">
+      <div class="search-head">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>
+        <h2 class="visually-hidden" id="search-title">Cari dokumentasi</h2>
+        <input id="search-input" type="search" aria-label="Cari dokumentasi" placeholder="Cari bab, fitur, atau masalah..." autocomplete="off" spellcheck="false">
+        <button class="search-close" type="button" data-search-close aria-label="Tutup pencarian">Esc</button>
+      </div>
+      <div class="search-results" id="search-results" aria-live="polite"></div>
+      <div class="search-foot">
+        <span id="search-summary">Mulai dari sini</span>
+        <span>↑↓ pilih · ↵ buka · esc tutup</span>
+      </div>
+    </div>
+  </div>
 
-      <h3>Kenapa judul dan legenda di awal file hilang?</h3>
+  <main class="docs-shell" id="main">
+      <aside class="docs-side">
+        <div class="side-label">Panduan</div>
+        <nav class="side-nav" aria-label="Bab panduan">
+        <a href="mulai.html"><span class="no">01</span><span>Mulai</span></a>
+        <a href="folder-zip.html"><span class="no">02</span><span>Folder &amp; ZIP</span></a>
+        <a href="teks.html"><span class="no">03</span><span>Teks &amp; spasi</span></a>
+        <a href="script.html"><span class="no">04</span><span>Script TL</span></a>
+        </nav>
+        <div class="side-label">Alat &amp; output</div>
+        <nav class="side-nav" aria-label="Alat dan output">
+        <a href="tester.html"><span class="no">05</span><span>Tester</span></a>
+        <a href="ekspor.html"><span class="no">06</span><span>Ekspor</span></a>
+        <a href="faq.html" class="active" aria-current="page"><span class="no">07</span><span>FAQ</span></a>
+        </nav>
+        <div class="side-help">
+          <strong>Baru mulai?</strong>
+          Baca berurutan dari Bab 01 agar alur impor, teks, dan ekspor tidak terlewat.
+          <a href="mulai.html">Mulai dari awal</a>
+        </div>
+      </aside>
+
+    <article class="docs-article" aria-labelledby="doc-title">
+      <header class="doc-masthead">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Manual</a><span class="sep">/</span><span>FAQ</span>
+        </nav>
+        <h1 id="doc-title">FAQ</h1>
+        <p class="doc-lead">Jawaban singkat untuk masalah yang paling sering muncul. Untuk detail, ikuti tautan ke halaman terkait.</p>
+        <div class="doc-meta"><span>Bab 07</span><span>5 bagian</span><span>±4 menit baca</span><span>Edisi 1.0</span></div>
+      </header>
+
+        <details class="mobile-toc">
+          <summary>Daftar isi</summary>
+          <div class="m-toc-body">
+            <div class="m-toc-group">
+              <span class="m-toc-label">Bagian</span>
+            <a href="#script">Script TL</a>
+            <a href="#zip">Folder dan impor</a>
+            <a href="#teks">Teks, font, dan inpainting</a>
+            <a href="#ekspor">Ekspor dan penyimpanan</a>
+            <a href="#lain">Lainnya</a>
+              <span class="m-toc-label">Subbagian</span>
+            <a class="toc-sub" href="#kenapa-judul-dan-legenda-di-awal-file-hilang">Kenapa judul dan legenda di awal file hilang?</a>
+            <a class="toc-sub" href="#kenapa-p1-tidak-memisahkan-halaman">Kenapa P1 tidak memisahkan halaman?</a>
+            <a class="toc-sub" href="#apa-bedanya-mode-gabung-dan-terhubung">Apa bedanya mode gabung dan terhubung?</a>
+            <a class="toc-sub" href="#kenapa-baris-sambungan-kehilangan-sebagian-spasi">Kenapa baris sambungan kehilangan sebagian spasi?</a>
+            <a class="toc-sub" href="#kenapa-preset-tidak-mengubah-ukuran-font-atau-spasi">Kenapa preset tidak mengubah ukuran font atau spasi?</a>
+            <a class="toc-sub" href="#apakah-file-docx-didukung-penuh">Apakah file DOCX didukung penuh?</a>
+            <a class="toc-sub" href="#kenapa-posisi-script-kembali-saat-proyek-dibuka">Kenapa posisi script kembali saat proyek dibuka?</a>
+            <a class="toc-sub" href="#kenapa-beberapa-gambar-di-zip-tidak-masuk">Kenapa beberapa gambar di ZIP tidak masuk?</a>
+            <a class="toc-sub" href="#kenapa-nama-folder-zip-berbeda-dari-yang-diharapkan">Kenapa nama folder ZIP berbeda dari yang diharapkan?</a>
+            <a class="toc-sub" href="#apakah-menghapus-folder-menghapus-proyek">Apakah menghapus folder menghapus proyek?</a>
+            <a class="toc-sub" href="#zip-dibuka-dari-file-manager-tetapi-tidak-terjadi-apa-ap">ZIP dibuka dari file manager tetapi tidak terjadi apa-apa?</a>
+            <a class="toc-sub" href="#kenapa-impor-banyak-gambar-membuat-folder-baru">Kenapa impor banyak gambar membuat folder baru?</a>
+            <a class="toc-sub" href="#font-kustom-tidak-muncul">Font kustom tidak muncul</a>
+            <a class="toc-sub" href="#jarak-huruf-baris-terasa-tidak-berubah">Jarak huruf/baris terasa tidak berubah</a>
+            <a class="toc-sub" href="#lama-gagal-diunduh-atau-gagal-dipakai">LaMa gagal diunduh atau gagal dipakai</a>
+            <a class="toc-sub" href="#hasil-inpainting-masih-terlihat-belang">Hasil inpainting masih terlihat belang</a>
+            <a class="toc-sub" href="#di-mana-proyek-disimpan">Di mana proyek disimpan?</a>
+            <a class="toc-sub" href="#bagaimana-cara-backup-proyek">Bagaimana cara backup proyek?</a>
+            <a class="toc-sub" href="#ekspor-gagal-menulis-ke-folder">Ekspor gagal menulis ke folder</a>
+            <a class="toc-sub" href="#file-lama-tertimpa">File lama tertimpa</a>
+            <a class="toc-sub" href="#kenapa-hasil-jpeg-berbeda-dari-png">Kenapa hasil JPEG berbeda dari PNG?</a>
+            <a class="toc-sub" href="#apakah-aplikasi-butuh-internet">Apakah aplikasi butuh internet?</a>
+            <a class="toc-sub" href="#apakah-data-dikirim-ke-server">Apakah data dikirim ke server?</a>
+            <a class="toc-sub" href="#aplikasi-versi-apa-yang-saya-pakai">Aplikasi versi apa yang saya pakai?</a>
+            </div>
+          </div>
+        </details>
+
+      <div class="doc-body">
+<h2 id="script">Script TL</h2>
+
+      <h3 id="kenapa-judul-dan-legenda-di-awal-file-hilang">Kenapa judul dan legenda di awal file hilang?</h3>
       <p>Itu disengaja. Semua baris sebelum pemisah halaman pertama dibuang agar kepala file tidak menjadi entri. Jika tidak ada pemisah yang cocok, tidak ada baris yang dibuang.</p>
 
-      <h3>Kenapa <code>P1</code> tidak memisahkan halaman?</h3>
+      <h3 id="kenapa-p1-tidak-memisahkan-halaman">Kenapa <code>P1</code> tidak memisahkan halaman?</h3>
       <p>Pemisah harus cocok dengan <strong>seluruh baris</strong>. Periksa spasi, karakter tak terlihat, dan pola regex di Settings. Coba paste naskah ke <a href="tester.html">tester</a> dengan pola yang sama untuk melihat hasilnya.</p>
 
-      <h3>Apa bedanya mode gabung dan terhubung?</h3>
+      <h3 id="apa-bedanya-mode-gabung-dan-terhubung">Apa bedanya mode gabung dan terhubung?</h3>
       <p><strong>Gabung</strong> menambahkan teks ke entri sebelumnya (satu balon, dua baris). <strong>Terhubung</strong> membuat entri baru untuk balon berikutnya, tetapi entri itu mewarisi preset gaya dari simbol induknya, misalnya <code>//-</code> dari <code>-</code>.</p>
 
-      <h3>Kenapa baris sambungan kehilangan sebagian spasi?</h3>
+      <h3 id="kenapa-baris-sambungan-kehilangan-sebagian-spasi">Kenapa baris sambungan kehilangan sebagian spasi?</h3>
       <p>Spasi indentasi yang sejajar dengan kolom teks simbol dibuang; sisanya dipertahankan. Ini membuat baris menjorok tetap konsisten tanpa menyalin indentasi sumber. Lihat <a href="script.html#sambungan">aturan indentasi</a>.</p>
 
-      <h3>Kenapa preset tidak mengubah ukuran font atau spasi?</h3>
+      <h3 id="kenapa-preset-tidak-mengubah-ukuran-font-atau-spasi">Kenapa preset tidak mengubah ukuran font atau spasi?</h3>
       <p>Preset hanya menyimpan font, gaya font, alignment, dan bentuk kotak. Ukuran diatur lewat resize kanvas, sedangkan jarak huruf/baris diatur per layer di panel teks.</p>
 
-      <h3>Apakah file DOCX didukung penuh?</h3>
+      <h3 id="apakah-file-docx-didukung-penuh">Apakah file DOCX didukung penuh?</h3>
       <p>MochiTs membaca teks dari <code>word/document.xml</code>; format paragraf, tabel, dan gambar di dalam DOCX tidak dipertahankan. Untuk hasil paling dapat diprediksi, gunakan TXT.</p>
 
-      <h3>Kenapa posisi script kembali saat proyek dibuka?</h3>
+      <h3 id="kenapa-posisi-script-kembali-saat-proyek-dibuka">Kenapa posisi script kembali saat proyek dibuka?</h3>
       <p>Fitur <em>Muat ulang file TL otomatis</em> aktif secara bawaan dan menyimpan file serta posisi halaman/baris per proyek. Matikan di Settings bila tidak diinginkan.</p>
 
       <h2 id="zip">Folder dan impor</h2>
 
-      <h3>Kenapa beberapa gambar di ZIP tidak masuk?</h3>
+      <h3 id="kenapa-beberapa-gambar-di-zip-tidak-masuk">Kenapa beberapa gambar di ZIP tidak masuk?</h3>
       <p>Periksa batas impor: maksimal 300 item, 5.000 entri dipindai, 64 MB per entri, dan 512 MB total. File non-gambar, file tersembunyi, folder <code>__MACOSX</code>, dan path traversal juga diabaikan.</p>
 
-      <h3>Kenapa nama folder ZIP berbeda dari yang diharapkan?</h3>
+      <h3 id="kenapa-nama-folder-zip-berbeda-dari-yang-diharapkan">Kenapa nama folder ZIP berbeda dari yang diharapkan?</h3>
       <p>Nama folder root diambil dari nama file ZIP. Setiap subfolder tingkat atas menjadi folder sendiri. Nama yang bentrok dengan folder yang sudah ada akan diberi akhiran otomatis seperti <code>(2)</code>.</p>
 
-      <h3>Apakah menghapus folder menghapus proyek?</h3>
+      <h3 id="apakah-menghapus-folder-menghapus-proyek">Apakah menghapus folder menghapus proyek?</h3>
       <p>Tidak. Proyek di dalamnya kembali ke <em>Tanpa folder</em>. Hapus proyek secara terpisah jika memang ingin membuangnya.</p>
 
-      <h3>ZIP dibuka dari file manager tetapi tidak terjadi apa-apa?</h3>
+      <h3 id="zip-dibuka-dari-file-manager-tetapi-tidak-terjadi-apa-ap">ZIP dibuka dari file manager tetapi tidak terjadi apa-apa?</h3>
       <p>MochiTs menampilkan dialog pratinjau lebih dulu; ketuk <strong>Impor</strong>. Jika dialog tidak muncul, pastikan aplikasi versi terbaru terpasang dan ZIP bertipe <code>application/zip</code> atau <code>application/x-zip-compressed</code>.</p>
 
-      <h3>Kenapa impor banyak gambar membuat folder baru?</h3>
+      <h3 id="kenapa-impor-banyak-gambar-membuat-folder-baru">Kenapa impor banyak gambar membuat folder baru?</h3>
       <p>Memilih lebih dari satu gambar tanpa folder tujuan otomatis membuat folder <code>Impor YYYYMMDD_HHMMSS</code> agar proyek tidak tercampur. Satu gambar tidak dibuatkan folder.</p>
 
       <h2 id="teks">Teks, font, dan inpainting</h2>
 
-      <h3>Font kustom tidak muncul</h3>
+      <h3 id="font-kustom-tidak-muncul">Font kustom tidak muncul</h3>
       <p>Pastikan file berformat <code>.ttf</code> atau <code>.otf</code> dan tidak rusak. Setelah diimpor dari Settings, font muncul di panel teks. Font yang dihapus membuat layer terkait kembali ke font default.</p>
 
-      <h3>Jarak huruf/baris terasa tidak berubah</h3>
+      <h3 id="jarak-huruf-baris-terasa-tidak-berubah">Jarak huruf/baris terasa tidak berubah</h3>
       <p>Kedua slider bekerja per layer teks yang sedang dipilih. Pastikan layer teks aktif. Nilai jarak baris ≤ 0 otomatis dianggap 100%; gunakan tombol <em>Reset jarak</em> untuk kembali ke nilai normal.</p>
 
-      <h3>LaMa gagal diunduh atau gagal dipakai</h3>
+      <h3 id="lama-gagal-diunduh-atau-gagal-dipakai">LaMa gagal diunduh atau gagal dipakai</h3>
       <p>Model berukuran ±196 MB dan diunduh sekali dari HuggingFace. Jika unduhan gagal, coba koneksi stabil dan ruang penyimpanan cukup. Saat model tidak tersedia atau gagal dimuat, inpainting otomatis memakai Telea yang offline.</p>
 
-      <h3>Hasil inpainting masih terlihat belang</h3>
+      <h3 id="hasil-inpainting-masih-terlihat-belang">Hasil inpainting masih terlihat belang</h3>
       <p>Perluas area mask sedikit melewati teks, lalu ulangi. Telea cocok untuk latar sederhana; untuk latar kompleks, gunakan LaMa. Coba beberapa kali dengan mask yang lebih rapi.</p>
 
       <h2 id="ekspor">Ekspor dan penyimpanan</h2>
 
-      <h3>Di mana proyek disimpan?</h3>
+      <h3 id="di-mana-proyek-disimpan">Di mana proyek disimpan?</h3>
       <p>Di penyimpanan internal aplikasi: database Room dan folder <code>filesDir/projects/{id}/</code> berisi gambar dasar, layer, serta riwayat. Data hilang jika aplikasi di-uninstall atau data aplikasi dibersihkan.</p>
 
-      <h3>Bagaimana cara backup proyek?</h3>
+      <h3 id="bagaimana-cara-backup-proyek">Bagaimana cara backup proyek?</h3>
       <p>Ekspor sebagai <strong>MTS</strong>. Bundel ini menyimpan proyek lengkap dan bisa dibuka kembali atau dimasukkan ke ZIP. Menyalin folder internal secara manual tidak didukung tanpa akses root.</p>
 
-      <h3>Ekspor gagal menulis ke folder</h3>
+      <h3 id="ekspor-gagal-menulis-ke-folder">Ekspor gagal menulis ke folder</h3>
       <p>Izin folder bisa dicabut setelah aplikasi dipasang ulang atau penyimpanan diubah. Buka Settings, pilih ulang folder output default, lalu ekspor lagi.</p>
 
-      <h3>File lama tertimpa</h3>
+      <h3 id="file-lama-tertimpa">File lama tertimpa</h3>
       <p>Ekspor dengan nama yang sama akan mengganti file di folder tujuan. Ganti nama output untuk menyimpan versi lain.</p>
 
-      <h3>Kenapa hasil JPEG berbeda dari PNG?</h3>
-      <p>JPEG lossy dan tidak menyimpan transparansi. Gunakan PNG untuk teks tajam atau area transparan, dan kualitas 85–95% untuk JPEG/WEBP.</p>
+      <h3 id="kenapa-hasil-jpeg-berbeda-dari-png">Kenapa hasil JPEG berbeda dari PNG?</h3>
+      <p>JPEG lossy dan tidak menyimpan transparansi. Gunakan PNG untuk teks tajam atau area transparan, dan kualitas 85 sampai 95% untuk JPEG/WEBP.</p>
 
       <h2 id="lain">Lainnya</h2>
 
-      <h3>Apakah aplikasi butuh internet?</h3>
+      <h3 id="apakah-aplikasi-butuh-internet">Apakah aplikasi butuh internet?</h3>
       <p>Editing, impor, dan ekspor berjalan offline. Internet hanya dibutuhkan untuk mengunduh model LaMa pertama kali.</p>
 
-      <h3>Apakah data dikirim ke server?</h3>
+      <h3 id="apakah-data-dikirim-ke-server">Apakah data dikirim ke server?</h3>
       <p>Tidak. Proyek dan naskah diproses di perangkat. Halaman tester script ini juga berjalan sepenuhnya di browser.</p>
 
-      <h3>Aplikasi versi apa yang saya pakai?</h3>
+      <h3 id="aplikasi-versi-apa-yang-saya-pakai">Aplikasi versi apa yang saya pakai?</h3>
       <p>Versi saat ini <code>1.0</code> (versionName). Build dari CI adalah build debug; pasang ulang APK terbaru untuk mendapatkan perbaikan.</p>
-
-      <div class="next-prev">
-        <a href="ekspor.html"><span class="lbl">Sebelumnya</span>Ekspor</a>
-        <a href="index.html"><span class="lbl">Kembali ke</span>Beranda</a>
       </div>
-    </main>
-  </div>
+
+      <nav class="doc-pager" aria-label="Navigasi bab">
+        <a class="prev" href="ekspor.html"><span class="lbl">Sebelumnya</span><span class="ttl">Ekspor</span></a>
+        <a class="next" href="index.html"><span class="lbl">Selanjutnya</span><span class="ttl">Daftar bab</span></a>
+      </nav>
+    </article>
+
+    <aside class="docs-toc">
+      <div class="side-label">Di halaman ini</div>
+      <nav class="toc-nav" aria-label="Di halaman ini">
+          <a href="#script">Script TL</a>
+          <a href="#zip">Folder dan impor</a>
+          <a href="#teks">Teks, font, dan inpainting</a>
+          <a href="#ekspor">Ekspor dan penyimpanan</a>
+          <a href="#lain">Lainnya</a>
+      </nav>
+      <a class="toc-top" href="#main">Kembali ke atas ↑</a>
+    </aside>
+  </main>
 
   <footer class="site-footer">
-    <div class="wrap footer-in">
-      <div>MochiTs — editor typeset komik untuk Android. Dokumentasi ini statis dan bisa dibaca offline setelah dimuat.</div>
-      <div class="footer-links">
-        <a href="index.html">Beranda</a>
-        <a href="mulai.html">Panduan</a>
-        <a href="https://github.com/Mochizhouuu/MochiTs" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://github.com/Mochizhouuu/MochiTs-Docs" target="_blank" rel="noopener">Sumber docs</a>
+    <div class="wrap">
+      <div class="footer-in">
+        <div class="footer-brand">MochiTs <span>Manual pengguna</span></div>
+        <div class="footer-links">
+          <a href="index.html">Beranda</a>
+          <a href="mulai.html">Mulai</a>
+          <a href="script.html">Script</a>
+          <a href="tester.html">Tester</a>
+          <a href="https://github.com/Mochizhouuu/MochiTs" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <div class="footer-note">
+        <span>Dokumentasi edisi 1.0 / Bahasa Indonesia</span>
+        <span>Dibuat untuk Android 10+</span>
       </div>
     </div>
   </footer>

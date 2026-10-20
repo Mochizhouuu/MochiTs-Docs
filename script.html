@@ -3,63 +3,143 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Format Script TL — MochiTs Docs</title>
+  <title>Format script TL | MochiTs Docs</title>
   <meta name="description" content="Panduan lengkap format script TL MochiTs: pemisah halaman, simbol, entri terhubung, baris sambungan, dan impor .docx.">
+  <meta name="theme-color" content="#f4efe5">
+  <link rel="canonical" href="https://mochits-docs.pages.dev/script.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Format script TL | MochiTs Docs">
+  <meta property="og:description" content="Panduan lengkap format script TL MochiTs: pemisah halaman, simbol, entri terhubung, baris sambungan, dan impor .docx.">
+  <meta property="og:url" content="https://mochits-docs.pages.dev/script.html">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=JetBrains+Mono:wght@400;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css">
 </head>
-<body>
+<body class="has-progress" data-page="script.html">
+  <a class="skip-link" href="#main">Lewati ke konten</a>
   <header class="site-header">
-    <div class="wrap header-in">
+    <div class="header-in">
       <a class="brand" href="index.html" aria-label="MochiTs Docs">
-        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-mark" aria-hidden="true">M</span>
         <span class="brand-word">Mochi<span>Ts</span></span>
+        <span class="brand-tag">Docs</span>
       </a>
-      <nav class="nav" aria-label="Utama">
+      <nav class="site-nav" aria-label="Utama">
         <a href="mulai.html">Mulai</a>
-        <a href="script.html">Script</a>
+        <a href="script.html" aria-current="page">Script</a>
         <a href="tester.html">Tester</a>
         <a href="faq.html">FAQ</a>
-        <a class="cta" href="https://github.com/Mochizhouuu/MochiTs" target="_blank" rel="noopener">GitHub</a>
       </nav>
-      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-nav">Menu</button>
-    </div>
-    <div class="mobile-nav" id="mobile-nav">
-      <div class="wrap">
-        <a href="mulai.html">Mulai &amp; instalasi</a>
-        <a href="folder-zip.html">Folder &amp; impor ZIP</a>
-        <a href="teks.html">Teks &amp; spasi</a>
-        <a href="script.html">Format script TL</a>
-        <a href="tester.html">Tester script</a>
-        <a href="ekspor.html">Ekspor</a>
-        <a href="faq.html">FAQ</a>
+      <div class="header-tools">
+        <button class="search-btn" type="button" aria-label="Cari dokumentasi">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>
+          <span>Cari</span>
+          <kbd>/</kbd>
+        </button>
+        <a class="header-link" href="https://github.com/Mochizhouuu/MochiTs" target="_blank" rel="noopener">GitHub</a>
+        <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Buka menu">
+          <span class="menu-btn-lines" aria-hidden="true"></span>
+        </button>
       </div>
+      <div class="reading-progress" aria-hidden="true"><span></span></div>
     </div>
   </header>
 
-  <div class="wrap docs">
-    <aside class="sidebar">
-      <div class="side-title">Panduan</div>
-      <a href="mulai.html">Mulai &amp; instalasi</a>
-      <a href="folder-zip.html">Folder &amp; impor ZIP</a>
-      <a href="teks.html">Teks &amp; spasi</a>
-      <a href="script.html">Format script TL</a>
-      <a href="ekspor.html">Ekspor</a>
-      <div class="side-title">Alat</div>
-      <a href="tester.html">Tester script</a>
-      <a href="faq.html">FAQ</a>
-    </aside>
-
-    <main class="docs-main">
-      <div class="doc-head">
-        <div class="breadcrumb"><a href="index.html">Docs</a> / Script TL</div>
-        <h1>Format script TL</h1>
-        <p>Ubah naskah terjemahan menjadi antrean balon: satu baris simbol, satu entri teks, satu halaman.</p>
+  <div class="site-menu" id="site-menu" hidden>
+    <div class="site-menu-in">
+      <nav class="menu-group" aria-label="Isi manual">
+        <div class="menu-label">Isi manual</div>
+        <a href="mulai.html"><span class="no">01</span><span>Mulai</span><span class="desc">Pasang, buat proyek, kenali kanvas.</span></a>
+        <a href="folder-zip.html"><span class="no">02</span><span>Folder &amp; ZIP</span><span class="desc">Rapikan proyek dan impor satu chapter.</span></a>
+        <a href="teks.html"><span class="no">03</span><span>Teks &amp; spasi</span><span class="desc">Font, warna, stroke, jarak huruf dan baris.</span></a>
+        <a href="script.html" aria-current="page"><span class="no">04</span><span>Script TL</span><span class="desc">Ubah naskah terjemahan jadi antrean balon.</span></a>
+        <a href="tester.html"><span class="no">05</span><span>Tester</span><span class="desc">Uji parser dan regex langsung di browser.</span></a>
+        <a href="ekspor.html"><span class="no">06</span><span>Ekspor</span><span class="desc">PNG, JPEG, WEBP, atau bundel proyek.</span></a>
+        <a href="faq.html"><span class="no">07</span><span>FAQ</span><span class="desc">Jawaban singkat untuk masalah umum.</span></a>
+      </nav>
+      <div class="menu-foot">
+        <button class="search-wide" type="button" aria-label="Buka pencarian">
+          <span>Cari di dokumentasi</span>
+          <span aria-hidden="true">/</span>
+        </button>
+        <a href="https://github.com/Mochizhouuu/MochiTs" target="_blank" rel="noopener">Kode aplikasi di GitHub</a>
+        <a href="https://github.com/Mochizhouuu/MochiTs-Docs" target="_blank" rel="noopener">Sumber dokumentasi</a>
+        <p class="menu-note">Semua halaman bisa dibaca tanpa akun. Proyek tetap tersimpan di perangkatmu.</p>
       </div>
+    </div>
+  </div>
 
-      <h2 id="contoh">Contoh singkat</h2>
+  <div class="search-overlay" id="search-overlay" hidden>
+    <div class="search-box" role="dialog" aria-modal="true" aria-labelledby="search-title">
+      <div class="search-head">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>
+        <h2 class="visually-hidden" id="search-title">Cari dokumentasi</h2>
+        <input id="search-input" type="search" aria-label="Cari dokumentasi" placeholder="Cari bab, fitur, atau masalah..." autocomplete="off" spellcheck="false">
+        <button class="search-close" type="button" data-search-close aria-label="Tutup pencarian">Esc</button>
+      </div>
+      <div class="search-results" id="search-results" aria-live="polite"></div>
+      <div class="search-foot">
+        <span id="search-summary">Mulai dari sini</span>
+        <span>↑↓ pilih · ↵ buka · esc tutup</span>
+      </div>
+    </div>
+  </div>
+
+  <main class="docs-shell" id="main">
+      <aside class="docs-side">
+        <div class="side-label">Panduan</div>
+        <nav class="side-nav" aria-label="Bab panduan">
+        <a href="mulai.html"><span class="no">01</span><span>Mulai</span></a>
+        <a href="folder-zip.html"><span class="no">02</span><span>Folder &amp; ZIP</span></a>
+        <a href="teks.html"><span class="no">03</span><span>Teks &amp; spasi</span></a>
+        <a href="script.html" class="active" aria-current="page"><span class="no">04</span><span>Script TL</span></a>
+        </nav>
+        <div class="side-label">Alat &amp; output</div>
+        <nav class="side-nav" aria-label="Alat dan output">
+        <a href="tester.html"><span class="no">05</span><span>Tester</span></a>
+        <a href="ekspor.html"><span class="no">06</span><span>Ekspor</span></a>
+        <a href="faq.html"><span class="no">07</span><span>FAQ</span></a>
+        </nav>
+        <div class="side-help">
+          <strong>Baru mulai?</strong>
+          Baca berurutan dari Bab 01 agar alur impor, teks, dan ekspor tidak terlewat.
+          <a href="mulai.html">Mulai dari awal</a>
+        </div>
+      </aside>
+
+    <article class="docs-article" aria-labelledby="doc-title">
+      <header class="doc-masthead">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Manual</a><span class="sep">/</span><span>Format script TL</span>
+        </nav>
+        <h1 id="doc-title">Format script TL</h1>
+        <p class="doc-lead">Ubah naskah terjemahan menjadi antrean balon: satu baris simbol, satu entri teks, satu halaman.</p>
+        <div class="doc-meta"><span>Bab 04</span><span>8 bagian</span><span>±4 menit baca</span><span>Edisi 1.0</span></div>
+      </header>
+
+        <details class="mobile-toc">
+          <summary>Daftar isi</summary>
+          <div class="m-toc-body">
+            <div class="m-toc-group">
+              <span class="m-toc-label">Bagian</span>
+            <a href="#contoh">Contoh singkat</a>
+            <a href="#halaman">Pemisah halaman</a>
+            <a href="#simbol">Simbol dan mode</a>
+            <a href="#sambungan">Baris sambungan dan indentasi</a>
+            <a href="#normalisasi">Normalisasi otomatis</a>
+            <a href="#alur">Alur kerja di aplikasi</a>
+            <a href="#autosave">Memuat ulang otomatis</a>
+            <a href="#tes">Tes file sebelum mengedit</a>
+              <span class="m-toc-label">Subbagian</span>
+            <a class="toc-sub" href="#induk-entri-terhubung">Induk entri terhubung</a>
+            </div>
+          </div>
+        </details>
+
+      <div class="doc-body">
+<h2 id="contoh">Contoh singkat</h2>
       <pre><code>P1
 [] Di sebuah kota yang selalu hujan,
    ada toko buku kecil di ujung gang.
@@ -88,7 +168,7 @@ P2
       <p>Contoh alternatif: isi pemisah dengan <code>===</code> bila naskah memakai baris <code>===</code>, atau <code>Halaman \d+</code> untuk format lain.</p>
 
       <h2 id="simbol">Simbol dan mode</h2>
-      <p>Setiap baris yang dimulai dengan simbol terdaftar menjadi entri baru. Simbol dicocokkan sebagai <strong>awalan</strong>, dan yang terpanjang menang — jadi <code>**</code> dipilih sebelum <code>*</code>.</p>
+      <p>Setiap baris yang dimulai dengan simbol terdaftar menjadi entri baru. Simbol dicocokkan sebagai <strong>awalan</strong>, dan yang terpanjang menang, jadi <code>**</code> dipilih sebelum <code>*</code>.</p>
       <div class="table-wrap">
         <table>
           <thead><tr><th>Mode</th><th>Perilaku</th><th>Contoh pemakaian</th></tr></thead>
@@ -101,9 +181,9 @@ P2
       </div>
       <p>Simbol bawaan: <code>[]</code>, <code>-</code>, <code>//-</code>, <code>//[]</code>, <code>#</code>, <code>*</code>, <code>**</code>, <code>&lt;&gt;</code>. Kamu bisa menambah, menghapus, atau mengganti mode lewat <strong>Settings → Script</strong>.</p>
 
-      <h3>Induk entri terhubung</h3>
+      <h3 id="induk-entri-terhubung">Induk entri terhubung</h3>
       <p>Untuk simbol berawalan <code>//</code>, induk ditentukan dari sisa simbolnya: <code>//-</code> terhubung ke <code>-</code>, dan <code>//[]</code> terhubung ke <code>[]</code>. Jika simbol hanya <code>//</code> tanpa sisa, induk diambil dari entri sebelumnya (atau induk entri itu, bila sebelumnya juga terhubung).</p>
-      <p>Induk dipakai untuk mewarisi <strong>preset gaya</strong>: gaya milik simbol sendiri dipakai lebih dulu; jika kosong, gaya simbol induk yang dipakai. Preset mencakup font, gaya font, alignment, dan bentuk kotak — bukan ukuran font atau spasi.</p>
+      <p>Induk dipakai untuk mewarisi <strong>preset gaya</strong>: gaya milik simbol sendiri dipakai lebih dulu; jika kosong, gaya simbol induk yang dipakai. Preset mencakup font, gaya font, alignment, dan bentuk kotak, bukan ukuran font atau spasi.</p>
 
       <h2 id="sambungan">Baris sambungan dan indentasi</h2>
       <p>Baris tanpa simbol tidak dibuang selama sudah ada entri sebelumnya. Baris itu disambungkan ke entri terakhir, dengan aturan indentasi:</p>
@@ -151,22 +231,46 @@ P2
 
       <h2 id="tes">Tes file sebelum mengedit</h2>
       <p>Di <em>Settings → Script</em>, tombol <strong>Tes file script (.txt/.docx)</strong> membaca file dan menampilkan ringkasan: jumlah halaman, entri, entri terhubung, hitungan per simbol, dan peringatan (misalnya simbol <code>//-</code> dipakai tetapi belum terdaftar). Tes ini tidak mengubah antrean proyek.</p>
-
-      <div class="next-prev">
-        <a href="teks.html"><span class="lbl">Sebelumnya</span>Teks &amp; spasi</a>
-        <a href="tester.html"><span class="lbl">Selanjutnya</span>Tester script</a>
       </div>
-    </main>
-  </div>
+
+      <nav class="doc-pager" aria-label="Navigasi bab">
+        <a class="prev" href="teks.html"><span class="lbl">Sebelumnya</span><span class="ttl">Teks &amp; spasi</span></a>
+        <a class="next" href="tester.html"><span class="lbl">Selanjutnya</span><span class="ttl">Tester script</span></a>
+      </nav>
+    </article>
+
+    <aside class="docs-toc">
+      <div class="side-label">Di halaman ini</div>
+      <nav class="toc-nav" aria-label="Di halaman ini">
+          <a href="#contoh">Contoh singkat</a>
+          <a href="#halaman">Pemisah halaman</a>
+          <a href="#simbol">Simbol dan mode</a>
+          <a href="#induk-entri-terhubung" class="level-2">Induk entri terhubung</a>
+          <a href="#sambungan">Baris sambungan dan indentasi</a>
+          <a href="#normalisasi">Normalisasi otomatis</a>
+          <a href="#alur">Alur kerja di aplikasi</a>
+          <a href="#autosave">Memuat ulang otomatis</a>
+          <a href="#tes">Tes file sebelum mengedit</a>
+      </nav>
+      <a class="toc-top" href="#main">Kembali ke atas ↑</a>
+    </aside>
+  </main>
 
   <footer class="site-footer">
-    <div class="wrap footer-in">
-      <div>MochiTs — editor typeset komik untuk Android. Dokumentasi ini statis dan bisa dibaca offline setelah dimuat.</div>
-      <div class="footer-links">
-        <a href="index.html">Beranda</a>
-        <a href="mulai.html">Panduan</a>
-        <a href="https://github.com/Mochizhouuu/MochiTs" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://github.com/Mochizhouuu/MochiTs-Docs" target="_blank" rel="noopener">Sumber docs</a>
+    <div class="wrap">
+      <div class="footer-in">
+        <div class="footer-brand">MochiTs <span>Manual pengguna</span></div>
+        <div class="footer-links">
+          <a href="index.html">Beranda</a>
+          <a href="mulai.html">Mulai</a>
+          <a href="script.html">Script</a>
+          <a href="tester.html">Tester</a>
+          <a href="https://github.com/Mochizhouuu/MochiTs" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <div class="footer-note">
+        <span>Dokumentasi edisi 1.0 / Bahasa Indonesia</span>
+        <span>Dibuat untuk Android 10+</span>
       </div>
     </div>
   </footer>

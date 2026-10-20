@@ -1,0 +1,422 @@
+[
+  {
+    "page": "mulai.html",
+    "pageTitle": "Bab 01 / Mulai",
+    "title": "Memasang aplikasi",
+    "id": "instalasi",
+    "text": "MochiTs adalah aplikasi Android native (Kotlin + Compose) dengan minimum Android 10 (API 29). Ada dua cara mendapatkan APK: Artifact dari CI: buka GitHub Actions, pilih workflow terbaru yang"
+  },
+  {
+    "page": "mulai.html",
+    "pageTitle": "Bab 01 / Mulai",
+    "title": "Membuat proyek pertama",
+    "id": "proyek",
+    "text": "Buka Home Semua proyek muncul di daftar, diurutkan dari yang terakhir dibuka. Folder ditampilkan sebagai chip di bagian atas. Ketuk tombol buat proyek Isi nama, lebar, dan tinggi kanvas dala"
+  },
+  {
+    "page": "mulai.html",
+    "pageTitle": "Bab 01 / Mulai",
+    "title": "Mengenal Home",
+    "id": "home",
+    "text": "Home adalah pusat proyek. Beberapa elemen penting: ElemenFungsi Chip folderMenyaring proyek. Semua menampilkan seluruh proyek, Tanpa folder hanya proyek yang belum dikelompokkan. KelolaMembu"
+  },
+  {
+    "page": "mulai.html",
+    "pageTitle": "Bab 01 / Mulai",
+    "title": "Mengenal Editor",
+    "id": "editor",
+    "text": "Kanvas: cubit untuk zoom, geser dua jari untuk pan. Ketuk dua kali layer teks untuk mengedit isinya. Toolbar: pilih alat (brush, eraser, lasso, magic wand), teks, atau layer gambar. Panel la"
+  },
+  {
+    "page": "mulai.html",
+    "pageTitle": "Bab 01 / Mulai",
+    "title": "Tiga kebiasaan yang menghemat waktu",
+    "id": "tips",
+    "text": "Kelompokkan proyek per judul atau chapter memakai folder sejak awal. Simpan naskah TL dalam satu file teks, lalu gunakan format script agar balon terisi otomatis. Atur jarak huruf/baris di p"
+  },
+  {
+    "page": "folder-zip.html",
+    "pageTitle": "Bab 02 / Folder & ZIP",
+    "title": "Folder proyek",
+    "id": "folder",
+    "text": "Folder di MochiTs bersifat virtual: proyek tetap berupa file terpisah, hanya dikelompokkan lewat folderId. Satu proyek berada di paling banyak satu folder. Buat folder: chip Kelola di Home, "
+  },
+  {
+    "page": "folder-zip.html",
+    "pageTitle": "Bab 02 / Folder & ZIP",
+    "title": "Impor banyak gambar",
+    "id": "banyak-gambar",
+    "text": "Ketuk ikon galeri Picker Android terbuka. Pilih hingga 100 gambar sekaligus (batas dari aplikasi). Folder otomatis Jika memilih lebih dari satu gambar tanpa folder tujuan, MochiTs membuat fo"
+  },
+  {
+    "page": "folder-zip.html",
+    "pageTitle": "Bab 02 / Folder & ZIP",
+    "title": "Impor ZIP",
+    "id": "zip",
+    "text": "Struktur ZIP menentukan struktur folder. MochiTs membaca arsip dalam dua lintasan: pertama memetakan isi, lalu mengekstrak hanya file yang relevan. Isi ZIPHasil di MochiTs 001.jpg, 002.jpg, "
+  },
+  {
+    "page": "folder-zip.html",
+    "pageTitle": "Bab 02 / Folder & ZIP",
+    "title": "Batas keamanan impor",
+    "id": "batas-keamanan-impor",
+    "text": "Maksimal 300 item diimpor dan 5.000 entri dipindai per ZIP. Maksimal 64 MB per entri dan 512 MB total data yang diekstrak. Path dengan .. (traversal) serta file tersembunyi tidak diproses. F"
+  },
+  {
+    "page": "folder-zip.html",
+    "pageTitle": "Bab 02 / Folder & ZIP",
+    "title": "Membuka ZIP dari file manager",
+    "id": "share",
+    "text": "MochiTs terdaftar sebagai pembuka untuk application/zip dan application/x-zip-compressed. Saat ZIP dibuka dari luar: Aplikasi menampilkan dialog pratinjau berisi nama file ZIP. Ketuk Impor u"
+  },
+  {
+    "page": "teks.html",
+    "pageTitle": "Bab 03 / Teks & spasi",
+    "title": "Membuat dan mengedit teks",
+    "id": "dasar",
+    "text": "Pilih alat teks di toolbar, lalu ketuk kanvas untuk membuat layer baru. Ketuk dua kali layer teks untuk membuka editor isi. Layer teks punya bentuk BOX (kotak) atau OVAL; pilihan bentuk meme"
+  },
+  {
+    "page": "teks.html",
+    "pageTitle": "Bab 03 / Teks & spasi",
+    "title": "Font dan ukuran",
+    "id": "font",
+    "text": "Font bawaan bisa diganti lewat panel teks. Untuk font kustom: Buka Settings → Font Impor file .ttf atau .otf dari penyimpanan. Pilih font di panel teks Font kustom muncul bersama font bawaan"
+  },
+  {
+    "page": "teks.html",
+    "pageTitle": "Bab 03 / Teks & spasi",
+    "title": "Jarak huruf dan jarak baris",
+    "id": "spasi",
+    "text": "Di panel teks, bagian Style & Size berisi dua slider spasi. Keduanya bekerja per layer dan langsung terlihat di kanvas. SliderRentangArti nilai Jarak huruf −5% sampai 20% Ditampilkan sebagai"
+  },
+  {
+    "page": "teks.html",
+    "pageTitle": "Bab 03 / Teks & spasi",
+    "title": "Warna, stroke, glow, dan gradient",
+    "id": "gaya",
+    "text": "Warna & opasitas: warna isi teks dan transparansinya. Stroke: ketebalan dan opasitas garis tepi; berguna untuk teks di atas latar ramai. Drop shadow: radius serta offset X/Y. Glow: radius da"
+  },
+  {
+    "page": "teks.html",
+    "pageTitle": "Bab 03 / Teks & spasi",
+    "title": "Menghapus teks lama (inpainting)",
+    "id": "inpainting",
+    "text": "Sebelum menempel teks baru, bersihkan teks asli memakai tool seleksi: Brush dan Eraser: melukis/menghapus mask. Lasso: seleksi area bebas. Magic Wand: flood fill berdasarkan toleransi warna,"
+  },
+  {
+    "page": "script.html",
+    "pageTitle": "Bab 04 / Script TL",
+    "title": "Contoh singkat",
+    "id": "contoh",
+    "text": "P1 [] Di sebuah kota yang selalu hujan, ada toko buku kecil di ujung gang. - Aku datang lagi hari ini. //- Balon sambungan tanpa ekor. # Catatan kecil di pinggir halaman. P2 - Lama sekali ki"
+  },
+  {
+    "page": "script.html",
+    "pageTitle": "Bab 04 / Script TL",
+    "title": "Pemisah halaman",
+    "id": "halaman",
+    "text": "Pemisah halaman adalah regex yang harus cocok dengan seluruh baris (setelah spasi tepi dibuang). Nilai bawaan: P\\d+"
+  },
+  {
+    "page": "script.html",
+    "pageTitle": "Bab 04 / Script TL",
+    "title": "Simbol dan mode",
+    "id": "simbol",
+    "text": "Setiap baris yang dimulai dengan simbol terdaftar menjadi entri baru. Simbol dicocokkan sebagai awalan, dan yang terpanjang menang, jadi ** dipilih sebelum *. ModePerilakuContoh pemakaian No"
+  },
+  {
+    "page": "script.html",
+    "pageTitle": "Bab 04 / Script TL",
+    "title": "Induk entri terhubung",
+    "id": "induk-entri-terhubung",
+    "text": "Untuk simbol berawalan //, induk ditentukan dari sisa simbolnya: //- terhubung ke -, dan //[] terhubung ke []. Jika simbol hanya // tanpa sisa, induk diambil dari entri sebelumnya (atau indu"
+  },
+  {
+    "page": "script.html",
+    "pageTitle": "Bab 04 / Script TL",
+    "title": "Baris sambungan dan indentasi",
+    "id": "sambungan",
+    "text": "Baris tanpa simbol tidak dibuang selama sudah ada entri sebelumnya. Baris itu disambungkan ke entri terakhir, dengan aturan indentasi: Spasi sejajar sampai kolom awal teks simbol dibuang. Co"
+  },
+  {
+    "page": "script.html",
+    "pageTitle": "Bab 04 / Script TL",
+    "title": "Normalisasi otomatis",
+    "id": "normalisasi",
+    "text": "Sebelum diproses, karakter berikut dibersihkan agar naskah hasil salin-tempel tetap aman: BOM (U+FEFF) dan zero-width space (U+200B) dihapus. Non-breaking space (U+00A0) diubah menjadi spasi"
+  },
+  {
+    "page": "script.html",
+    "pageTitle": "Bab 04 / Script TL",
+    "title": "Alur kerja di aplikasi",
+    "id": "alur",
+    "text": "Atur simbol dan pemisah Buka Settings → Script. Tambahkan simbol yang dipakai naskah, tentukan mode, dan pasangkan preset gaya bila perlu. Muat naskah di Editor Buka panel Script TL, lalu ke"
+  },
+  {
+    "page": "script.html",
+    "pageTitle": "Bab 04 / Script TL",
+    "title": "Memuat ulang otomatis",
+    "id": "autosave",
+    "text": "Secara bawaan, file script terakhir dan posisi halaman/barisnya dimuat lagi saat proyek dibuka. Matikan opsi Muat ulang file TL otomatis di Settings bila tidak diinginkan. Data ini disimpan "
+  },
+  {
+    "page": "script.html",
+    "pageTitle": "Bab 04 / Script TL",
+    "title": "Tes file sebelum mengedit",
+    "id": "tes",
+    "text": "Di Settings → Script, tombol Tes file script (.txt/.docx) membaca file dan menampilkan ringkasan: jumlah halaman, entri, entri terhubung, hitungan per simbol, dan peringatan (misalnya simbol"
+  },
+  {
+    "page": "tester.html",
+    "pageTitle": "Bab 05 / Tester script",
+    "title": "Parser naskah",
+    "id": "parser",
+    "text": "Input Naskah TL P1 [] Di sebuah kota yang selalu hujan, ada toko buku kecil di ujung gang. - Aku datang lagi hari ini. //- Balon sambungan tanpa ekor. # Catatan kecil di pinggir halaman. P2 "
+  },
+  {
+    "page": "tester.html",
+    "pageTitle": "Bab 05 / Tester script",
+    "title": "Lab regex pemisah",
+    "id": "regex",
+    "text": "Coba pola lain untuk memastikan baris pemisah cocok persis. Lab ini memakai RegExp JavaScript; aplikasi memakai regex Kotlin/Java, yang umumnya sama untuk pola sederhana. Pola Flag i (abaika"
+  },
+  {
+    "page": "ekspor.html",
+    "pageTitle": "Bab 06 / Ekspor",
+    "title": "Dialog Simpan Sebagai",
+    "id": "dialog",
+    "text": "Ketuk ikon ekspor di Editor. Dialog berisi: Nama Output / Nama Proyek: dipakai sebagai nama file sekaligus mengganti judul proyek bila berbeda. Format: PNG, JPEG, WEBP, atau MTS. Kualitas: h"
+  },
+  {
+    "page": "ekspor.html",
+    "pageTitle": "Bab 06 / Ekspor",
+    "title": "Memilih format",
+    "id": "format",
+    "text": "FormatCocok untukCatatan PNG Hasil akhir dengan area transparan, teks tajam, atau garis tipis. Lossless; slider kualitas tidak ditampilkan. Ukuran file paling besar. JPEG Unggahan umum, ukur"
+  },
+  {
+    "page": "ekspor.html",
+    "pageTitle": "Bab 06 / Ekspor",
+    "title": "Folder tujuan",
+    "id": "folder",
+    "text": "Atur folder default di Settings → Folder Output Default (Export). MochiTs memakai Storage Access Framework, jadi tidak perlu izin penyimpanan penuh. Jika folder default masih valid, ekspor l"
+  },
+  {
+    "page": "ekspor.html",
+    "pageTitle": "Bab 06 / Ekspor",
+    "title": "Bundel .mts",
+    "id": "mts",
+    "text": "Format MTS menyimpan proyek lengkap: gambar dasar, layer, dan data editing. Gunakan untuk: mencadangkan proyek sebelum eksperimen besar, memindahkan proyek ke perangkat lain, mengirim proyek"
+  },
+  {
+    "page": "ekspor.html",
+    "pageTitle": "Bab 06 / Ekspor",
+    "title": "Tips kualitas",
+    "id": "tips",
+    "text": "Gunakan PNG untuk teks berukuran kecil agar tepi huruf tetap tajam. Untuk WEBP/JPEG, kualitas 85 sampai 95% biasanya cukup; di bawah 70% tepi teks mulai terlihat pecah. Ekspor versi PNG dulu"
+  },
+  {
+    "page": "faq.html",
+    "pageTitle": "Bab 07 / FAQ",
+    "title": "Script TL",
+    "id": "script",
+    "text": "Jawaban singkat untuk masalah yang paling sering muncul. Untuk detail, ikuti tautan ke halaman terkait."
+  },
+  {
+    "page": "faq.html",
+    "pageTitle": "Bab 07 / FAQ",
+    "title": "Kenapa judul dan legenda di awal file hilang?",
+    "id": "kenapa-judul-dan-legenda-di-awal-file-hilang",
+    "text": "Itu disengaja. Semua baris sebelum pemisah halaman pertama dibuang agar kepala file tidak menjadi entri. Jika tidak ada pemisah yang cocok, tidak ada baris yang dibuang."
+  },
+  {
+    "page": "faq.html",
+    "pageTitle": "Bab 07 / FAQ",
+    "title": "Kenapa P1 tidak memisahkan halaman?",
+    "id": "kenapa-p1-tidak-memisahkan-halaman",
+    "text": "Pemisah harus cocok dengan seluruh baris. Periksa spasi, karakter tak terlihat, dan pola regex di Settings. Coba paste naskah ke tester dengan pola yang sama untuk melihat hasilnya."
+  },
+  {
+    "page": "faq.html",
+    "pageTitle": "Bab 07 / FAQ",
+    "title": "Apa bedanya mode gabung dan terhubung?",
+    "id": "apa-bedanya-mode-gabung-dan-terhubung",
+    "text": "Gabung menambahkan teks ke entri sebelumnya (satu balon, dua baris). Terhubung membuat entri baru untuk balon berikutnya, tetapi entri itu mewarisi preset gaya dari simbol induknya, misalnya"
+  },
+  {
+    "page": "faq.html",
+    "pageTitle": "Bab 07 / FAQ",
+    "title": "Kenapa baris sambungan kehilangan sebagian spasi?",
+    "id": "kenapa-baris-sambungan-kehilangan-sebagian-spasi",
+    "text": "Spasi indentasi yang sejajar dengan kolom teks simbol dibuang; sisanya dipertahankan. Ini membuat baris menjorok tetap konsisten tanpa menyalin indentasi sumber. Lihat aturan indentasi."
+  },
+  {
+    "page": "faq.html",
+    "pageTitle": "Bab 07 / FAQ",
+    "title": "Kenapa preset tidak mengubah ukuran font atau spasi?",
+    "id": "kenapa-preset-tidak-mengubah-ukuran-font-atau-spasi",
+    "text": "Preset hanya menyimpan font, gaya font, alignment, dan bentuk kotak. Ukuran diatur lewat resize kanvas, sedangkan jarak huruf/baris diatur per layer di panel teks."
+  },
+  {
+    "page": "faq.html",
+    "pageTitle": "Bab 07 / FAQ",
+    "title": "Apakah file DOCX didukung penuh?",
+    "id": "apakah-file-docx-didukung-penuh",
+    "text": "MochiTs membaca teks dari word/document.xml; format paragraf, tabel, dan gambar di dalam DOCX tidak dipertahankan. Untuk hasil paling dapat diprediksi, gunakan TXT."
+  },
+  {
+    "page": "faq.html",
+    "pageTitle": "Bab 07 / FAQ",
+    "title": "Kenapa posisi script kembali saat proyek dibuka?",
+    "id": "kenapa-posisi-script-kembali-saat-proyek-dibuka",
+    "text": "Fitur Muat ulang file TL otomatis aktif secara bawaan dan menyimpan file serta posisi halaman/baris per proyek. Matikan di Settings bila tidak diinginkan."
+  },
+  {
+    "page": "faq.html",
+    "pageTitle": "Bab 07 / FAQ",
+    "title": "Folder dan impor",
+    "id": "zip",
+    "text": "Jawaban singkat untuk masalah yang paling sering muncul. Untuk detail, ikuti tautan ke halaman terkait."
+  },
+  {
+    "page": "faq.html",
+    "pageTitle": "Bab 07 / FAQ",
+    "title": "Kenapa beberapa gambar di ZIP tidak masuk?",
+    "id": "kenapa-beberapa-gambar-di-zip-tidak-masuk",
+    "text": "Periksa batas impor: maksimal 300 item, 5.000 entri dipindai, 64 MB per entri, dan 512 MB total. File non-gambar, file tersembunyi, folder __MACOSX, dan path traversal juga diabaikan."
+  },
+  {
+    "page": "faq.html",
+    "pageTitle": "Bab 07 / FAQ",
+    "title": "Kenapa nama folder ZIP berbeda dari yang diharapkan?",
+    "id": "kenapa-nama-folder-zip-berbeda-dari-yang-diharapkan",
+    "text": "Nama folder root diambil dari nama file ZIP. Setiap subfolder tingkat atas menjadi folder sendiri. Nama yang bentrok dengan folder yang sudah ada akan diberi akhiran otomatis seperti (2)."
+  },
+  {
+    "page": "faq.html",
+    "pageTitle": "Bab 07 / FAQ",
+    "title": "Apakah menghapus folder menghapus proyek?",
+    "id": "apakah-menghapus-folder-menghapus-proyek",
+    "text": "Tidak. Proyek di dalamnya kembali ke Tanpa folder. Hapus proyek secara terpisah jika memang ingin membuangnya."
+  },
+  {
+    "page": "faq.html",
+    "pageTitle": "Bab 07 / FAQ",
+    "title": "ZIP dibuka dari file manager tetapi tidak terjadi apa-apa?",
+    "id": "zip-dibuka-dari-file-manager-tetapi-tidak-terjadi-apa-ap",
+    "text": "MochiTs menampilkan dialog pratinjau lebih dulu; ketuk Impor. Jika dialog tidak muncul, pastikan aplikasi versi terbaru terpasang dan ZIP bertipe application/zip atau application/x-zip-compr"
+  },
+  {
+    "page": "faq.html",
+    "pageTitle": "Bab 07 / FAQ",
+    "title": "Kenapa impor banyak gambar membuat folder baru?",
+    "id": "kenapa-impor-banyak-gambar-membuat-folder-baru",
+    "text": "Memilih lebih dari satu gambar tanpa folder tujuan otomatis membuat folder Impor YYYYMMDD_HHMMSS agar proyek tidak tercampur. Satu gambar tidak dibuatkan folder."
+  },
+  {
+    "page": "faq.html",
+    "pageTitle": "Bab 07 / FAQ",
+    "title": "Teks, font, dan inpainting",
+    "id": "teks",
+    "text": "Jawaban singkat untuk masalah yang paling sering muncul. Untuk detail, ikuti tautan ke halaman terkait."
+  },
+  {
+    "page": "faq.html",
+    "pageTitle": "Bab 07 / FAQ",
+    "title": "Font kustom tidak muncul",
+    "id": "font-kustom-tidak-muncul",
+    "text": "Pastikan file berformat .ttf atau .otf dan tidak rusak. Setelah diimpor dari Settings, font muncul di panel teks. Font yang dihapus membuat layer terkait kembali ke font default."
+  },
+  {
+    "page": "faq.html",
+    "pageTitle": "Bab 07 / FAQ",
+    "title": "Jarak huruf/baris terasa tidak berubah",
+    "id": "jarak-huruf-baris-terasa-tidak-berubah",
+    "text": "Kedua slider bekerja per layer teks yang sedang dipilih. Pastikan layer teks aktif. Nilai jarak baris ≤ 0 otomatis dianggap 100%; gunakan tombol Reset jarak untuk kembali ke nilai normal."
+  },
+  {
+    "page": "faq.html",
+    "pageTitle": "Bab 07 / FAQ",
+    "title": "LaMa gagal diunduh atau gagal dipakai",
+    "id": "lama-gagal-diunduh-atau-gagal-dipakai",
+    "text": "Model berukuran ±196 MB dan diunduh sekali dari HuggingFace. Jika unduhan gagal, coba koneksi stabil dan ruang penyimpanan cukup. Saat model tidak tersedia atau gagal dimuat, inpainting otom"
+  },
+  {
+    "page": "faq.html",
+    "pageTitle": "Bab 07 / FAQ",
+    "title": "Hasil inpainting masih terlihat belang",
+    "id": "hasil-inpainting-masih-terlihat-belang",
+    "text": "Perluas area mask sedikit melewati teks, lalu ulangi. Telea cocok untuk latar sederhana; untuk latar kompleks, gunakan LaMa. Coba beberapa kali dengan mask yang lebih rapi."
+  },
+  {
+    "page": "faq.html",
+    "pageTitle": "Bab 07 / FAQ",
+    "title": "Ekspor dan penyimpanan",
+    "id": "ekspor",
+    "text": "Jawaban singkat untuk masalah yang paling sering muncul. Untuk detail, ikuti tautan ke halaman terkait."
+  },
+  {
+    "page": "faq.html",
+    "pageTitle": "Bab 07 / FAQ",
+    "title": "Di mana proyek disimpan?",
+    "id": "di-mana-proyek-disimpan",
+    "text": "Di penyimpanan internal aplikasi: database Room dan folder filesDir/projects/{id}/ berisi gambar dasar, layer, serta riwayat. Data hilang jika aplikasi di-uninstall atau data aplikasi dibers"
+  },
+  {
+    "page": "faq.html",
+    "pageTitle": "Bab 07 / FAQ",
+    "title": "Bagaimana cara backup proyek?",
+    "id": "bagaimana-cara-backup-proyek",
+    "text": "Ekspor sebagai MTS. Bundel ini menyimpan proyek lengkap dan bisa dibuka kembali atau dimasukkan ke ZIP. Menyalin folder internal secara manual tidak didukung tanpa akses root."
+  },
+  {
+    "page": "faq.html",
+    "pageTitle": "Bab 07 / FAQ",
+    "title": "Ekspor gagal menulis ke folder",
+    "id": "ekspor-gagal-menulis-ke-folder",
+    "text": "Izin folder bisa dicabut setelah aplikasi dipasang ulang atau penyimpanan diubah. Buka Settings, pilih ulang folder output default, lalu ekspor lagi."
+  },
+  {
+    "page": "faq.html",
+    "pageTitle": "Bab 07 / FAQ",
+    "title": "File lama tertimpa",
+    "id": "file-lama-tertimpa",
+    "text": "Ekspor dengan nama yang sama akan mengganti file di folder tujuan. Ganti nama output untuk menyimpan versi lain."
+  },
+  {
+    "page": "faq.html",
+    "pageTitle": "Bab 07 / FAQ",
+    "title": "Kenapa hasil JPEG berbeda dari PNG?",
+    "id": "kenapa-hasil-jpeg-berbeda-dari-png",
+    "text": "JPEG lossy dan tidak menyimpan transparansi. Gunakan PNG untuk teks tajam atau area transparan, dan kualitas 85 sampai 95% untuk JPEG/WEBP."
+  },
+  {
+    "page": "faq.html",
+    "pageTitle": "Bab 07 / FAQ",
+    "title": "Lainnya",
+    "id": "lain",
+    "text": "Jawaban singkat untuk masalah yang paling sering muncul. Untuk detail, ikuti tautan ke halaman terkait."
+  },
+  {
+    "page": "faq.html",
+    "pageTitle": "Bab 07 / FAQ",
+    "title": "Apakah aplikasi butuh internet?",
+    "id": "apakah-aplikasi-butuh-internet",
+    "text": "Editing, impor, dan ekspor berjalan offline. Internet hanya dibutuhkan untuk mengunduh model LaMa pertama kali."
+  },
+  {
+    "page": "faq.html",
+    "pageTitle": "Bab 07 / FAQ",
+    "title": "Apakah data dikirim ke server?",
+    "id": "apakah-data-dikirim-ke-server",
+    "text": "Tidak. Proyek dan naskah diproses di perangkat. Halaman tester script ini juga berjalan sepenuhnya di browser."
+  },
+  {
+    "page": "faq.html",
+    "pageTitle": "Bab 07 / FAQ",
+    "title": "Aplikasi versi apa yang saya pakai?",
+    "id": "aplikasi-versi-apa-yang-saya-pakai",
+    "text": "Versi saat ini 1.0 (versionName). Build dari CI adalah build debug; pasang ulang APK terbaru untuk mendapatkan perbaikan."
+  }
+]
