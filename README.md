@@ -1,7 +1,8 @@
 # MochiTs Docs
 
 Dokumentasi statis untuk [MochiTs](https://github.com/Mochizhouuu/MochiTs) — editor
-typeset komik Android. Bahasa Indonesia, tanpa build step, siap di-deploy ke Netlify.
+typeset komik Android. Bahasa Indonesia, tanpa build step, siap di-deploy ke
+Cloudflare Pages.
 
 ## Isi
 
@@ -28,16 +29,31 @@ python3 -m http.server 8080
 Buka `http://localhost:8080`. Tester script dan lab regex berjalan sepenuhnya di
 browser; tidak ada data yang dikirim ke server.
 
-## Deploy ke Netlify
+## Deploy ke Cloudflare Pages
 
-1. Masuk ke Netlify, pilih **Add new site → Import an existing project**.
-2. Hubungkan repo `Mochizhouuu/MochiTs-Docs`.
-3. Build command: **kosongkan**. Publish directory: `.` (root repo).
-4. Deploy. URL produksi akan diberikan Netlify (mis. `https://mochits-docs.netlify.app`).
+### Lewat integrasi Git (disarankan)
 
-`netlify.toml` sudah mengatur publish directory dan cache aset. Setiap push ke
-`main` akan memicu deploy otomatis. Alternatif tanpa Git: drag-and-drop folder
-ini ke Netlify Drop.
+1. Buka Cloudflare Dashboard → **Workers & Pages** → **Create** → **Pages** →
+   **Connect to Git**.
+2. Pilih repo `Mochizhouuu/MochiTs-Docs`.
+3. Production branch: `main`.
+4. Framework preset: **None**. Build command: **kosongkan**. Build output
+   directory: `/` (root repo).
+5. Klik **Save and Deploy**. URL produksi berbentuk
+   `https://<nama-proyek>.pages.dev`.
+
+Setiap push ke `main` akan memicu deploy otomatis. File `_headers` sudah
+mengatur cache aset dan halaman HTML. Halaman 404 memakai `404.html`.
+
+### Upload langsung lewat Wrangler
+
+```bash
+npx wrangler login
+npx wrangler pages deploy . --project-name mochits-docs
+```
+
+Gunakan cara ini hanya bila tidak ingin menghubungkan repo. Integrasi Git lebih
+mudah karena deploy berjalan otomatis setiap kali dokumentasi diperbarui.
 
 ## Menjaga dokumentasi tetap akurat
 
@@ -45,8 +61,8 @@ ini ke Netlify Drop.
   `app/src/main/java/com/mochits/app/script/ScriptParser.kt` di repo aplikasi.
 - Nilai bawaan (pemisah `P\d+`, simbol, batas impor, rentang slider) ada di kode
   aplikasi dan Settings; perbarui halaman terkait bila kode berubah.
-- Tautan "Panduan" di Settings aplikasi dapat diarahkan ke URL Netlify setelah
-  situs ini online.
+- Tautan "Panduan" di Settings aplikasi dapat diarahkan ke URL Cloudflare Pages
+  setelah situs ini online.
 
 ## Lisensi
 
