@@ -4,6 +4,8 @@ Dokumentasi statis untuk [MochiTs](https://github.com/Mochizhouuu/MochiTs) — e
 typeset komik Android. Bahasa Indonesia, tanpa build step, siap di-deploy ke
 Cloudflare Pages.
 
+**Live:** https://mochits-docs.pages.dev/
+
 ## Isi
 
 | File | Halaman |
