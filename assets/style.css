@@ -752,12 +752,14 @@ pre:hover .copy-btn, .copy-btn:focus { opacity: 1; }
 }
 .step::before {
   content: counter(step, decimal-leading-zero);
+  grid-column: 1; grid-row: 1 / span 2; align-self: start;
   width: 25px; height: 25px; display: grid; place-items: center;
   border: 1px solid var(--line-strong); border-radius: 50%;
   font-family: var(--font-mono); font-size: 8px; color: var(--accent-deep);
 }
-.step strong { display: block; color: var(--ink); font-size: 14px; margin-bottom: 1px; }
-.step p { margin: 0; color: var(--muted); font-size: 13.5px; line-height: 1.6; }
+.step > * { min-width: 0; }
+.step strong { grid-column: 2; grid-row: 1; display: block; color: var(--ink); font-size: 14px; margin-bottom: 1px; }
+.step p { grid-column: 2; grid-row: 2; margin: 0; color: var(--muted); font-size: 13.5px; line-height: 1.6; }
 
 .table-wrap {
   margin: 22px 0; overflow-x: auto;
