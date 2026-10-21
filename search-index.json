@@ -11,14 +11,14 @@
     "pageTitle": "Bab 01 / Mulai",
     "title": "Membuat proyek pertama",
     "id": "proyek",
-    "text": "Buka Home. Folder dan proyek tanpa folder tampil dalam satu grid. Ketuk New Project, isi nama, lebar, dan tinggi kanvas, lalu mulai mengedit."
+    "text": "Buka Home. Folder dan proyek terbaru tampil di Recent Projects. Ketuk New Project, isi nama, lebar, dan tinggi kanvas, lalu mulai mengedit."
   },
   {
     "page": "mulai.html",
     "pageTitle": "Bab 01 / Mulai",
     "title": "Mengenal Home",
     "id": "home",
-    "text": "Home menampilkan folder dan proyek tanpa folder dalam satu grid. Kartu folder berisi cover dan jumlah proyek. Open Project mengimpor berkas .mts. Ikon gambar dan ZIP ada di bar atas. Tekan lama kartu untuk memilih beberapa proyek atau folder lalu menghapusnya."
+    "text": "Home menampilkan folder dan proyek dalam deretan Recent Projects. Kartu folder berisi cover dan jumlah proyek. Lihat semua membuka All Project dalam grid dua kolom. Open Project mengimpor berkas .mts, Import Image memilih gambar, dan ikon ZIP mengimpor arsip. Tekan lama kartu untuk memilih beberapa item."
   },
   {
     "page": "mulai.html",
@@ -39,7 +39,7 @@
     "pageTitle": "Bab 02 / Folder & ZIP",
     "title": "Folder proyek",
     "id": "folder",
-    "text": "Folder di MochiTs bersifat virtual. Buat folder lewat Kelola folder. Pindahkan proyek lewat menu tiga titik. Tekan lama kartu untuk memilih beberapa proyek atau folder sekaligus. Hapus folder tidak menghapus proyek di dalamnya."
+    "text": "Folder di MochiTs bersifat virtual. Buat folder lewat Kelola. Pindahkan proyek lewat menu tiga titik di All Project atau isi folder. Tekan lama kartu untuk memilih beberapa proyek atau folder sekaligus. Hapus folder tidak menghapus proyek di dalamnya."
   },
   {
     "page": "folder-zip.html",
