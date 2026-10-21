@@ -11,14 +11,14 @@
     "pageTitle": "Bab 01 / Mulai",
     "title": "Membuat proyek pertama",
     "id": "proyek",
-    "text": "Buka Home Semua proyek muncul di daftar, diurutkan dari yang terakhir dibuka. Folder ditampilkan sebagai chip di bagian atas. Ketuk tombol buat proyek Isi nama, lebar, dan tinggi kanvas dala"
+    "text": "Buka Home. Proyek terbaru muncul di Home, sedangkan folder tampil sebagai kartu dengan cover dan jumlah halaman. Ketuk tombol buat proyek, isi nama, lebar, dan tinggi kanvas, lalu mulai mengedit."
   },
   {
     "page": "mulai.html",
     "pageTitle": "Bab 01 / Mulai",
     "title": "Mengenal Home",
     "id": "home",
-    "text": "Home adalah pusat proyek. Beberapa elemen penting: ElemenFungsi Chip folderMenyaring proyek. Semua menampilkan seluruh proyek, Tanpa folder hanya proyek yang belum dikelompokkan. KelolaMembu"
+    "text": "Home adalah pusat proyek. Kartu folder menampilkan cover dan jumlah halaman. Tombol Open Project membuka layar semua proyek. Ikon ZIP mengimpor arsip, ikon galeri memilih banyak gambar, dan menu proyek menyediakan aksi lengkap."
   },
   {
     "page": "mulai.html",
@@ -39,7 +39,7 @@
     "pageTitle": "Bab 02 / Folder & ZIP",
     "title": "Folder proyek",
     "id": "folder",
-    "text": "Folder di MochiTs bersifat virtual: proyek tetap berupa file terpisah, hanya dikelompokkan lewat folderId. Satu proyek berada di paling banyak satu folder. Buat folder: chip Kelola di Home, "
+    "text": "Folder di MochiTs bersifat virtual. Buat folder lewat Kelola. Pindahkan proyek lewat menu tiga titik di Open Project atau folder. Ganti nama dan hapus folder dari Kelola. Kartu folder di Home menampilkan cover dan jumlah halaman."
   },
   {
     "page": "folder-zip.html",
@@ -303,9 +303,9 @@
   {
     "page": "faq.html",
     "pageTitle": "Bab 07 / FAQ",
-    "title": "ZIP dibuka dari file manager tetapi tidak terjadi apa-apa?",
+    "title": "ZIP dibuka atau dibagikan tetapi tidak terjadi apa-apa?",
     "id": "zip-dibuka-dari-file-manager-tetapi-tidak-terjadi-apa-ap",
-    "text": "MochiTs menampilkan dialog pratinjau lebih dulu; ketuk Impor. Jika dialog tidak muncul, pastikan aplikasi versi terbaru terpasang dan ZIP bertipe application/zip atau application/x-zip-compr"
+    "text": "MochiTs menampilkan dialog pratinjau lebih dulu; ketuk Impor. Jika dialog tidak muncul, pastikan aplikasi versi terbaru terpasang dan ZIP bertipe application/zip atau application/x-zip-compressed. Gunakan ikon ZIP di Home atau Buka dengan sebagai alternatif."
   },
   {
     "page": "faq.html",
