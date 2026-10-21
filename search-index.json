@@ -18,7 +18,7 @@
     "pageTitle": "Bab 01 / Mulai",
     "title": "Mengenal Home",
     "id": "home",
-    "text": "Home menampilkan folder dan proyek dalam deretan Recent Projects. Kartu folder berisi cover dan jumlah proyek. Lihat semua membuka All Project dalam grid dua kolom. Open Project mengimpor berkas .mts, Import Image memilih gambar, dan ikon ZIP mengimpor arsip. Tekan lama kartu untuk memilih beberapa item."
+    "text": "Home menampilkan folder dan proyek dalam deretan Recent Projects. Kartu folder berisi cover dan jumlah proyek. Ikon panah di kanan judul membuka All Project dalam grid dua kolom. Menu tiga titik berisi Kelola folder. Open Project mengimpor berkas .mts, Import Image memilih gambar, dan ikon ZIP mengimpor arsip. Tekan lama kartu untuk memilih beberapa item."
   },
   {
     "page": "mulai.html",
@@ -39,7 +39,7 @@
     "pageTitle": "Bab 02 / Folder & ZIP",
     "title": "Folder proyek",
     "id": "folder",
-    "text": "Folder di MochiTs bersifat virtual. Buat folder lewat Kelola. Pindahkan proyek lewat menu tiga titik di All Project atau isi folder. Tekan lama kartu untuk memilih beberapa proyek atau folder sekaligus. Hapus folder tidak menghapus proyek di dalamnya."
+    "text": "Folder di MochiTs bersifat virtual. Buat folder lewat menu tiga titik, Kelola folder. Pindahkan proyek lewat menu tiga titik di All Project atau isi folder. Tekan lama kartu untuk memilih beberapa proyek atau folder sekaligus. Hapus folder tidak menghapus proyek di dalamnya."
   },
   {
     "page": "folder-zip.html",
