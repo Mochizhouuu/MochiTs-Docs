@@ -127,7 +127,7 @@
             <a href="#folder">Folder proyek</a>
             <a href="#banyak-gambar">Impor banyak gambar</a>
             <a href="#zip">Impor ZIP</a>
-            <a href="#share">Membuka ZIP dari file manager</a>
+            <a href="#share">Membuka atau membagikan ZIP</a>
               <span class="m-toc-label">Subbagian</span>
             <a class="toc-sub" href="#batas-keamanan-impor">Batas keamanan impor</a>
             </div>
@@ -165,6 +165,21 @@
       </div>
 
       <h2 id="zip">Impor ZIP</h2>
+      <p>Ada dua cara masuk: pilih ZIP langsung dari Beranda, atau bagikan ZIP dari file manager. Untuk impor dari dalam aplikasi:</p>
+      <div class="steps">
+        <div class="step">
+          <strong>Ketuk ikon ZIP</strong>
+          <p>Di Beranda, ketuk ikon panah ke bawah di bar atas. Pemilih dokumen Android akan terbuka.</p>
+        </div>
+        <div class="step">
+          <strong>Pilih file ZIP</strong>
+          <p>Pilih satu arsip. MochiTs memetakan isi ZIP terlebih dahulu, lalu mengimpor gambar dan bundel <code>.mts</code> yang ditemukan.</p>
+        </div>
+        <div class="step">
+          <strong>Periksa hasil</strong>
+          <p>Notifikasi singkat menampilkan jumlah gambar dan proyek yang berhasil diimpor. Folder baru langsung muncul di Beranda.</p>
+        </div>
+      </div>
       <p>Struktur ZIP menentukan struktur folder. MochiTs membaca arsip dalam dua lintasan: pertama memetakan isi, lalu mengekstrak hanya file yang relevan.</p>
       <div class="table-wrap">
         <table>
@@ -191,14 +206,17 @@
         <strong>ZIP rusak atau terenkripsi.</strong> Jika arsip tidak bisa dibaca, impor dibatalkan dan dicatat sebagai gagal. Coba ekstrak ulang ZIP dengan aplikasi arsip lain, lalu impor kembali.
       </div>
 
-      <h2 id="share">Membuka ZIP dari file manager</h2>
-      <p>MochiTs terdaftar sebagai pembuka untuk <code>application/zip</code> dan <code>application/x-zip-compressed</code>. Saat ZIP dibuka dari luar:</p>
+      <h2 id="share">Membuka atau membagikan ZIP</h2>
+      <p>MochiTs terdaftar sebagai pembuka dan target bagikan untuk <code>application/zip</code> dan <code>application/x-zip-compressed</code>. Dari file manager, pilih <strong>Bagikan</strong> lalu <strong>MochiTs</strong>, atau gunakan <strong>Buka dengan</strong>. Saat ZIP masuk dari luar:</p>
       <ol>
         <li>Aplikasi menampilkan dialog pratinjau berisi nama file ZIP.</li>
         <li>Ketuk <strong>Impor</strong> untuk memproses, atau <strong>Batal</strong> untuk membatalkan.</li>
         <li>Salinan sementara di cache dihapus setelah impor atau pembatalan.</li>
       </ol>
       <p>Pratinjau ini sengaja dipakai agar ZIP tidak langsung diekstrak tanpa persetujuan. File <code>.mts</code> yang dibuka dari luar tetap langsung masuk sebagai proyek.</p>
+      <div class="callout">
+        <strong>MochiTs belum muncul di menu Bagikan?</strong> Gunakan ikon ZIP di Beranda atau pilihan <strong>Buka dengan</strong>. Pastikan aplikasi sudah versi terbaru.
+      </div>
       </div>
 
       <nav class="doc-pager" aria-label="Navigasi bab">
@@ -214,7 +232,7 @@
           <a href="#banyak-gambar">Impor banyak gambar</a>
           <a href="#zip">Impor ZIP</a>
           <a href="#batas-keamanan-impor" class="level-2">Batas keamanan impor</a>
-          <a href="#share">Membuka ZIP dari file manager</a>
+          <a href="#share">Membuka atau membagikan ZIP</a>
       </nav>
       <a class="toc-top" href="#main">Kembali ke atas ↑</a>
     </aside>

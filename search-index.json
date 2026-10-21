@@ -65,9 +65,9 @@
   {
     "page": "folder-zip.html",
     "pageTitle": "Bab 02 / Folder & ZIP",
-    "title": "Membuka ZIP dari file manager",
+    "title": "Membuka atau membagikan ZIP",
     "id": "share",
-    "text": "MochiTs terdaftar sebagai pembuka untuk application/zip dan application/x-zip-compressed. Saat ZIP dibuka dari luar: Aplikasi menampilkan dialog pratinjau berisi nama file ZIP. Ketuk Impor u"
+    "text": "MochiTs terdaftar sebagai pembuka dan target bagikan untuk application/zip dan application/x-zip-compressed. Dari file manager, pilih Bagikan lalu MochiTs, atau Buka dengan. Aplikasi menampilkan pratinjau sebelum impor."
   },
   {
     "page": "teks.html",
