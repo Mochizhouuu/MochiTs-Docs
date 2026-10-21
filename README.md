@@ -4,7 +4,7 @@ Dokumentasi pengguna untuk [MochiTs](https://github.com/Mochizhouuu/MochiTs), ed
 typeset komik Android. Ditulis dalam bahasa Indonesia dan dapat dibaca langsung di
 browser.
 
-**Situs:** https://mochits-docs.pages.dev/
+**Situs:** https://mochits.my.id/
 
 ## Isi
 
