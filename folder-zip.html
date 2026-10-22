@@ -145,7 +145,8 @@
         <li><strong>Hapus folder</strong>: proyek di dalamnya <strong>tidak dihapus</strong>, hanya kembali ke daftar Home tanpa folder.</li>
       </ul>
       <p>Home menampilkan folder dan proyek dalam deretan <strong>Recent Projects</strong>. Kartu folder berisi cover dan jumlah proyek; ketuk kartu untuk membuka isinya dalam grid tiga kolom. Ikon panah di kanan judul membuka All Project dalam grid dua kolom. Tombol <strong>Open Project</strong> di bagian bawah khusus mengimpor berkas <code>.mts</code>, <strong>Import Image</strong> membuka galeri, dan <strong>Impor ZIP</strong> ada di menu tiga titik.</p>
-      <p>Setiap kartu proyek memakai nama file gambar sebagai judul, tanpa ekstensi. Nama yang tampil di Home, All Project, dan isi folder berasal dari judul proyek yang sama.</p>
+      <p>Di <strong>All Project</strong>, setiap folder tampil sebagai satu kartu tersendiri. Isi folder hanya muncul setelah kartu folder dibuka, jadi halaman tidak tercampur dengan daftar utama. Proyek yang tidak berada di folder tampil sebagai kartu proyek di grid yang sama.</p>
+      <p>Setiap kartu proyek memakai nama file gambar sebagai judul, tanpa ekstensi. Nama yang tampil di Home, All Project, dan isi folder berasal dari judul proyek yang sama. Urutan di dalam folder mengikuti nama file secara natural, misalnya <code>2</code> sebelum <code>10</code>.</p>
 
       <h2 id="banyak-gambar">Impor banyak gambar</h2>
       <div class="steps">
@@ -188,7 +189,7 @@
           <thead><tr><th>Isi ZIP</th><th>Hasil di MochiTs</th></tr></thead>
           <tbody>
             <tr><td><code>001.jpg</code>, <code>002.jpg</code>, … di root</td><td>Proyek-proyek di dalam satu folder bernama file ZIP.</td></tr>
-            <tr><td>Subfolder <code>Ch 1/</code>, <code>Ch 2/</code></td><td>Satu folder per subfolder tingkat atas; gambar di dalamnya menjadi proyek.</td></tr>
+            <tr><td>Subfolder <code>Ch 1/</code>, <code>Ch 2/</code></td><td>Satu folder per subfolder tingkat atas; gambar di dalamnya menjadi proyek dan hanya tampil setelah foldernya dibuka.</td></tr>
             <tr><td>Campuran gambar root + subfolder</td><td>Gambar root masuk folder ZIP; setiap subfolder menjadi folder sendiri.</td></tr>
             <tr><td>Bundel <code>.mts</code></td><td>Diimpor sebagai proyek yang bisa diedit, lengkap dengan layer dan riwayatnya.</td></tr>
             <tr><td><code>__MACOSX/</code>, file tersembunyi, non-gambar</td><td>Diabaikan.</td></tr>
