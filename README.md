@@ -13,7 +13,7 @@ browser.
 | `index.html` | Beranda dan daftar bab |
 | `mulai.html` | Proyek pertama, Home, dan Editor |
 | `folder-zip.html` | Folder proyek, impor gambar, dan ZIP |
-| `teks.html` | Layer teks, font, spasi, dan inpainting |
+| `teks.html` | Layer teks, efek, blend, clipping, dan inpainting |
 | `script.html` | Format script TL, simbol, dan pemisah halaman |
 | `tester.html` | Parser script dan lab regex di browser |
 | `ekspor.html` | PNG, JPEG, WEBP, dan bundel MTS |

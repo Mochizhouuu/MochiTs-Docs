@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Teks &amp; spasi | MochiTs Docs</title>
-  <meta name="description" content="Kontrol layer teks MochiTs: font kustom, ukuran, stroke, glow, gradient, huruf vertikal, jarak huruf, dan jarak baris.">
+  <meta name="description" content="Kontrol layer teks MochiTs: font kustom, stroke, glow, gradient, blend mode, clipping mask, radial blur, texture, dan inpainting.">
   <meta name="theme-color" content="#f4efe5">
   <link rel="canonical" href="https://mochits.my.id/teks.html">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Teks &amp; spasi | MochiTs Docs">
-  <meta property="og:description" content="Kontrol layer teks MochiTs: font kustom, ukuran, stroke, glow, gradient, huruf vertikal, jarak huruf, dan jarak baris.">
+  <meta property="og:description" content="Kontrol layer teks MochiTs: font kustom, stroke, glow, gradient, blend mode, clipping mask, radial blur, texture, dan inpainting.">
   <meta property="og:url" content="https://mochits.my.id/teks.html">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -116,7 +116,7 @@
         </nav>
         <h1 id="doc-title">Teks &amp; spasi</h1>
         <p class="doc-lead">Semua yang bisa diatur pada layer teks, termasuk dua slider yang paling sering dipakai untuk merapikan balon.</p>
-        <div class="doc-meta"><span>Bab 03</span><span>5 bagian</span><span>±2 menit baca</span><span>Edisi 1.0</span></div>
+        <div class="doc-meta"><span>Bab 03</span><span>6 bagian</span><span>±3 menit baca</span><span>Edisi 1.0</span></div>
       </header>
 
         <details class="mobile-toc">
@@ -128,6 +128,7 @@
             <a href="#font">Font dan ukuran</a>
             <a href="#spasi">Jarak huruf dan jarak baris</a>
             <a href="#gaya">Warna, stroke, glow, dan gradient</a>
+            <a href="#layer">Blend, clipping, dan efek</a>
             <a href="#inpainting">Menghapus teks lama (inpainting)</a>
 
             </div>
@@ -198,13 +199,34 @@
         <li><strong>Motion blur</strong>: blur searah sudut tertentu untuk kesan gerak.</li>
       </ul>
 
+      <h2 id="layer">Blend mode, clipping mask, dan efek</h2>
+      <p>Panel <strong>Efek</strong> berlaku untuk layer teks maupun gambar. Semua perubahan tersimpan bersama proyek.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Kontrol</th><th>Fungsi</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Blend mode</strong></td><td>16 mode, dari Normal, Multiply, Screen, sampai Hue dan Luminosity. Mode menentukan cara layer menyatu dengan isi di bawahnya.</td></tr>
+            <tr><td><strong>Clipping mask</strong></td><td>Memotong layer mengikuti alpha layer dasar tepat di bawahnya. Aktifkan lewat sakelar di panel Efek atau ikon rantai di daftar layer.</td></tr>
+            <tr><td><strong>Radial blur</strong></td><td>Bagian tengah tetap tajam, tepi memutar atau memancar. Pilih mode Putar atau Zoom. Untuk gambar, atur juga pusat X dan Y.</td></tr>
+            <tr><td><strong>Texture</strong></td><td>Tambahkan Grain, Kertas, atau Kanvas. Atur kekuatan dan skala tekstur; alpha gambar tetap dipertahankan.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <ul>
+        <li>Layer paling bawah tidak bisa memakai clipping mask karena belum punya layer dasar.</li>
+        <li>Jika layer dasar disembunyikan, layer yang di-clip ikut tidak tampil.</li>
+        <li>Efek gambar yang berat diproses di latar. Pratinjau muncul setelah slider dilepas.</li>
+        <li>Blend mode dan clipping ikut diterapkan saat ekspor, bukan hanya di kanvas.</li>
+      </ul>
+
       <h2 id="inpainting">Menghapus teks lama (inpainting)</h2>
       <p>Sebelum menempel teks baru, bersihkan teks asli memakai tool seleksi:</p>
       <ul>
-        <li><strong>Brush</strong> dan <strong>Eraser</strong>: melukis/menghapus mask.</li>
+        <li><strong>Brush</strong> dan <strong>Eraser</strong>: Brush menambah area seleksi; Eraser mengurangi seleksi, bukan menghapus gambar.</li>
         <li><strong>Lasso</strong>: seleksi area bebas.</li>
         <li><strong>Magic Wand</strong>: flood fill berdasarkan toleransi warna, dengan opsi pelebaran margin (<em>expand</em>) dan invert mask.</li>
       </ul>
+      <p>Panel <strong>Hapus Objek</strong> menyediakan tombol <strong>Bersihkan</strong>, <strong>Invert Seleksi</strong>, dan <strong>Hapus Area Terpilih</strong>. Tombol hapus baru aktif setelah ada area yang dipilih.</p>
       <p>Setelah mask siap, jalankan inpainting:</p>
       <ul>
         <li><strong>Telea (OpenCV)</strong>: cepat dan sepenuhnya offline. Cocok untuk latar sederhana.</li>
@@ -228,6 +250,7 @@
           <a href="#font">Font dan ukuran</a>
           <a href="#spasi">Jarak huruf dan jarak baris</a>
           <a href="#gaya">Warna, stroke, glow, dan gradient</a>
+          <a href="#layer">Blend, clipping, dan efek</a>
           <a href="#inpainting">Menghapus teks lama (inpainting)</a>
       </nav>
       <a class="toc-top" href="#main">Kembali ke atas ↑</a>

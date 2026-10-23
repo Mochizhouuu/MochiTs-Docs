@@ -100,9 +100,16 @@
   {
     "page": "teks.html",
     "pageTitle": "Bab 03 / Teks & spasi",
+    "title": "Blend mode, clipping mask, dan efek",
+    "id": "layer",
+    "text": "Panel Efek berlaku untuk teks dan gambar. Blend mode menyediakan 16 mode dari Normal sampai Luminosity. Clipping mask memotong layer mengikuti alpha layer dasar di bawahnya; layer paling bawah tidak bisa memakainya. Radial blur menjaga pusat tetap tajam dengan mode Putar atau Zoom, dan gambar bisa mengatur pusat X dan Y. Texture menambahkan Grain, Kertas, atau Kanvas dengan pengaturan kekuatan dan skala. Blend dan clipping ikut diterapkan saat ekspor."
+  },
+  {
+    "page": "teks.html",
+    "pageTitle": "Bab 03 / Teks & spasi",
     "title": "Menghapus teks lama (inpainting)",
     "id": "inpainting",
-    "text": "Sebelum menempel teks baru, bersihkan teks asli memakai tool seleksi: Brush dan Eraser: melukis/menghapus mask. Lasso: seleksi area bebas. Magic Wand: flood fill berdasarkan toleransi warna,"
+    "text": "Sebelum menempel teks baru, bersihkan teks asli memakai tool seleksi. Brush menambah area seleksi; Eraser mengurangi seleksi, bukan menghapus gambar. Lasso membuat seleksi bebas. Magic Wand memilih area berwarna mirip. Panel Hapus Objek menyediakan Bersihkan, Invert Seleksi, dan Hapus Area Terpilih. Tombol hapus aktif setelah ada area yang dipilih."
   },
   {
     "page": "script.html",
