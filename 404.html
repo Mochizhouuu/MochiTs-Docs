@@ -4,21 +4,38 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Halaman tidak ditemukan | MochiTs Docs</title>
-  <meta name="description" content="Halaman yang dicari tidak ada, sudah dipindah, atau salah ketik alamat.">
-  <meta name="robots" content="noindex">
-  <meta name="theme-color" content="#f4efe5">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <meta name="description" content="Halaman yang dicari tidak ada, sudah dipindah, atau salah ketik alamatnya.">
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#f7f9ff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0f141d" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="assets/icon-48.png" sizes="48x48" type="image/png">
+  <link rel="icon" href="assets/icon-192.png" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=JetBrains+Mono:wght@400;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <script>
+    (function () {
+      var theme = "light";
+      try {
+        var saved = localStorage.getItem("mochits-theme");
+        if (saved === "dark" || saved === "light") theme = saved;
+        else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) theme = "dark";
+      } catch (error) { /* penyimpanan diblokir */ }
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body class="error">
   <a class="skip-link" href="#main">Lewati ke konten</a>
+
   <header class="site-header">
     <div class="header-in">
-      <a class="brand" href="index.html" aria-label="MochiTs Docs">
-        <span class="brand-mark" aria-hidden="true">M</span>
+      <a class="brand" href="index.html" aria-label="MochiTs Docs, beranda">
+        <img class="brand-logo" src="assets/logo-mark.png" alt="" width="34" height="34">
         <span class="brand-word">Mochi<span>Ts</span></span>
         <span class="brand-tag">Docs</span>
       </a>
@@ -30,11 +47,18 @@
       </nav>
       <div class="header-tools">
         <button class="search-btn" type="button" aria-label="Cari dokumentasi">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>
           <span>Cari</span>
           <kbd>/</kbd>
         </button>
-        <a class="header-link" href="https://github.com/Mochizhouuu/MochiTs" target="_blank" rel="noopener">GitHub</a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Aktifkan mode gelap" title="Mode gelap">
+          <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3a6.5 6.5 0 0 0 9.8 9.8Z"></path></svg>
+          <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>
+        </button>
+        <a class="header-link" href="https://github.com/Mochizhouuu/MochiTs" target="_blank" rel="noopener" aria-label="MochiTs di GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .7a11.3 11.3 0 0 0-3.6 22c.6.1.8-.3.8-.6v-2.2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.2-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11 11 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.9 1.2 1.9 1.2 3.2 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.3 11.3 0 0 0 12 .7Z"></path></svg>
+          <span>GitHub</span>
+        </a>
         <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Buka menu">
           <span class="menu-btn-lines" aria-hidden="true"></span>
         </button>
@@ -45,15 +69,15 @@
 
   <div class="site-menu" id="site-menu" hidden>
     <div class="site-menu-in">
-      <nav class="menu-group" aria-label="Isi manual">
-        <div class="menu-label">Isi manual</div>
-        <a href="mulai.html"><span class="no">01</span><span>Mulai</span><span class="desc">Pasang, buat proyek, kenali kanvas.</span></a>
-        <a href="folder-zip.html"><span class="no">02</span><span>Folder &amp; ZIP</span><span class="desc">Rapikan proyek dan impor satu chapter.</span></a>
-        <a href="teks.html"><span class="no">03</span><span>Teks &amp; spasi</span><span class="desc">Font, warna, stroke, jarak huruf dan baris.</span></a>
-        <a href="script.html"><span class="no">04</span><span>Script TL</span><span class="desc">Ubah naskah terjemahan jadi antrean balon.</span></a>
-        <a href="tester.html"><span class="no">05</span><span>Tester</span><span class="desc">Uji parser dan regex langsung di browser.</span></a>
-        <a href="ekspor.html"><span class="no">06</span><span>Ekspor</span><span class="desc">PNG, JPEG, WEBP, atau bundel proyek.</span></a>
-        <a href="faq.html"><span class="no">07</span><span>FAQ</span><span class="desc">Jawaban singkat untuk masalah umum.</span></a>
+      <nav class="menu-group" aria-label="Isi panduan">
+        <div class="menu-label">Isi panduan</div>
+        <a href="mulai.html"><span class="no">01</span><span>Mulai</span><span class="desc">Pasang aplikasi, buat proyek, kenali layar editor.</span></a>
+        <a href="folder-zip.html"><span class="no">02</span><span>Folder &amp; ZIP</span><span class="desc">Rapikan proyek dan impor satu chapter sekaligus.</span></a>
+        <a href="teks.html"><span class="no">03</span><span>Teks &amp; spasi</span><span class="desc">Huruf, warna, efek, dan cara membersihkan balon.</span></a>
+        <a href="script.html"><span class="no">04</span><span>Script TL</span><span class="desc">Ubah naskah terjemahan menjadi daftar balon.</span></a>
+        <a href="tester.html"><span class="no">05</span><span>Tester</span><span class="desc">Coba naskah dan pemisah halaman langsung di browser.</span></a>
+        <a href="ekspor.html"><span class="no">06</span><span>Ekspor</span><span class="desc">Simpan gambar jadi atau file proyek yang bisa diedit.</span></a>
+        <a href="faq.html"><span class="no">07</span><span>FAQ</span><span class="desc">Jawaban singkat untuk masalah yang sering muncul.</span></a>
       </nav>
       <div class="menu-foot">
         <button class="search-wide" type="button" aria-label="Buka pencarian">
@@ -62,7 +86,7 @@
         </button>
         <a href="https://github.com/Mochizhouuu/MochiTs" target="_blank" rel="noopener">Kode aplikasi di GitHub</a>
         <a href="https://github.com/Mochizhouuu/MochiTs-Docs" target="_blank" rel="noopener">Sumber dokumentasi</a>
-        <p class="menu-note">Semua halaman bisa dibaca tanpa akun. Proyek tetap tersimpan di perangkatmu.</p>
+        <p class="menu-note">Semua halaman bisa dibaca tanpa akun. Proyekmu tetap tersimpan di perangkat.</p>
       </div>
     </div>
   </div>
@@ -70,7 +94,7 @@
   <div class="search-overlay" id="search-overlay" hidden>
     <div class="search-box" role="dialog" aria-modal="true" aria-labelledby="search-title">
       <div class="search-head">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>
         <h2 class="visually-hidden" id="search-title">Cari dokumentasi</h2>
         <input id="search-input" type="search" aria-label="Cari dokumentasi" placeholder="Cari bab, fitur, atau masalah..." autocomplete="off" spellcheck="false">
         <button class="search-close" type="button" data-search-close aria-label="Tutup pencarian">Esc</button>
@@ -83,21 +107,20 @@
     </div>
   </div>
 
-
   <main class="wrap error-page" id="main">
-    <span class="eyebrow">Error 404 / Halaman hilang</span>
+    <span class="eyebrow">Error 404 · Halaman tidak ditemukan</span>
     <h1>Balon ini <em>kosong.</em></h1>
-    <p>Alamat yang kamu buka tidak ada, sudah dipindah, atau salah ketik. Coba kembali ke daftar bab atau buka panduan dari awal.</p>
+    <p>Alamat yang kamu buka tidak ada, sudah dipindah, atau salah ketik. Kembali ke daftar bab, atau buka panduan dari awal.</p>
     <div class="actions">
       <a class="btn btn-primary" href="index.html">Kembali ke beranda</a>
-      <a class="btn btn-ghost" href="mulai.html">Baca Bab 01</a>
+      <a class="btn btn-ghost" href="mulai.html">Baca bab 01</a>
     </div>
   </main>
 
   <footer class="site-footer">
     <div class="wrap">
       <div class="footer-in">
-        <div class="footer-brand">MochiTs <span>Manual pengguna</span></div>
+        <div class="footer-brand"><img src="assets/logo-mark.png" alt="" width="26" height="26">MochiTs <span>Panduan pengguna</span></div>
         <div class="footer-links">
           <a href="index.html">Beranda</a>
           <a href="mulai.html">Mulai</a>
@@ -107,7 +130,7 @@
         </div>
       </div>
       <div class="footer-note">
-        <span>Dokumentasi edisi 1.0 / Bahasa Indonesia</span>
+        <span>Dokumentasi edisi 1.0 · Bahasa Indonesia</span>
         <span>Dibuat untuk Android 10+</span>
       </div>
     </div>

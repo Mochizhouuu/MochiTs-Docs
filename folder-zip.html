@@ -3,26 +3,81 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Folder &amp; impor ZIP | MochiTs Docs</title>
-  <meta name="description" content="Kelola folder proyek, impor banyak gambar sekaligus, dan impor ZIP berisi halaman atau subfolder di MochiTs.">
-  <meta name="theme-color" content="#f4efe5">
+  <title>Folder & impor ZIP | MochiTs Docs</title>
+  <meta name="description" content="Mengelola folder proyek, mengimpor banyak gambar, dan memasukkan satu chapter lewat file ZIP di MochiTs.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f7f9ff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0f141d" media="(prefers-color-scheme: dark)">
   <link rel="canonical" href="https://mochits.my.id/folder-zip.html">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Folder &amp; impor ZIP | MochiTs Docs">
-  <meta property="og:description" content="Kelola folder proyek, impor banyak gambar sekaligus, dan impor ZIP berisi halaman atau subfolder di MochiTs.">
+  <meta property="og:site_name" content="MochiTs Docs">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:title" content="Folder & impor ZIP | MochiTs Docs">
+  <meta property="og:description" content="Mengelola folder proyek, mengimpor banyak gambar, dan memasukkan satu chapter lewat file ZIP di MochiTs.">
   <meta property="og:url" content="https://mochits.my.id/folder-zip.html">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <meta property="og:image" content="https://mochits.my.id/assets/og-cover.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Logo MochiTs dan tulisan Panduan MochiTs">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Folder & impor ZIP | MochiTs Docs">
+  <meta name="twitter:description" content="Mengelola folder proyek, mengimpor banyak gambar, dan memasukkan satu chapter lewat file ZIP di MochiTs.">
+  <meta name="twitter:image" content="https://mochits.my.id/assets/og-cover.png">
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="assets/icon-48.png" sizes="48x48" type="image/png">
+  <link rel="icon" href="assets/icon-192.png" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=JetBrains+Mono:wght@400;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <script>
+    (function () {
+      var theme = "light";
+      try {
+        var saved = localStorage.getItem("mochits-theme");
+        if (saved === "dark" || saved === "light") theme = saved;
+        else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) theme = "dark";
+      } catch (error) { /* penyimpanan diblokir */ }
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
   <link rel="stylesheet" href="assets/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+            {
+        "@type": "TechArticle",
+        "@id": "https://mochits.my.id/folder-zip.html#article",
+        "headline": "Folder & impor ZIP | MochiTs Docs",
+        "description": "Mengelola folder proyek, mengimpor banyak gambar, dan memasukkan satu chapter lewat file ZIP di MochiTs.",
+        "url": "https://mochits.my.id/folder-zip.html",
+        "mainEntityOfPage": "https://mochits.my.id/folder-zip.html",
+        "inLanguage": "id",
+        "isPartOf": { "@id": "https://mochits.my.id/#website" },
+        "author": { "@type": "Organization", "name": "MochiTs" },
+        "publisher": { "@type": "Organization", "name": "MochiTs", "logo": { "@type": "ImageObject", "url": "https://mochits.my.id/assets/icon-512.png" } },
+        "datePublished": "2026-10-20",
+        "dateModified": "2026-10-24"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://mochits.my.id/" },
+          { "@type": "ListItem", "position": 2, "name": "Folder & ZIP", "item": "https://mochits.my.id/folder-zip.html" }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="has-progress" data-page="folder-zip.html">
   <a class="skip-link" href="#main">Lewati ke konten</a>
   <header class="site-header">
     <div class="header-in">
-      <a class="brand" href="index.html" aria-label="MochiTs Docs">
-        <span class="brand-mark" aria-hidden="true">M</span>
+      <a class="brand" href="index.html" aria-label="MochiTs Docs, beranda">
+        <img class="brand-logo" src="assets/logo-mark.png" alt="" width="34" height="34">
         <span class="brand-word">Mochi<span>Ts</span></span>
         <span class="brand-tag">Docs</span>
       </a>
@@ -34,11 +89,18 @@
       </nav>
       <div class="header-tools">
         <button class="search-btn" type="button" aria-label="Cari dokumentasi">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>
           <span>Cari</span>
           <kbd>/</kbd>
         </button>
-        <a class="header-link" href="https://github.com/Mochizhouuu/MochiTs" target="_blank" rel="noopener">GitHub</a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Aktifkan mode gelap" title="Mode gelap">
+          <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3a6.5 6.5 0 0 0 9.8 9.8Z"></path></svg>
+          <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>
+        </button>
+        <a class="header-link" href="https://github.com/Mochizhouuu/MochiTs" target="_blank" rel="noopener" aria-label="MochiTs di GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .7a11.3 11.3 0 0 0-3.6 22c.6.1.8-.3.8-.6v-2.2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.2-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11 11 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.9 1.2 1.9 1.2 3.2 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.3 11.3 0 0 0 12 .7Z"></path></svg>
+          <span>GitHub</span>
+        </a>
         <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Buka menu">
           <span class="menu-btn-lines" aria-hidden="true"></span>
         </button>
@@ -49,15 +111,15 @@
 
   <div class="site-menu" id="site-menu" hidden>
     <div class="site-menu-in">
-      <nav class="menu-group" aria-label="Isi manual">
-        <div class="menu-label">Isi manual</div>
-        <a href="mulai.html"><span class="no">01</span><span>Mulai</span><span class="desc">Pasang, buat proyek, kenali kanvas.</span></a>
-        <a href="folder-zip.html" aria-current="page"><span class="no">02</span><span>Folder &amp; ZIP</span><span class="desc">Rapikan proyek dan impor satu chapter.</span></a>
-        <a href="teks.html"><span class="no">03</span><span>Teks &amp; spasi</span><span class="desc">Font, warna, stroke, jarak huruf dan baris.</span></a>
-        <a href="script.html"><span class="no">04</span><span>Script TL</span><span class="desc">Ubah naskah terjemahan jadi antrean balon.</span></a>
-        <a href="tester.html"><span class="no">05</span><span>Tester</span><span class="desc">Uji parser dan regex langsung di browser.</span></a>
-        <a href="ekspor.html"><span class="no">06</span><span>Ekspor</span><span class="desc">PNG, JPEG, WEBP, atau bundel proyek.</span></a>
-        <a href="faq.html"><span class="no">07</span><span>FAQ</span><span class="desc">Jawaban singkat untuk masalah umum.</span></a>
+      <nav class="menu-group" aria-label="Isi panduan">
+        <div class="menu-label">Isi panduan</div>
+        <a href="mulai.html"><span class="no">01</span><span>Mulai</span><span class="desc">Pasang aplikasi, buat proyek, kenali layar editor.</span></a>
+        <a href="folder-zip.html" aria-current="page"><span class="no">02</span><span>Folder &amp; ZIP</span><span class="desc">Rapikan proyek dan impor satu chapter sekaligus.</span></a>
+        <a href="teks.html"><span class="no">03</span><span>Teks &amp; spasi</span><span class="desc">Huruf, warna, efek, dan cara membersihkan balon.</span></a>
+        <a href="script.html"><span class="no">04</span><span>Script TL</span><span class="desc">Ubah naskah terjemahan menjadi daftar balon.</span></a>
+        <a href="tester.html"><span class="no">05</span><span>Tester</span><span class="desc">Coba naskah dan pemisah halaman langsung di browser.</span></a>
+        <a href="ekspor.html"><span class="no">06</span><span>Ekspor</span><span class="desc">Simpan gambar jadi atau file proyek yang bisa diedit.</span></a>
+        <a href="faq.html"><span class="no">07</span><span>FAQ</span><span class="desc">Jawaban singkat untuk masalah yang sering muncul.</span></a>
       </nav>
       <div class="menu-foot">
         <button class="search-wide" type="button" aria-label="Buka pencarian">
@@ -66,7 +128,7 @@
         </button>
         <a href="https://github.com/Mochizhouuu/MochiTs" target="_blank" rel="noopener">Kode aplikasi di GitHub</a>
         <a href="https://github.com/Mochizhouuu/MochiTs-Docs" target="_blank" rel="noopener">Sumber dokumentasi</a>
-        <p class="menu-note">Semua halaman bisa dibaca tanpa akun. Proyek tetap tersimpan di perangkatmu.</p>
+        <p class="menu-note">Semua halaman bisa dibaca tanpa akun. Proyekmu tetap tersimpan di perangkat.</p>
       </div>
     </div>
   </div>
@@ -136,7 +198,7 @@
 
       <div class="doc-body">
 <h2 id="folder">Folder proyek</h2>
-      <p>Folder di MochiTs bersifat virtual: proyek tetap berupa file terpisah, hanya dikelompokkan lewat <code>folderId</code>. Satu proyek berada di paling banyak satu folder.</p>
+      <p>Folder di MochiTs hanya untuk merapikan tampilan. File setiap proyek tetap terpisah, dan satu proyek hanya berada di satu folder.</p>
       <ul>
         <li><strong>Buat folder</strong>: buka menu tiga titik di Home, pilih <em>Kelola folder</em>, lalu tambahkan nama folder. Nama yang sudah dipakai akan diberi akhiran otomatis, misalnya <code>Chapter 1 (2)</code>.</li>
         <li><strong>Pindahkan proyek</strong>: buka <em>All Project</em> atau isi folder, tekan lama proyek, buka menu tiga titik di bar atas, pilih <em>Pindahkan ke folder</em>, lalu tentukan folder atau <em>Tanpa folder</em>.</li>
@@ -152,7 +214,7 @@
       <div class="steps">
         <div class="step">
           <strong>Ketuk Import Image</strong>
-          <p>Picker Android terbuka. Pilih hingga 100 gambar sekaligus (batas dari aplikasi).</p>
+          <p>Pemilih gambar Android akan terbuka. Pilih hingga 100 gambar sekaligus (batas dari aplikasi).</p>
         </div>
         <div class="step">
           <strong>Folder otomatis</strong>
@@ -164,7 +226,7 @@
         </div>
       </div>
       <div class="callout">
-        <strong>Fallback picker.</strong> Jika pemilih galeri tidak tersedia, MochiTs memakai pemilih dokumen Android. Hasilnya sama.
+        <strong>Jika galeri tidak tersedia.</strong> MochiTs memakai pemilih file bawaan Android. Hasilnya sama.
       </div>
 
       <h2 id="zip">Impor ZIP</h2>
@@ -176,47 +238,47 @@
         </div>
         <div class="step">
           <strong>Pilih file ZIP</strong>
-          <p>Pilih satu arsip. MochiTs memetakan isi ZIP terlebih dahulu, lalu mengimpor gambar dan bundel <code>.mts</code> yang ditemukan.</p>
+          <p>Pilih satu file ZIP. MochiTs memeriksa isinya lebih dulu, lalu mengimpor gambar dan file proyek <code>.mts</code> yang ditemukan.</p>
         </div>
         <div class="step">
           <strong>Periksa hasil</strong>
           <p>Notifikasi singkat menampilkan jumlah gambar dan proyek yang berhasil diimpor. Folder baru langsung muncul di Beranda.</p>
         </div>
       </div>
-      <p>Struktur ZIP menentukan struktur folder. MochiTs membaca arsip dalam dua lintasan: pertama memetakan isi, lalu mengekstrak hanya file yang relevan.</p>
+      <p>Susunan folder di dalam ZIP menjadi susunan folder di MochiTs. Aplikasi membaca daftar isi ZIP lebih dulu, lalu hanya mengambil gambar dan file proyek yang diperlukan.</p>
       <div class="table-wrap">
         <table>
           <thead><tr><th>Isi ZIP</th><th>Hasil di MochiTs</th></tr></thead>
           <tbody>
-            <tr><td><code>001.jpg</code>, <code>002.jpg</code>, … di root</td><td>Proyek-proyek di dalam satu folder bernama file ZIP.</td></tr>
-            <tr><td>Subfolder <code>Ch 1/</code>, <code>Ch 2/</code></td><td>Satu folder per subfolder tingkat atas; gambar di dalamnya menjadi proyek dan hanya tampil setelah foldernya dibuka.</td></tr>
-            <tr><td>Campuran gambar root + subfolder</td><td>Gambar root masuk folder ZIP; setiap subfolder menjadi folder sendiri.</td></tr>
-            <tr><td>Bundel <code>.mts</code></td><td>Diimpor sebagai proyek yang bisa diedit, lengkap dengan layer dan riwayatnya.</td></tr>
+            <tr><td><code>001.jpg</code>, <code>002.jpg</code>, … di luar folder</td><td>Proyek-proyek di dalam satu folder bernama file ZIP.</td></tr>
+            <tr><td>Folder di dalam ZIP, misalnya <code>Ch 1/</code></td><td>Satu folder untuk setiap folder di dalam ZIP. Gambar di dalamnya menjadi proyek dan baru tampil setelah foldernya dibuka.</td></tr>
+            <tr><td>Gambar di luar folder + folder</td><td>Gambar yang berada di luar folder masuk ke folder ZIP. Setiap folder di dalamnya menjadi folder sendiri.</td></tr>
+            <tr><td>File proyek <code>.mts</code></td><td>Diimpor sebagai proyek yang bisa diedit, lengkap dengan lapisan dan riwayat perubahannya.</td></tr>
             <tr><td><code>__MACOSX/</code>, file tersembunyi, non-gambar</td><td>Diabaikan.</td></tr>
           </tbody>
         </table>
       </div>
-      <p>Urutan halaman di dalam satu folder mengikuti <em>natural sort</em>: <code>2</code> sebelum <code>10</code>, dan nama file dinormalisasi menjadi judul proyek.</p>
+      <p>Urutan halaman mengikuti nama file secara alami: <code>2</code> muncul sebelum <code>10</code>. Nama file tanpa ekstensi dipakai sebagai judul proyek.</p>
 
       <h3 id="batas-keamanan-impor">Batas keamanan impor</h3>
       <ul>
-        <li>Maksimal <strong>300 item</strong> diimpor dan <strong>5.000 entri</strong> dipindai per ZIP.</li>
-        <li>Maksimal <strong>64 MB per entri</strong> dan <strong>512 MB total</strong> data yang diekstrak.</li>
-        <li>Path dengan <code>..</code> (traversal) serta file tersembunyi tidak diproses.</li>
-        <li>File sementara di cache dihapus setelah setiap entri selesai diimpor.</li>
+        <li>Maksimal <strong>300 file</strong> diimpor dan <strong>5.000 isi ZIP</strong> diperiksa untuk setiap file ZIP.</li>
+        <li>Maksimal <strong>64 MB per file</strong> dan <strong>512 MB total</strong> untuk data yang dibuka dari ZIP.</li>
+        <li>Alamat folder yang mencoba keluar dari ZIP (mengandung <code>..</code>) dan file tersembunyi tidak diproses.</li>
+        <li>File sementara dihapus setelah setiap file selesai diimpor.</li>
       </ul>
       <div class="callout warn">
-        <strong>ZIP rusak atau terenkripsi.</strong> Jika arsip tidak bisa dibaca, impor dibatalkan dan dicatat sebagai gagal. Coba ekstrak ulang ZIP dengan aplikasi arsip lain, lalu impor kembali.
+        <strong>ZIP rusak atau terkunci.</strong> Kalau file ZIP tidak bisa dibaca, impor dibatalkan dan dicatat sebagai gagal. Coba buka ulang ZIP dengan aplikasi lain, lalu impor kembali.
       </div>
 
       <h2 id="share">Membuka atau membagikan ZIP</h2>
-      <p>MochiTs terdaftar sebagai pembuka dan target bagikan untuk <code>application/zip</code> dan <code>application/x-zip-compressed</code>. Dari file manager, pilih <strong>Bagikan</strong> lalu <strong>MochiTs</strong>, atau gunakan <strong>Buka dengan</strong>. Saat ZIP masuk dari luar:</p>
+      <p>MochiTs bisa menerima file ZIP dari aplikasi lain. Di aplikasi File, pilih <strong>Bagikan</strong> lalu <strong>MochiTs</strong>, atau gunakan <strong>Buka dengan</strong>. Saat ZIP masuk dari luar:</p>
       <ol>
         <li>Aplikasi menampilkan dialog pratinjau berisi nama file ZIP.</li>
         <li>Ketuk <strong>Impor</strong> untuk memproses, atau <strong>Batal</strong> untuk membatalkan.</li>
-        <li>Salinan sementara di cache dihapus setelah impor atau pembatalan.</li>
+        <li>Salinan sementara dihapus setelah impor atau pembatalan.</li>
       </ol>
-      <p>Pratinjau ini sengaja dipakai agar ZIP tidak langsung diekstrak tanpa persetujuan. File <code>.mts</code> yang dibuka dari luar tetap langsung masuk sebagai proyek.</p>
+      <p>Pratinjau ini memastikan ZIP tidak langsung dibuka tanpa persetujuanmu. File <code>.mts</code> yang dibuka dari luar tetap langsung masuk sebagai proyek.</p>
       <div class="callout">
         <strong>MochiTs belum muncul di menu Bagikan?</strong> Gunakan menu tiga titik di Beranda, pilih <em>Impor ZIP</em>, atau pakai pilihan <strong>Buka dengan</strong>. Pastikan aplikasi sudah versi terbaru.
       </div>
@@ -244,7 +306,7 @@
   <footer class="site-footer">
     <div class="wrap">
       <div class="footer-in">
-        <div class="footer-brand">MochiTs <span>Manual pengguna</span></div>
+        <div class="footer-brand"><img src="assets/logo-mark.png" alt="" width="26" height="26">MochiTs <span>Panduan pengguna</span></div>
         <div class="footer-links">
           <a href="index.html">Beranda</a>
           <a href="mulai.html">Mulai</a>
@@ -254,7 +316,7 @@
         </div>
       </div>
       <div class="footer-note">
-        <span>Dokumentasi edisi 1.0 / Bahasa Indonesia</span>
+        <span>Dokumentasi edisi 1.0 · Bahasa Indonesia</span>
         <span>Dibuat untuk Android 10+</span>
       </div>
     </div>

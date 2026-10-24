@@ -3,26 +3,81 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Teks &amp; spasi | MochiTs Docs</title>
-  <meta name="description" content="Kontrol layer teks MochiTs: font kustom, stroke, glow, gradient, blend mode, clipping mask, radial blur, texture, dan inpainting.">
-  <meta name="theme-color" content="#f4efe5">
+  <title>Teks, font, dan efek | MochiTs Docs</title>
+  <meta name="description" content="Panduan mengatur huruf, warna, jarak baris, efek lapisan, clipping mask, dan menghapus teks lama di MochiTs.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f7f9ff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0f141d" media="(prefers-color-scheme: dark)">
   <link rel="canonical" href="https://mochits.my.id/teks.html">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Teks &amp; spasi | MochiTs Docs">
-  <meta property="og:description" content="Kontrol layer teks MochiTs: font kustom, stroke, glow, gradient, blend mode, clipping mask, radial blur, texture, dan inpainting.">
+  <meta property="og:site_name" content="MochiTs Docs">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:title" content="Teks, font, dan efek | MochiTs Docs">
+  <meta property="og:description" content="Panduan mengatur huruf, warna, jarak baris, efek lapisan, clipping mask, dan menghapus teks lama di MochiTs.">
   <meta property="og:url" content="https://mochits.my.id/teks.html">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <meta property="og:image" content="https://mochits.my.id/assets/og-cover.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Logo MochiTs dan tulisan Panduan MochiTs">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Teks, font, dan efek | MochiTs Docs">
+  <meta name="twitter:description" content="Panduan mengatur huruf, warna, jarak baris, efek lapisan, clipping mask, dan menghapus teks lama di MochiTs.">
+  <meta name="twitter:image" content="https://mochits.my.id/assets/og-cover.png">
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="assets/icon-48.png" sizes="48x48" type="image/png">
+  <link rel="icon" href="assets/icon-192.png" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=JetBrains+Mono:wght@400;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <script>
+    (function () {
+      var theme = "light";
+      try {
+        var saved = localStorage.getItem("mochits-theme");
+        if (saved === "dark" || saved === "light") theme = saved;
+        else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) theme = "dark";
+      } catch (error) { /* penyimpanan diblokir */ }
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
   <link rel="stylesheet" href="assets/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+            {
+        "@type": "TechArticle",
+        "@id": "https://mochits.my.id/teks.html#article",
+        "headline": "Teks, font, dan efek | MochiTs Docs",
+        "description": "Panduan mengatur huruf, warna, jarak baris, efek lapisan, clipping mask, dan menghapus teks lama di MochiTs.",
+        "url": "https://mochits.my.id/teks.html",
+        "mainEntityOfPage": "https://mochits.my.id/teks.html",
+        "inLanguage": "id",
+        "isPartOf": { "@id": "https://mochits.my.id/#website" },
+        "author": { "@type": "Organization", "name": "MochiTs" },
+        "publisher": { "@type": "Organization", "name": "MochiTs", "logo": { "@type": "ImageObject", "url": "https://mochits.my.id/assets/icon-512.png" } },
+        "datePublished": "2026-10-20",
+        "dateModified": "2026-10-24"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://mochits.my.id/" },
+          { "@type": "ListItem", "position": 2, "name": "Teks & spasi", "item": "https://mochits.my.id/teks.html" }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="has-progress" data-page="teks.html">
   <a class="skip-link" href="#main">Lewati ke konten</a>
   <header class="site-header">
     <div class="header-in">
-      <a class="brand" href="index.html" aria-label="MochiTs Docs">
-        <span class="brand-mark" aria-hidden="true">M</span>
+      <a class="brand" href="index.html" aria-label="MochiTs Docs, beranda">
+        <img class="brand-logo" src="assets/logo-mark.png" alt="" width="34" height="34">
         <span class="brand-word">Mochi<span>Ts</span></span>
         <span class="brand-tag">Docs</span>
       </a>
@@ -34,11 +89,18 @@
       </nav>
       <div class="header-tools">
         <button class="search-btn" type="button" aria-label="Cari dokumentasi">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>
           <span>Cari</span>
           <kbd>/</kbd>
         </button>
-        <a class="header-link" href="https://github.com/Mochizhouuu/MochiTs" target="_blank" rel="noopener">GitHub</a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Aktifkan mode gelap" title="Mode gelap">
+          <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3a6.5 6.5 0 0 0 9.8 9.8Z"></path></svg>
+          <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>
+        </button>
+        <a class="header-link" href="https://github.com/Mochizhouuu/MochiTs" target="_blank" rel="noopener" aria-label="MochiTs di GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .7a11.3 11.3 0 0 0-3.6 22c.6.1.8-.3.8-.6v-2.2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.2-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11 11 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.9 1.2 1.9 1.2 3.2 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.3 11.3 0 0 0 12 .7Z"></path></svg>
+          <span>GitHub</span>
+        </a>
         <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Buka menu">
           <span class="menu-btn-lines" aria-hidden="true"></span>
         </button>
@@ -49,15 +111,15 @@
 
   <div class="site-menu" id="site-menu" hidden>
     <div class="site-menu-in">
-      <nav class="menu-group" aria-label="Isi manual">
-        <div class="menu-label">Isi manual</div>
-        <a href="mulai.html"><span class="no">01</span><span>Mulai</span><span class="desc">Pasang, buat proyek, kenali kanvas.</span></a>
-        <a href="folder-zip.html"><span class="no">02</span><span>Folder &amp; ZIP</span><span class="desc">Rapikan proyek dan impor satu chapter.</span></a>
-        <a href="teks.html" aria-current="page"><span class="no">03</span><span>Teks &amp; spasi</span><span class="desc">Font, warna, stroke, jarak huruf dan baris.</span></a>
-        <a href="script.html"><span class="no">04</span><span>Script TL</span><span class="desc">Ubah naskah terjemahan jadi antrean balon.</span></a>
-        <a href="tester.html"><span class="no">05</span><span>Tester</span><span class="desc">Uji parser dan regex langsung di browser.</span></a>
-        <a href="ekspor.html"><span class="no">06</span><span>Ekspor</span><span class="desc">PNG, JPEG, WEBP, atau bundel proyek.</span></a>
-        <a href="faq.html"><span class="no">07</span><span>FAQ</span><span class="desc">Jawaban singkat untuk masalah umum.</span></a>
+      <nav class="menu-group" aria-label="Isi panduan">
+        <div class="menu-label">Isi panduan</div>
+        <a href="mulai.html"><span class="no">01</span><span>Mulai</span><span class="desc">Pasang aplikasi, buat proyek, kenali layar editor.</span></a>
+        <a href="folder-zip.html"><span class="no">02</span><span>Folder &amp; ZIP</span><span class="desc">Rapikan proyek dan impor satu chapter sekaligus.</span></a>
+        <a href="teks.html" aria-current="page"><span class="no">03</span><span>Teks &amp; spasi</span><span class="desc">Huruf, warna, efek, dan cara membersihkan balon.</span></a>
+        <a href="script.html"><span class="no">04</span><span>Script TL</span><span class="desc">Ubah naskah terjemahan menjadi daftar balon.</span></a>
+        <a href="tester.html"><span class="no">05</span><span>Tester</span><span class="desc">Coba naskah dan pemisah halaman langsung di browser.</span></a>
+        <a href="ekspor.html"><span class="no">06</span><span>Ekspor</span><span class="desc">Simpan gambar jadi atau file proyek yang bisa diedit.</span></a>
+        <a href="faq.html"><span class="no">07</span><span>FAQ</span><span class="desc">Jawaban singkat untuk masalah yang sering muncul.</span></a>
       </nav>
       <div class="menu-foot">
         <button class="search-wide" type="button" aria-label="Buka pencarian">
@@ -66,7 +128,7 @@
         </button>
         <a href="https://github.com/Mochizhouuu/MochiTs" target="_blank" rel="noopener">Kode aplikasi di GitHub</a>
         <a href="https://github.com/Mochizhouuu/MochiTs-Docs" target="_blank" rel="noopener">Sumber dokumentasi</a>
-        <p class="menu-note">Semua halaman bisa dibaca tanpa akun. Proyek tetap tersimpan di perangkatmu.</p>
+        <p class="menu-note">Semua halaman bisa dibaca tanpa akun. Proyekmu tetap tersimpan di perangkat.</p>
       </div>
     </div>
   </div>
@@ -114,8 +176,8 @@
         <nav class="breadcrumb" aria-label="Breadcrumb">
           <a href="index.html">Manual</a><span class="sep">/</span><span>Teks &amp; spasi</span>
         </nav>
-        <h1 id="doc-title">Teks &amp; spasi</h1>
-        <p class="doc-lead">Semua yang bisa diatur pada layer teks, termasuk dua slider yang paling sering dipakai untuk merapikan balon.</p>
+        <h1 id="doc-title">Teks, huruf, dan efek</h1>
+        <p class="doc-lead">Cara mengatur huruf, warna, jarak, dan efek pada teks. Semua dijelaskan dari sudut pandang pengguna, bukan istilah teknis.</p>
         <div class="doc-meta"><span>Bab 03</span><span>6 bagian</span><span>±3 menit baca</span><span>Edisi 1.0</span></div>
       </header>
 
@@ -128,7 +190,7 @@
             <a href="#font">Font dan ukuran</a>
             <a href="#spasi">Jarak huruf dan jarak baris</a>
             <a href="#gaya">Warna, stroke, glow, dan gradient</a>
-            <a href="#layer">Blend, clipping, dan efek</a>
+            <a href="#layer">Blend, clipping, dan Effect</a>
             <a href="#inpainting">Menghapus teks lama (inpainting)</a>
 
             </div>
@@ -138,102 +200,108 @@
       <div class="doc-body">
 <h2 id="dasar">Membuat dan mengedit teks</h2>
       <ul>
-        <li>Pilih alat teks di toolbar, lalu ketuk kanvas untuk membuat layer baru.</li>
-        <li>Ketuk dua kali layer teks untuk membuka editor isi.</li>
-        <li>Layer teks punya bentuk <strong>BOX</strong> (kotak) atau <strong>OVAL</strong>; pilihan bentuk memengaruhi area pembungkusan baris.</li>
-        <li>Teks dibungkus ulang (reflow) saat lebar kotak berubah, dengan dukungan hyphenation Indonesia dan Inggris.</li>
+        <li>Pilih alat teks di toolbar, lalu ketuk kanvas untuk membuat kotak teks baru.</li>
+        <li>Ketuk dua kali kotak teks untuk membuka editor isinya.</li>
+        <li>Ada dua bentuk kotak: <strong>BOX</strong> (kotak) dan <strong>OVAL</strong> (bulat). Bentuk ini menentukan bagaimana teks turun baris.</li>
+        <li>Saat lebar kotak diubah, teks otomatis ditata ulang dan dipotong per suku kata bila perlu, baik untuk bahasa Indonesia maupun Inggris.</li>
       </ul>
+      <div class="callout">
+        <strong>Istilah singkat.</strong> Di aplikasi, <em>layer</em> berarti lapisan gambar atau teks. <em>Area seleksi</em> berarti bagian gambar yang kamu tandai untuk dihapus atau diubah.
+      </div>
 
       <h2 id="font">Font dan ukuran</h2>
-      <p>Font bawaan bisa diganti lewat panel teks. Untuk font kustom:</p>
+      <p>Font bawaan bisa diganti langsung dari panel teks. Untuk memakai font sendiri:</p>
       <div class="steps">
         <div class="step">
-          <strong>Buka Settings → Font</strong>
-          <p>Impor file <code>.ttf</code> atau <code>.otf</code> dari penyimpanan.</p>
+          <strong>Buka Pengaturan → Font</strong>
+          <p>Pilih file font <code>.ttf</code> atau <code>.otf</code> dari penyimpanan HP.</p>
         </div>
         <div class="step">
           <strong>Pilih font di panel teks</strong>
-          <p>Font kustom muncul bersama font bawaan. Gaya Regular, Bold, Italic, dan Bold Italic mengikuti file yang tersedia.</p>
+          <p>Font baru muncul bersama font bawaan. Pilihan Regular, Bold, Italic, dan Bold Italic mengikuti file yang kamu impor.</p>
         </div>
         <div class="step">
-          <strong>Hapus jika tidak dipakai</strong>
-          <p>Font kustom bisa dihapus dari Settings. Proyek yang memakai font tersebut perlu mengganti fontnya.</p>
+          <strong>Hapus bila tidak dipakai</strong>
+          <p>Font bisa dihapus dari Pengaturan. Proyek yang memakainya perlu diganti ke font lain agar tampilannya tetap sama.</p>
         </div>
       </div>
 
       <h2 id="spasi">Jarak huruf dan jarak baris</h2>
-      <p>Di panel teks, bagian <em>Style &amp; Size</em> berisi dua slider spasi. Keduanya bekerja per layer dan langsung terlihat di kanvas.</p>
+      <p>Di panel teks, bagian <em>Style &amp; Size</em> punya dua pengatur jarak. Keduanya hanya berlaku untuk teks yang sedang dipilih dan langsung terlihat di kanvas.</p>
       <div class="table-wrap">
         <table>
-          <thead><tr><th>Slider</th><th>Rentang</th><th>Arti nilai</th></tr></thead>
+          <thead><tr><th>Pengatur</th><th>Rentang</th><th>Arti angkanya</th></tr></thead>
           <tbody>
             <tr>
               <td><strong>Jarak huruf</strong></td>
               <td>−5% sampai 20%</td>
-              <td>Ditampilkan sebagai persen dari ukuran font (<code>em</code>). 0% = normal, 10% = tiap huruf diberi ruang tambahan 0,1 em.</td>
+              <td>Menambah atau mengurangi ruang antarkarakter. 0% berarti normal; 10% membuat setiap huruf sedikit lebih renggang.</td>
             </tr>
             <tr>
               <td><strong>Jarak baris</strong></td>
               <td>80% sampai 200%</td>
-              <td>Pengali tinggi baris. 100% = normal, 120% = baris lebih renggang, 80% = lebih rapat.</td>
+              <td>Mengatur tinggi setiap baris. 100% berarti normal, 120% lebih lega, dan 80% lebih rapat.</td>
             </tr>
           </tbody>
         </table>
       </div>
       <ul>
-        <li>Nilai jarak baris ≤ 0 dianggap tidak valid dan otomatis kembali ke 100% saat dirender.</li>
-        <li>Jarak huruf ikut diperhitungkan saat mengukur lebar minimum kotak dan saat menggambar, jadi teks tidak terpotong.</li>
-        <li>Tombol <strong>Reset jarak</strong> mengembalikan keduanya ke 0% dan 100%.</li>
+        <li>Jika jarak baris diisi 0 atau kurang, aplikasi mengembalikannya ke 100% agar teks tetap terbaca.</li>
+        <li>Jarak huruf ikut dihitung saat menentukan lebar kotak, jadi teks tidak terpotong di tepi.</li>
+        <li>Tombol <strong>Reset jarak</strong> mengembalikan jarak huruf ke 0% dan jarak baris ke 100%.</li>
       </ul>
       <div class="callout">
-        <strong>Kapan dipakai?</strong> Jarak huruf membantu teks kapital yang terasa sempit; jarak baris membantu balon dengan banyak baris agar tidak menempel. Untuk teks vertikal, kedua nilai tetap diterapkan mengikuti arah aliran.
+        <strong>Kapan dipakai?</strong> Jarak huruf membantu teks kapital yang terasa sempit. Jarak baris membantu balon berisi banyak baris agar tidak menumpuk. Untuk teks vertikal, kedua pengatur tetap bekerja mengikuti arah tulisan.
       </div>
 
       <h2 id="gaya">Warna, stroke, glow, dan gradient</h2>
       <ul>
-        <li><strong>Warna &amp; opasitas</strong>: warna isi teks dan transparansinya.</li>
-        <li><strong>Stroke</strong>: ketebalan dan opasitas garis tepi; berguna untuk teks di atas latar ramai.</li>
-        <li><strong>Drop shadow</strong>: radius serta offset X/Y.</li>
-        <li><strong>Glow</strong>: radius dan warna cahaya di belakang teks.</li>
-        <li><strong>Gradient</strong>: dua warna atau lebih, arah horizontal/vertikal, atau sudut bebas. Minimal dua stop agar aman.</li>
-        <li><strong>Motion blur</strong>: blur searah sudut tertentu untuk kesan gerak.</li>
+        <li><strong>Warna &amp; Opacity</strong>: warna isi teks dan seberapa pekat warnanya. Angka Opacity rendah membuat teks lebih tembus pandang.</li>
+        <li><strong>Stroke</strong>: garis tepi teks. Berguna saat teks berada di atas latar yang ramai.</li>
+        <li><strong>Drop shadow</strong>: bayangan di belakang teks. Atur besar bayangan serta posisi mendatar dan menurunnya.</li>
+        <li><strong>Glow</strong>: cahaya lembut di belakang teks, dengan warna dan lebar tertentu.</li>
+        <li><strong>Gradient</strong>: warna teks yang berubah dari satu warna ke warna lain, secara mendatar, menurun, atau mengikuti sudut pilihan. Isi minimal dua warna.</li>
+        <li><strong>Motion blur</strong>: efek kabur ke satu arah untuk memberi kesan bergerak.</li>
       </ul>
 
-      <h2 id="layer">Blend mode, clipping mask, dan efek</h2>
-      <p>Panel <strong>Efek</strong> berlaku untuk layer teks maupun gambar. Semua perubahan tersimpan bersama proyek.</p>
+      <h2 id="layer">Blend mode, clipping mask, dan Effect</h2>
+      <p>Panel <strong>Effect</strong> tersedia untuk lapisan (layer) teks maupun gambar. Semua pengaturan tersimpan bersama proyek.</p>
       <div class="table-wrap">
         <table>
           <thead><tr><th>Kontrol</th><th>Fungsi</th></tr></thead>
           <tbody>
-            <tr><td><strong>Blend mode</strong></td><td>16 mode, dari Normal, Multiply, Screen, sampai Hue dan Luminosity. Mode menentukan cara layer menyatu dengan isi di bawahnya.</td></tr>
-            <tr><td><strong>Clipping mask</strong></td><td>Memotong layer mengikuti alpha layer dasar tepat di bawahnya. Aktifkan lewat sakelar di panel Efek atau ikon rantai di daftar layer.</td></tr>
-            <tr><td><strong>Radial blur</strong></td><td>Bagian tengah tetap tajam, tepi memutar atau memancar. Pilih mode Putar atau Zoom. Untuk gambar, atur juga pusat X dan Y.</td></tr>
-            <tr><td><strong>Texture</strong></td><td>Tambahkan Grain, Kertas, atau Kanvas. Atur kekuatan dan skala tekstur; alpha gambar tetap dipertahankan.</td></tr>
+            <tr><td><strong>Blend mode</strong></td><td>Mengatur cara warna lapisan bercampur dengan lapisan di bawahnya. Contohnya, <em>Multiply</em> membuat hasil lebih gelap seperti tinta spidol, sedangkan <em>Screen</em> membuatnya lebih terang.</td></tr>
+            <tr><td><strong>Clipping mask</strong></td><td>Lapisan ini hanya terlihat di bagian yang tertutup bentuk lapisan di bawahnya. Anggap lapisan bawah sebagai cetakan: bagian gambar di luar cetakan disembunyikan. Cocok untuk memasukkan foto ke dalam huruf atau bentuk balon. Aktifkan lewat sakelar di panel Effect atau ikon rantai di daftar lapisan.</td></tr>
+            <tr><td><strong>Radial blur</strong></td><td>Bagian tengah tetap tajam, tepinya memutar atau memancar. Pilih mode Putar atau Zoom. Untuk gambar, atur juga titik pusatnya.</td></tr>
+            <tr><td><strong>Texture</strong></td><td>Menambahkan tekstur halus seperti butiran, kertas, atau kanvas. Atur kekuatan dan ukurannya. Bagian gambar yang transparan tetap transparan.</td></tr>
           </tbody>
         </table>
       </div>
       <ul>
-        <li>Layer paling bawah tidak bisa memakai clipping mask karena belum punya layer dasar.</li>
-        <li>Jika layer dasar disembunyikan, layer yang di-clip ikut tidak tampil.</li>
-        <li>Efek gambar yang berat diproses di latar. Pratinjau muncul setelah slider dilepas.</li>
-        <li>Blend mode dan clipping ikut diterapkan saat ekspor, bukan hanya di kanvas.</li>
+        <li>Lapisan paling bawah belum punya bentuk di bawahnya, jadi belum bisa memakai clipping mask.</li>
+        <li>Kalau lapisan bawah disembunyikan, lapisan yang memakai clipping mask ikut tidak terlihat.</li>
+        <li>Efek gambar yang berat diproses di belakang layar. Pratinjau muncul setelah pengatur dilepas.</li>
+        <li>Blend mode dan clipping mask ikut tersimpan saat ekspor, bukan hanya terlihat di kanvas.</li>
       </ul>
+      <div class="callout">
+        <strong>Contoh pemakaian.</strong> Ingin memasukkan foto langit ke dalam tulisan judul? Letakkan tulisan di bawah foto, lalu aktifkan clipping mask pada foto. Foto akan mengikuti bentuk tulisan tanpa perlu menghapus bagian luarnya.
+      </div>
 
       <h2 id="inpainting">Menghapus teks lama (inpainting)</h2>
-      <p>Sebelum menempel teks baru, bersihkan teks asli memakai tool seleksi:</p>
+      <p>Sebelum menempel teks baru, bersihkan teks asli dengan alat seleksi:</p>
       <ul>
-        <li><strong>Brush</strong> dan <strong>Eraser</strong>: Brush menambah area seleksi; Eraser mengurangi seleksi, bukan menghapus gambar.</li>
-        <li><strong>Lasso</strong>: seleksi area bebas.</li>
-        <li><strong>Magic Wand</strong>: flood fill berdasarkan toleransi warna, dengan opsi pelebaran margin (<em>expand</em>) dan invert mask.</li>
+        <li><strong>Brush</strong> dan <strong>Eraser</strong>: Brush menambah area seleksi; Eraser menguranginya. Keduanya menandai area, bukan langsung menghapus gambar.</li>
+        <li><strong>Lasso</strong>: membuat area seleksi bebas dengan menarik garis.</li>
+        <li><strong>Magic Wand</strong>: mengetuk satu titik, lalu memilih area di sekitarnya yang warnanya mirip. Naikkan toleransi bila ingin mencakup lebih banyak warna.</li>
       </ul>
-      <p>Panel <strong>Hapus Objek</strong> menyediakan tombol <strong>Bersihkan</strong>, <strong>Invert Seleksi</strong>, dan <strong>Hapus Area Terpilih</strong>. Tombol hapus baru aktif setelah ada area yang dipilih.</p>
-      <p>Setelah mask siap, jalankan inpainting:</p>
+      <p>Panel <strong>Hapus Objek</strong> berisi tombol <strong>Bersihkan</strong>, <strong>Invert Seleksi</strong>, dan <strong>Hapus Area Terpilih</strong>. Tombol hapus baru aktif setelah ada area yang dipilih.</p>
+      <p>Setelah area seleksi siap, pilih cara menambalnya:</p>
       <ul>
-        <li><strong>Telea (OpenCV)</strong>: cepat dan sepenuhnya offline. Cocok untuk latar sederhana.</li>
-        <li><strong>LaMa AI</strong>: model ONNX ±196 MB, diunduh sekali dari HuggingFace ke folder model aplikasi. Jika model belum ada atau gagal dimuat, MochiTs otomatis memakai Telea.</li>
+        <li><strong>Telea (OpenCV)</strong>: cepat dan sepenuhnya offline. Cocok untuk latar yang sederhana.</li>
+        <li><strong>LaMa AI</strong>: model AI sekitar 196 MB yang diunduh sekali ke perangkat. Cocok untuk latar rumit. Jika model belum tersedia atau gagal dimuat, MochiTs otomatis memakai Telea.</li>
       </ul>
       <div class="callout warn">
-        <strong>Unduhan model.</strong> Sediakan koneksi stabil untuk unduhan pertama. Setelah tersimpan di perangkat, LaMa bisa dipakai offline. Unduhan yang terputus disimpan sebagai file <code>.tmp</code> dan tidak dipakai sampai selesai.
+        <strong>Unduhan model.</strong> Sediakan koneksi stabil saat pertama kali mengunduh LaMa. Setelah tersimpan, model bisa dipakai tanpa internet. Unduhan yang terputus tidak dipakai sampai prosesnya selesai.
       </div>
       </div>
 
@@ -260,7 +328,7 @@
   <footer class="site-footer">
     <div class="wrap">
       <div class="footer-in">
-        <div class="footer-brand">MochiTs <span>Manual pengguna</span></div>
+        <div class="footer-brand"><img src="assets/logo-mark.png" alt="" width="26" height="26">MochiTs <span>Panduan pengguna</span></div>
         <div class="footer-links">
           <a href="index.html">Beranda</a>
           <a href="mulai.html">Mulai</a>
@@ -270,7 +338,7 @@
         </div>
       </div>
       <div class="footer-note">
-        <span>Dokumentasi edisi 1.0 / Bahasa Indonesia</span>
+        <span>Dokumentasi edisi 1.0 · Bahasa Indonesia</span>
         <span>Dibuat untuk Android 10+</span>
       </div>
     </div>

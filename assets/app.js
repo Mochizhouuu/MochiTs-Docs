@@ -14,6 +14,53 @@
   var path = location.pathname.replace(/\/index\.html$/, "/");
   var lastFocused = null;
 
+  /* ---------- Tema terang / gelap ---------- */
+  var themeButtons = all("[data-theme-toggle]");
+  var systemTheme = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
+
+  function storedTheme() {
+    try { return localStorage.getItem("mochits-theme"); } catch (error) { return null; }
+  }
+
+  function syncThemeColor(theme) {
+    var metas = all('meta[name="theme-color"]');
+    if (!metas.length) return;
+    metas[0].setAttribute("content", theme === "dark" ? "#0f141d" : "#f7f9ff");
+    metas[0].removeAttribute("media");
+    for (var i = 1; i < metas.length; i++) metas[i].parentNode.removeChild(metas[i]);
+  }
+
+  function applyTheme(theme, save) {
+    doc.documentElement.setAttribute("data-theme", theme);
+    var dark = theme === "dark";
+    themeButtons.forEach(function (button) {
+      button.setAttribute("aria-label", dark ? "Aktifkan mode terang" : "Aktifkan mode gelap");
+      button.setAttribute("title", dark ? "Mode terang" : "Mode gelap");
+      button.setAttribute("aria-pressed", dark ? "true" : "false");
+    });
+    syncThemeColor(theme);
+    if (save) {
+      try { localStorage.setItem("mochits-theme", theme); } catch (error) { /* diabaikan */ }
+    }
+  }
+
+  themeButtons.forEach(function (button) {
+    on(button, "click", function () {
+      var next = doc.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      applyTheme(next, true);
+    });
+  });
+
+  if (systemTheme) {
+    var followSystem = function (event) {
+      if (!storedTheme()) applyTheme(event.matches ? "dark" : "light", false);
+    };
+    if (systemTheme.addEventListener) systemTheme.addEventListener("change", followSystem);
+    else if (systemTheme.addListener) systemTheme.addListener(followSystem);
+  }
+
+  applyTheme(doc.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light", false);
+
   function all(selector, root) {
     return Array.prototype.slice.call((root || doc).querySelectorAll(selector));
   }
@@ -211,6 +258,19 @@
       searchSummary.textContent = entries.length + (entries.length === 1 ? " hasil" : " hasil");
     }
   }
+
+  function openQueryFromUrl() {
+    if (!searchInput || !window.URLSearchParams) return;
+    var query = "";
+    try { query = new URLSearchParams(location.search).get("q") || ""; } catch (error) { return; }
+    if (!query.trim()) return;
+    openSearch();
+    searchInput.value = query;
+    renderSearch(query);
+    loadSearchIndex();
+  }
+
+  openQueryFromUrl();
 
   function highlightResult(next) {
     var links = all(".search-result", searchResults);

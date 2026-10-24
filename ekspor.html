@@ -3,26 +3,81 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ekspor | MochiTs Docs</title>
-  <meta name="description" content="Ekspor proyek MochiTs ke PNG, JPEG, atau WEBP, atur kualitas dan folder tujuan, atau simpan bundel .mts yang bisa diedit lagi.">
-  <meta name="theme-color" content="#f4efe5">
+  <title>Ekspor gambar & proyek | MochiTs Docs</title>
+  <meta name="description" content="Menyimpan halaman MochiTs sebagai PNG, JPEG, atau WEBP, dan menyimpan file proyek yang masih bisa diedit.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f7f9ff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0f141d" media="(prefers-color-scheme: dark)">
   <link rel="canonical" href="https://mochits.my.id/ekspor.html">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Ekspor | MochiTs Docs">
-  <meta property="og:description" content="Ekspor proyek MochiTs ke PNG, JPEG, atau WEBP, atur kualitas dan folder tujuan, atau simpan bundel .mts yang bisa diedit lagi.">
+  <meta property="og:site_name" content="MochiTs Docs">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:title" content="Ekspor gambar & proyek | MochiTs Docs">
+  <meta property="og:description" content="Menyimpan halaman MochiTs sebagai PNG, JPEG, atau WEBP, dan menyimpan file proyek yang masih bisa diedit.">
   <meta property="og:url" content="https://mochits.my.id/ekspor.html">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <meta property="og:image" content="https://mochits.my.id/assets/og-cover.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Logo MochiTs dan tulisan Panduan MochiTs">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ekspor gambar & proyek | MochiTs Docs">
+  <meta name="twitter:description" content="Menyimpan halaman MochiTs sebagai PNG, JPEG, atau WEBP, dan menyimpan file proyek yang masih bisa diedit.">
+  <meta name="twitter:image" content="https://mochits.my.id/assets/og-cover.png">
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="assets/icon-48.png" sizes="48x48" type="image/png">
+  <link rel="icon" href="assets/icon-192.png" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=JetBrains+Mono:wght@400;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <script>
+    (function () {
+      var theme = "light";
+      try {
+        var saved = localStorage.getItem("mochits-theme");
+        if (saved === "dark" || saved === "light") theme = saved;
+        else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) theme = "dark";
+      } catch (error) { /* penyimpanan diblokir */ }
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
   <link rel="stylesheet" href="assets/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+            {
+        "@type": "TechArticle",
+        "@id": "https://mochits.my.id/ekspor.html#article",
+        "headline": "Ekspor gambar & proyek | MochiTs Docs",
+        "description": "Menyimpan halaman MochiTs sebagai PNG, JPEG, atau WEBP, dan menyimpan file proyek yang masih bisa diedit.",
+        "url": "https://mochits.my.id/ekspor.html",
+        "mainEntityOfPage": "https://mochits.my.id/ekspor.html",
+        "inLanguage": "id",
+        "isPartOf": { "@id": "https://mochits.my.id/#website" },
+        "author": { "@type": "Organization", "name": "MochiTs" },
+        "publisher": { "@type": "Organization", "name": "MochiTs", "logo": { "@type": "ImageObject", "url": "https://mochits.my.id/assets/icon-512.png" } },
+        "datePublished": "2026-10-20",
+        "dateModified": "2026-10-24"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://mochits.my.id/" },
+          { "@type": "ListItem", "position": 2, "name": "Ekspor", "item": "https://mochits.my.id/ekspor.html" }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="has-progress" data-page="ekspor.html">
   <a class="skip-link" href="#main">Lewati ke konten</a>
   <header class="site-header">
     <div class="header-in">
-      <a class="brand" href="index.html" aria-label="MochiTs Docs">
-        <span class="brand-mark" aria-hidden="true">M</span>
+      <a class="brand" href="index.html" aria-label="MochiTs Docs, beranda">
+        <img class="brand-logo" src="assets/logo-mark.png" alt="" width="34" height="34">
         <span class="brand-word">Mochi<span>Ts</span></span>
         <span class="brand-tag">Docs</span>
       </a>
@@ -34,11 +89,18 @@
       </nav>
       <div class="header-tools">
         <button class="search-btn" type="button" aria-label="Cari dokumentasi">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>
           <span>Cari</span>
           <kbd>/</kbd>
         </button>
-        <a class="header-link" href="https://github.com/Mochizhouuu/MochiTs" target="_blank" rel="noopener">GitHub</a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Aktifkan mode gelap" title="Mode gelap">
+          <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3a6.5 6.5 0 0 0 9.8 9.8Z"></path></svg>
+          <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>
+        </button>
+        <a class="header-link" href="https://github.com/Mochizhouuu/MochiTs" target="_blank" rel="noopener" aria-label="MochiTs di GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .7a11.3 11.3 0 0 0-3.6 22c.6.1.8-.3.8-.6v-2.2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.2-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11 11 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.9 1.2 1.9 1.2 3.2 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.3 11.3 0 0 0 12 .7Z"></path></svg>
+          <span>GitHub</span>
+        </a>
         <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Buka menu">
           <span class="menu-btn-lines" aria-hidden="true"></span>
         </button>
@@ -49,15 +111,15 @@
 
   <div class="site-menu" id="site-menu" hidden>
     <div class="site-menu-in">
-      <nav class="menu-group" aria-label="Isi manual">
-        <div class="menu-label">Isi manual</div>
-        <a href="mulai.html"><span class="no">01</span><span>Mulai</span><span class="desc">Pasang, buat proyek, kenali kanvas.</span></a>
-        <a href="folder-zip.html"><span class="no">02</span><span>Folder &amp; ZIP</span><span class="desc">Rapikan proyek dan impor satu chapter.</span></a>
-        <a href="teks.html"><span class="no">03</span><span>Teks &amp; spasi</span><span class="desc">Font, warna, stroke, jarak huruf dan baris.</span></a>
-        <a href="script.html"><span class="no">04</span><span>Script TL</span><span class="desc">Ubah naskah terjemahan jadi antrean balon.</span></a>
-        <a href="tester.html"><span class="no">05</span><span>Tester</span><span class="desc">Uji parser dan regex langsung di browser.</span></a>
-        <a href="ekspor.html" aria-current="page"><span class="no">06</span><span>Ekspor</span><span class="desc">PNG, JPEG, WEBP, atau bundel proyek.</span></a>
-        <a href="faq.html"><span class="no">07</span><span>FAQ</span><span class="desc">Jawaban singkat untuk masalah umum.</span></a>
+      <nav class="menu-group" aria-label="Isi panduan">
+        <div class="menu-label">Isi panduan</div>
+        <a href="mulai.html"><span class="no">01</span><span>Mulai</span><span class="desc">Pasang aplikasi, buat proyek, kenali layar editor.</span></a>
+        <a href="folder-zip.html"><span class="no">02</span><span>Folder &amp; ZIP</span><span class="desc">Rapikan proyek dan impor satu chapter sekaligus.</span></a>
+        <a href="teks.html"><span class="no">03</span><span>Teks &amp; spasi</span><span class="desc">Huruf, warna, efek, dan cara membersihkan balon.</span></a>
+        <a href="script.html"><span class="no">04</span><span>Script TL</span><span class="desc">Ubah naskah terjemahan menjadi daftar balon.</span></a>
+        <a href="tester.html"><span class="no">05</span><span>Tester</span><span class="desc">Coba naskah dan pemisah halaman langsung di browser.</span></a>
+        <a href="ekspor.html" aria-current="page"><span class="no">06</span><span>Ekspor</span><span class="desc">Simpan gambar jadi atau file proyek yang bisa diedit.</span></a>
+        <a href="faq.html"><span class="no">07</span><span>FAQ</span><span class="desc">Jawaban singkat untuk masalah yang sering muncul.</span></a>
       </nav>
       <div class="menu-foot">
         <button class="search-wide" type="button" aria-label="Buka pencarian">
@@ -66,7 +128,7 @@
         </button>
         <a href="https://github.com/Mochizhouuu/MochiTs" target="_blank" rel="noopener">Kode aplikasi di GitHub</a>
         <a href="https://github.com/Mochizhouuu/MochiTs-Docs" target="_blank" rel="noopener">Sumber dokumentasi</a>
-        <p class="menu-note">Semua halaman bisa dibaca tanpa akun. Proyek tetap tersimpan di perangkatmu.</p>
+        <p class="menu-note">Semua halaman bisa dibaca tanpa akun. Proyekmu tetap tersimpan di perangkat.</p>
       </div>
     </div>
   </div>
@@ -115,7 +177,7 @@
           <a href="index.html">Manual</a><span class="sep">/</span><span>Ekspor</span>
         </nav>
         <h1 id="doc-title">Ekspor</h1>
-        <p class="doc-lead">Simpan hasil sebagai gambar siap unggah, atau sebagai bundel proyek yang bisa dibuka dan diedit lagi.</p>
+        <p class="doc-lead">Simpan hasil sebagai gambar siap unggah, atau sebagai file proyek yang bisa dibuka dan diedit lagi.</p>
         <div class="doc-meta"><span>Bab 06</span><span>5 bagian</span><span>±2 menit baca</span><span>Edisi 1.0</span></div>
       </header>
 
@@ -124,10 +186,10 @@
           <div class="m-toc-body">
             <div class="m-toc-group">
               <span class="m-toc-label">Bagian</span>
-            <a href="#dialog">Dialog Simpan Sebagai</a>
+            <a href="#dialog">Jendela Simpan</a>
             <a href="#format">Memilih format</a>
             <a href="#folder">Folder tujuan</a>
-            <a href="#mts">Bundel .mts</a>
+            <a href="#mts">File proyek .mts</a>
             <a href="#tips">Tips kualitas</a>
 
             </div>
@@ -135,13 +197,13 @@
         </details>
 
       <div class="doc-body">
-<h2 id="dialog">Dialog Simpan Sebagai</h2>
-      <p>Ketuk ikon ekspor di Editor. Dialog berisi:</p>
+<h2 id="dialog">Jendela Simpan</h2>
+      <p>Ketuk ikon ekspor di Editor. Akan muncul jendela dengan pilihan berikut:</p>
       <ul>
-        <li><strong>Nama Output / Nama Proyek</strong>: dipakai sebagai nama file sekaligus mengganti judul proyek bila berbeda.</li>
+        <li><strong>Nama Output / Nama Proyek</strong>: nama file hasil ekspor. Kalau diubah, judul proyek ikut berubah.</li>
         <li><strong>Format</strong>: PNG, JPEG, WEBP, atau MTS.</li>
-        <li><strong>Kualitas</strong>: hanya muncul untuk JPEG dan WEBP, rentang 10 sampai 100%.</li>
-        <li><strong>Folder tujuan</strong>: folder default dari Settings, atau pilih folder saat menekan <em>Simpan &amp; Ekspor</em> jika belum diatur.</li>
+        <li><strong>Kualitas</strong>: hanya muncul untuk JPEG dan WEBP, dari 10 sampai 100%.</li>
+        <li><strong>Folder tujuan</strong>: folder yang sudah diatur di Settings. Kalau belum ada, MochiTs meminta kamu memilih folder saat menekan <em>Simpan &amp; Ekspor</em>.</li>
       </ul>
 
       <h2 id="format">Memilih format</h2>
@@ -151,58 +213,58 @@
           <tbody>
             <tr>
               <td><strong>PNG</strong></td>
-              <td>Hasil akhir dengan area transparan, teks tajam, atau garis tipis.</td>
-              <td>Lossless; slider kualitas tidak ditampilkan. Ukuran file paling besar.</td>
+              <td>Gambar dengan bagian transparan, teks kecil, atau garis tipis.</td>
+              <td>Tidak mengurangi kualitas, jadi ukuran filenya paling besar. Pengatur kualitas tidak muncul.</td>
             </tr>
             <tr>
               <td><strong>JPEG</strong></td>
-              <td>Unggahan umum, ukuran file lebih kecil.</td>
-              <td>Lossy; tidak mendukung transparansi. Kualitas 10 sampai 100%.</td>
+              <td>Unggahan sehari-hari yang ingin ukurannya lebih kecil.</td>
+              <td>Kualitas gambar sedikit dikurangi dan bagian transparan tidak bisa disimpan. Atur kualitas 10 sampai 100%.</td>
             </tr>
             <tr>
               <td><strong>WEBP</strong></td>
-              <td>Ukuran kecil dengan kualitas baik untuk web.</td>
-              <td>Lossy pada Android 11+; kualitas 10 sampai 100%.</td>
+              <td>Situs web atau berbagi gambar dengan ukuran kecil.</td>
+              <td>Di Android 11 ke atas, kualitas gambar sedikit dikurangi agar file lebih kecil. Atur kualitas 10 sampai 100%.</td>
             </tr>
             <tr>
               <td><strong>MTS</strong></td>
-              <td>Arsip proyek, pindah perangkat, atau melanjutkan editing nanti.</td>
-              <td>Bundel proyek, bukan gambar. Bisa diimpor kembali lewat ZIP atau dibuka langsung.</td>
+              <td>Menyimpan proyek utuh, memindahkannya ke HP lain, atau melanjutkan editing nanti.</td>
+              <td>Ini file proyek, bukan gambar. Bisa dibuka lagi atau dimasukkan ke ZIP.</td>
             </tr>
           </tbody>
         </table>
       </div>
       <div class="callout">
-        <strong>Resolusi.</strong> Gambar diekspor pada ukuran kanvas proyek, bukan ukuran layar saat zoom. Periksa lebar/tinggi proyek bila hasil terasa kecil.
+        <strong>Ukuran hasil.</strong> Gambar mengikuti ukuran kanvas proyek, bukan seberapa besar gambar terlihat di layar. Kalau hasil terasa kecil, periksa lebar dan tinggi proyek.
       </div>
 
       <h2 id="folder">Folder tujuan</h2>
-      <p>Atur folder default di <strong>Settings → Folder Output Default (Export)</strong>. MochiTs memakai Storage Access Framework, jadi tidak perlu izin penyimpanan penuh.</p>
+      <p>Atur folder default di <strong>Settings → Folder Output Default (Export)</strong>. MochiTs memakai pemilih folder bawaan Android, jadi aplikasi tidak meminta izin ke seluruh penyimpanan.</p>
       <ul>
-        <li>Jika folder default masih valid, ekspor langsung ditulis ke sana.</li>
-        <li>Jika belum diatur atau aksesnya dicabut, pemilih folder Android terbuka setiap kali ekspor.</li>
-        <li>File dengan nama yang sama di folder tujuan akan <strong>ditimpa</strong>. Ganti nama output bila ingin menyimpan beberapa versi.</li>
-        <li>File ditulis lewat file sementara di cache, lalu disalin ke folder tujuan dan dibersihkan.</li>
+        <li>Kalau folder default masih bisa diakses, hasil langsung disimpan ke sana.</li>
+        <li>Kalau belum diatur atau izinnya dicabut, Android meminta kamu memilih folder setiap kali ekspor.</li>
+        <li>File dengan nama yang sama akan <strong>ditimpa</strong>. Ganti nama output kalau ingin menyimpan beberapa versi.</li>
+        <li>File ditulis dulu ke penyimpanan sementara, lalu dipindahkan ke folder tujuan.</li>
       </ul>
       <div class="callout warn">
         <strong>Nama file.</strong> Ekstensi mengikuti format yang dipilih: <code>.png</code>, <code>.jpeg</code>, <code>.webp</code>, atau <code>.mts</code>. Hindari karakter <code>/</code> dan <code>:</code> pada nama output.
       </div>
 
-      <h2 id="mts">Bundel .mts</h2>
-      <p>Format MTS menyimpan proyek lengkap: gambar dasar, layer, dan data editing. Gunakan untuk:</p>
+      <h2 id="mts">File proyek .mts</h2>
+      <p>File <code>.mts</code> menyimpan proyek secara utuh: gambar dasar, lapisan, dan semua pengaturan editing. Gunakan untuk:</p>
       <ul>
-        <li>mencadangkan proyek sebelum eksperimen besar,</li>
+        <li>mencadangkan proyek sebelum mencoba perubahan besar,</li>
         <li>memindahkan proyek ke perangkat lain,</li>
-        <li>mengirim proyek ke rekan tanpa kehilangan layer.</li>
+        <li>mengirim proyek ke rekan tanpa kehilangan lapisan.</li>
       </ul>
-      <p>Bundel bisa dibuka dari file manager (langsung menjadi proyek) atau dimasukkan ke ZIP bersama gambar lain; saat ZIP diimpor, bundel tetap dikenali sebagai proyek editable.</p>
+      <p>File ini bisa dibuka langsung dari aplikasi File, atau dimasukkan ke ZIP bersama gambar lain. Saat ZIP diimpor, file <code>.mts</code> tetap dikenali sebagai proyek yang bisa diedit.</p>
 
       <h2 id="tips">Tips kualitas</h2>
       <ol>
         <li>Gunakan PNG untuk teks berukuran kecil agar tepi huruf tetap tajam.</li>
-        <li>Untuk WEBP/JPEG, kualitas 85 sampai 95% biasanya cukup; di bawah 70% tepi teks mulai terlihat pecah.</li>
-        <li>Ekspor versi PNG dulu sebagai arsip, lalu versi WEBP untuk diunggah.</li>
-        <li>Jika hasil terlihat berbeda dari kanvas, periksa layer yang tersembunyi atau terpotong di luar batas kanvas.</li>
+        <li>Untuk JPEG atau WEBP, kualitas 85 sampai 95% biasanya sudah cukup. Di bawah 70%, tepi huruf mulai terlihat pecah.</li>
+        <li>Simpan versi PNG sebagai arsip, lalu versi WEBP untuk diunggah.</li>
+        <li>Kalau hasil berbeda dari kanvas, periksa lapisan yang disembunyikan atau berada di luar batas kanvas.</li>
       </ol>
       </div>
 
@@ -215,10 +277,10 @@
     <aside class="docs-toc">
       <div class="side-label">Di halaman ini</div>
       <nav class="toc-nav" aria-label="Di halaman ini">
-          <a href="#dialog">Dialog Simpan Sebagai</a>
+          <a href="#dialog">Jendela Simpan</a>
           <a href="#format">Memilih format</a>
           <a href="#folder">Folder tujuan</a>
-          <a href="#mts">Bundel .mts</a>
+          <a href="#mts">File proyek .mts</a>
           <a href="#tips">Tips kualitas</a>
       </nav>
       <a class="toc-top" href="#main">Kembali ke atas ↑</a>
@@ -228,7 +290,7 @@
   <footer class="site-footer">
     <div class="wrap">
       <div class="footer-in">
-        <div class="footer-brand">MochiTs <span>Manual pengguna</span></div>
+        <div class="footer-brand"><img src="assets/logo-mark.png" alt="" width="26" height="26">MochiTs <span>Panduan pengguna</span></div>
         <div class="footer-links">
           <a href="index.html">Beranda</a>
           <a href="mulai.html">Mulai</a>
@@ -238,7 +300,7 @@
         </div>
       </div>
       <div class="footer-note">
-        <span>Dokumentasi edisi 1.0 / Bahasa Indonesia</span>
+        <span>Dokumentasi edisi 1.0 · Bahasa Indonesia</span>
         <span>Dibuat untuk Android 10+</span>
       </div>
     </div>
