@@ -609,8 +609,7 @@ body.menu-open .menu-btn-lines::after { top: 5px; transform: rotate(-45deg); }
   overflow: hidden;
   border-bottom: 1px solid var(--line);
   background:
-    radial-gradient(720px 420px at 88% 4%, color-mix(in srgb, var(--primary) 14%, transparent), transparent 66%),
-    radial-gradient(520px 360px at 8% 100%, color-mix(in srgb, #30b0f0 9%, transparent), transparent 70%),
+    radial-gradient(720px 420px at 88% 4%, color-mix(in srgb, var(--primary) 10%, transparent), transparent 66%),
     linear-gradient(180deg, var(--surface) 0%, var(--bg) 100%);
 }
 .hero::before {
@@ -637,21 +636,20 @@ body.menu-open .menu-btn-lines::after { top: 5px; transform: rotate(-45deg); }
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 5px 10px 5px 7px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--surface) 80%, transparent);
-  color: var(--text-soft);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--primary-deep);
   font-size: 12px;
-  font-weight: 600;
-  box-shadow: var(--shadow-sm);
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
 }
 .hero-eyebrow .dot {
-  width: 7px;
-  height: 7px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
-  background: #22c55e;
-  box-shadow: 0 0 0 3px color-mix(in srgb, #22c55e 18%, transparent);
+  background: var(--primary);
 }
 .hero-title {
   margin: 20px 0 0;
@@ -1836,12 +1834,15 @@ mark { background: color-mix(in srgb, var(--primary) 28%, transparent); color: v
   .mobile-toc a:hover { color: var(--primary-deep); }
   .mobile-toc a.toc-sub { padding-left: 10px; font-size: 11px; color: var(--muted); }
 
-  .hero-grid { grid-template-columns: 1fr; gap: 30px; padding-top: 38px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 30px; padding-top: 34px; padding-bottom: 56px; }
   .hero-title { max-width: 17ch; }
   .hero-visual { width: min(100%, 560px); margin: 0 auto; }
   .float-script { right: -4px; }
   .float-clean { left: -4px; }
   .chapter-list { grid-template-columns: 1fr; }
+  .chapter-row { grid-template-columns: 42px minmax(0, 1fr) 22px; grid-template-rows: auto auto; }
+  .chapter-row .chapter-desc { grid-column: 2; }
+  .chapter-row .chapter-arrow { display: none; }
   .chapter-row:last-child:nth-child(odd) { grid-column: auto; }
   .feature-grid { grid-template-columns: 1fr; }
   .start-grid { grid-template-columns: 1fr; }
@@ -1881,9 +1882,11 @@ mark { background: color-mix(in srgb, var(--primary) 28%, transparent); color: v
   .footer-note { flex-direction: column; gap: 4px; }
   .hero-trust { gap: 6px 14px; }
   .float-note { display: none; }
-  .app-window { transform: none; }
+  .app-window { transform: none; max-width: 100%; }
   .app-main { min-height: 280px; }
   .bubble { font-size: 16px; }
+  .hero-actions { gap: 8px; }
+  .hero-lead { font-size: 15.5px; }
   .workflow-list { grid-template-columns: 1fr; }
   .workflow-row { border-right: 0; border-bottom: 1px solid var(--line); }
   .workflow-row:last-child { border-bottom: 0; }
