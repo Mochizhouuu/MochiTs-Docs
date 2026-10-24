@@ -168,11 +168,13 @@ kbd {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  background: color-mix(in srgb, var(--surface) 92%, transparent);
   border-bottom: 1px solid var(--line);
-  backdrop-filter: blur(16px) saturate(1.2);
-  -webkit-backdrop-filter: blur(16px) saturate(1.2);
+  backdrop-filter: blur(18px) saturate(1.4);
+  -webkit-backdrop-filter: blur(18px) saturate(1.4);
+  transition: box-shadow .25s ease;
 }
+.site-header.is-scrolled { box-shadow: var(--shadow-sm); }
 .header-in {
   width: min(var(--max), calc(100% - (var(--pad) * 2)));
   height: var(--header-h);
@@ -320,7 +322,6 @@ body.menu-open .menu-btn-lines::after { top: 5px; transform: rotate(-45deg); }
   backdrop-filter: blur(20px);
   border-top: 1px solid var(--line);
   overflow: auto;
-  animation: menuIn .22s cubic-bezier(.2, .7, .2, 1);
 }
 .site-menu[hidden] { display: none; }
 .site-menu-in {
@@ -432,7 +433,6 @@ body.menu-open .menu-btn-lines::after { top: 5px; transform: rotate(-45deg); }
   background: rgba(6, 12, 24, .5);
   backdrop-filter: blur(6px);
   padding: 9vh var(--pad) 4vh;
-  animation: fadeIn .16s ease;
 }
 .search-overlay[hidden] { display: none; }
 .search-box {
@@ -446,7 +446,6 @@ body.menu-open .menu-btn-lines::after { top: 5px; transform: rotate(-45deg); }
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  animation: popIn .2s cubic-bezier(.2, .7, .2, 1);
 }
 .search-head { display: flex; align-items: center; border-bottom: 1px solid var(--line); }
 .search-head > svg { width: 19px; height: 19px; margin-left: 18px; flex: 0 0 auto; color: var(--muted); }
@@ -886,7 +885,7 @@ body.menu-open .menu-btn-lines::after { top: 5px; transform: rotate(-45deg); }
 }
 .chapter-row:hover {
   transform: translateY(-2px);
-  border-color: color-mix(in srgb, var(--primary) 55%, var(--line));
+  border-color: color-mix(in srgb, var(--primary) 45%, var(--line));
   box-shadow: var(--shadow-md);
   color: var(--text);
 }
@@ -1158,7 +1157,7 @@ body.menu-open .menu-btn-lines::after { top: 5px; transform: rotate(-45deg); }
 .side-help strong { display: block; color: var(--text); font-size: 12px; margin-bottom: 3px; }
 .side-help a { color: var(--primary-deep); font-weight: 600; text-decoration: none; display: inline-block; margin-top: 4px; }
 
-.docs-article { min-width: 0; max-width: 768px; animation: pageIn .38s ease both; }
+.docs-article { min-width: 0; max-width: 768px; }
 .doc-masthead { padding-bottom: 24px; margin-bottom: 8px; }
 .breadcrumb {
   display: flex;
@@ -1674,7 +1673,7 @@ mark { background: color-mix(in srgb, var(--primary) 28%, transparent); color: v
 
 /* ---------- 404 ---------- */
 
-.error-page { padding: clamp(64px, 11vw, 128px) 0; min-height: 62vh; animation: pageIn .4s ease both; }
+.error-page { padding: clamp(64px, 11vw, 128px) 0; min-height: 62vh; }
 .error-page .eyebrow {
   font-size: 11px;
   font-weight: 700;
@@ -1694,12 +1693,41 @@ mark { background: color-mix(in srgb, var(--primary) 28%, transparent); color: v
 .error-page p { max-width: 46ch; color: var(--muted); font-size: 16px; margin: 0 0 24px; }
 .error-page .actions { display: flex; flex-wrap: wrap; gap: 10px; }
 
-/* ---------- Motion ---------- */
+/* ---------- Motion: transisi antar halaman & elemen ---------- */
 
+/* 1) Antar dokumen (View Transitions API bila didukung) */
 @view-transition { navigation: auto; }
-::view-transition-old(root) { animation: fadeOut .16s ease both; }
-::view-transition-new(root) { animation: fadeIn .24s ease both; }
+::view-transition-old(root) { animation: vtFadeOut .2s ease both; }
+::view-transition-new(root) { animation: vtSlideIn .3s cubic-bezier(.2, .7, .3, 1) both; }
+/* Header & footer tetap, hanya konten yang bergeser */
+::view-transition-group(vt-header) { animation-duration: .2s; }
+::view-transition-group(vt-footer) { animation-duration: .2s; }
+.site-header { view-transition-name: vt-header; }
+.site-footer { view-transition-name: vt-footer; }
 
+/* 2) Animasi masuk elemen saat halaman dibuka (stagger) */
+.hero-copy, .hero-visual,
+.section-heading,
+.start-card, .chapter-row, .feature-card, .workflow-row,
+.closing-grid,
+.doc-masthead, .mobile-toc, .doc-body, .doc-pager,
+.menu-group a, .menu-foot > * {
+  animation: vtRise .5s cubic-bezier(.2, .7, .3, 1) both;
+  animation-delay: calc(var(--vt-i, 0) * 55ms);
+}
+
+@keyframes vtRise {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes vtSlideIn {
+  from { opacity: .3; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes vtFadeOut {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
 @keyframes pageIn {
   from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: translateY(0); }
@@ -1714,6 +1742,31 @@ mark { background: color-mix(in srgb, var(--primary) 28%, transparent); color: v
   from { opacity: 0; transform: translateY(8px) scale(.985); }
   to { opacity: 1; transform: translateY(0) scale(1); }
 }
+
+/* 3) Menu & overlay: transisi halus buka/tutup */
+.site-menu {
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity .22s ease, transform .22s ease;
+  animation: none;
+}
+.site-menu:not([hidden]) { opacity: 1; transform: translateY(0); }
+
+.search-overlay {
+  opacity: 0;
+  transition: opacity .18s ease;
+  animation: none;
+}
+.search-overlay:not([hidden]) { opacity: 1; }
+.search-box {
+  transform: translateY(10px) scale(.98);
+  transition: transform .22s cubic-bezier(.2, .7, .3, 1);
+  animation: none;
+}
+.search-overlay:not([hidden]) .search-box { transform: translateY(0) scale(1); }
+
+/* 4) Fallback: kelas ditambahkan oleh JS bila View Transitions API tak didukung */
+.vt-enter-fx { animation: vtSlideIn .3s cubic-bezier(.2, .7, .3, 1) both; }
 
 /* ---------- Responsive ---------- */
 

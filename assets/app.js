@@ -337,6 +337,83 @@
     });
   }
 
+  /* ---------- Transisi antar halaman & stagger elemen ---------- */
+  /*
+   * Antar dokumen:
+   * - Browser yang mendukung View Transitions API (Chromium/Edge) memakai
+   *   @view-transition { navigation: auto } di CSS: pindah halaman antar
+   *   tautan internal otomatis bertransisi fade + slide tanpa kode ekstra.
+   * - Browser lain (Firefox/Safari) mengikuti jalur fallback: saat tautan
+   *   internal diklik, kami memberi penanda di sessionStorage; dokumen
+   *   baru yang dimuat lalu menjalankan animasi masuk (fade + slide) pada
+   *   konten utamanya, sehingga perpindahan tetap terasa halus.
+   * Stagger: elemen penting muncul berurutan saat halaman dibuka.
+   */
+  function assignStagger() {
+    ['.hero-copy', '.hero-visual', '.section-heading', '.start-card',
+     '.chapter-row', '.feature-card', '.workflow-row', '.closing-grid',
+     '.doc-masthead', '.mobile-toc', '.doc-body', '.doc-pager',
+     '.menu-group a', '.menu-foot > *'
+    ].forEach(function (selector) {
+      doc.querySelectorAll(selector).forEach(function (el, i) {
+        el.style.setProperty('--vt-i', String(i));
+      });
+    });
+  }
+  assignStagger();
+
+  var VT_KEY = 'mochits-vt-pending';
+
+  function localDocUrl(href) {
+    var url;
+    try { url = new URL(href, location.href); } catch (error) { return null; }
+    if (url.origin !== location.origin) return null;
+    var name = url.pathname.split('/').pop() || 'index.html';
+    if (name !== 'index.html' && !/^[\w-]+\.html$/.test(name)) return null;
+    return url;
+  }
+
+  /* Fallback: tandai navigasi antarhalaman agar halaman tujuan beranimasi */
+  doc.addEventListener('click', function (event) {
+    if (event.defaultPrevented || event.button !== 0) return;
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    var link = event.target.closest('a[href]');
+    if (!link || link.target === '_blank' || link.hasAttribute('download')) return;
+    var url = localDocUrl(link.getAttribute('href'));
+    if (!url || url.pathname === location.pathname) return;
+    var dest = url.pathname + (url.search || '') + (url.hash || '');
+    var isDifferentDoc = url.pathname !== location.pathname;
+    if (!isDifferentDoc) return;
+    try {
+      sessionStorage.setItem(VT_KEY, "1");
+    } catch (error) { /* sessionStorage diblokir; lanjut */ }
+    event.preventDefault();
+    location.href = dest;
+  }, true);
+
+  /* Saat halaman dimuat: jalankan animasi masuk bila berasal dari transisi */
+  (function enterFromTransition() {
+    var marker = null;
+    try { marker = sessionStorage.getItem(VT_KEY); } catch (error) { return; }
+    if (!marker) return;
+    try { sessionStorage.removeItem(VT_KEY); } catch (error) { /* abaikan */ }
+    var target = doc.querySelector('main') || doc.body;
+    /* Web Animations API bila ada, jika tidak pakai kelas CSS */
+    if (target.animate) {
+      target.classList.add('vt-enter-fx');
+      target.animate(
+        [
+          { opacity: 0, transform: 'translateY(14px)' },
+          { opacity: 1, transform: 'translateY(0)' }
+        ],
+        { duration: 320, easing: 'cubic-bezier(.2, .7, .3, 1)' }
+      ).onfinish = function () { target.classList.remove('vt-enter-fx'); };
+    } else if (target) {
+      target.classList.add('vt-enter-fx');
+      setTimeout(function () { target.classList.remove('vt-enter-fx'); }, 340);
+    }
+  })();
+
   /* ---------- Halaman aktif ---------- */
   var file = path.split("/").pop() || "index.html";
   all(".site-nav a, .side-nav a").forEach(function (link) {
@@ -348,6 +425,7 @@
   });
 
   /* ---------- Progres baca ---------- */
+  var header = doc.querySelector(".site-header");
   var progressFrame = false;
   function updateProgress() {
     progressFrame = false;
@@ -355,6 +433,7 @@
     var max = doc.documentElement.scrollHeight - window.innerHeight;
     var value = max > 0 ? Math.min(1, Math.max(0, window.pageYOffset / max)) : 0;
     progressBar.style.width = (value * 100).toFixed(2) + "%";
+    if (header) header.classList.toggle("is-scrolled", window.pageYOffset > 8);
   }
   function queueProgress() {
     if (progressFrame) return;
@@ -400,6 +479,7 @@
   }
   updateProgress();
   updateToc();
+  if (header && window.pageYOffset > 8) header.classList.add("is-scrolled");
 
   all(".mobile-toc a").forEach(function (link) {
     on(link, "click", function () {
