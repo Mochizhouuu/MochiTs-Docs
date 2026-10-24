@@ -423,6 +423,35 @@
       link.setAttribute("aria-current", "page");
     }
   });
+  all(".bottom-nav-item").forEach(function (item) {
+    var href = (item.getAttribute("data-nav") || "").split("#")[0];
+    if (href === file) {
+      item.classList.add("active");
+      item.setAttribute("aria-current", "page");
+    }
+  });
+
+  /* ---------- Transisi tombol bottom nav ---------- */
+  all(".bottom-nav-item").forEach(function (item) {
+    item.addEventListener('click', function (event) {
+      var dest = item.getAttribute('data-nav') || item.getAttribute('href');
+      if (!dest) return;
+      var url = new URL(dest, location.href);
+      if (url.pathname === location.pathname) {
+        /* Halaman yang sama: beri efek animasi tombol saja, tanpa navigasi */
+        event.preventDefault();
+        item.classList.remove('is-animating');
+        void item.offsetWidth; /* reflow */
+        item.classList.add('is-animating');
+        setTimeout(function () { item.classList.remove('is-animating'); }, 400);
+        return;
+      }
+      event.preventDefault();
+      try { sessionStorage.setItem(VT_KEY, "1"); } catch (error) {}
+      item.classList.add('is-animating');
+      location.href = dest;
+    });
+  });
 
   /* ---------- Progres baca ---------- */
   var header = doc.querySelector(".site-header");

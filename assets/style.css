@@ -1066,6 +1066,96 @@ body.menu-open .menu-btn-lines::after { top: 5px; transform: rotate(-45deg); }
 /* ---------- Footer ---------- */
 
 .site-footer { padding: 34px 0 40px; background: var(--surface); }
+
+/* ---------- Bottom navigation ---------- */
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 110;
+  display: none;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 4px;
+  padding: 8px 10px calc(10px + env(safe-area-inset-bottom, 0px));
+  background: color-mix(in srgb, var(--surface) 92%, transparent);
+  backdrop-filter: blur(18px) saturate(1.4);
+  -webkit-backdrop-filter: blur(18px) saturate(1.4);
+  border-top: 1px solid var(--line);
+  box-shadow: 0 -8px 24px -12px color-mix(in srgb, var(--text) 12%, transparent);
+}
+.bottom-nav-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 6px 2px;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 10.5px;
+  font-weight: 500;
+  border-radius: 10px;
+  transition: color .2s ease, background-color .2s ease, transform .2s cubic-bezier(.2, .7, .3, 1);
+  overflow: hidden;
+}
+.bottom-nav-item .icon {
+  width: 20px;
+  height: 20px;
+  display: grid;
+  place-items: center;
+  transition: transform .25s cubic-bezier(.2, .7, .3, 1);
+}
+.bottom-nav-item .icon svg { width: 18px; height: 18px; }
+.bottom-nav-item:hover { color: var(--text); background: var(--surface-2); }
+.bottom-nav-item:active { transform: scale(.94); }
+/* Animasi tombol saat pindah menu (dijalankan oleh JS) */
+.bottom-nav-item.is-animating {
+  animation: bottomNavPulse .35s cubic-bezier(.2, .7, .3, 1) both;
+}
+@keyframes bottomNavPulse {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+.bottom-nav-item.active {
+  color: var(--primary-deep);
+  background: var(--primary-soft);
+}
+.bottom-nav-item.active .icon { transform: translateY(-1px) scale(1.06); }
+/* Indikator kecil di bawah item aktif */
+.bottom-nav-item::after {
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--primary);
+  transform: translateX(-50%) scale(0);
+  opacity: 0;
+  transition: transform .25s cubic-bezier(.2, .7, .3, 1), opacity .25s ease;
+}
+.bottom-nav-item.active::after {
+  transform: translateX(-50%) scale(1);
+  opacity: 1;
+}
+/* Elemen aktif di tengah (Beranda) dapat efek tombol pill */
+.bottom-nav-item[data-nav="index.html"].active {
+  background: var(--primary);
+  color: var(--on-primary);
+  box-shadow: 0 6px 16px -8px color-mix(in srgb, var(--primary) 80%, transparent);
+}
+.bottom-nav-item[data-nav="index.html"].active::after { background: var(--on-primary); }
+/* Tambah padding di bawah konten agar tidak terhalang bottom nav */
+@media (max-width: 1040px) {
+  .bottom-nav { display: grid; }
+  .site-footer { padding-bottom: 148px; }
+  main { padding-bottom: 100px; }
+}
+
 .footer-in {
   display: flex;
   align-items: flex-end;
