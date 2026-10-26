@@ -28,10 +28,9 @@
   <link rel="icon" href="assets/icon-192.png" sizes="192x192" type="image/png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="sitemap" type="application/xml" href="https://mochits.my.id/sitemap.xml">>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="sitemap" type="application/xml" href="https://mochits.my.id/sitemap.xml">
+  <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
   <script>
     (function () {
       var theme = "light";
@@ -116,22 +115,22 @@
       <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m3 12 9-9 9 9M5 10v10a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V10"></path></svg></span>
       <span class="lbl">Beranda</span>
     </a>
-    <a href="mulai.html" class="bottom-nav-item" data-nav="mulai.html">
+    <a href="mulai.html" class="bottom-nav-item active" data-nav="mulai.html" aria-current="page">
       <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5h16M4 12h16M4 19h10"></path></svg></span>
       <span class="lbl">Mulai</span>
+    </a>
+    <a href="teks.html" class="bottom-nav-item" data-nav="teks.html">
+      <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 4h14M5 8h14M7 14h10M7 18h6"></path></svg></span>
+      <span class="lbl">Teks</span>
     </a>
     <a href="script.html" class="bottom-nav-item" data-nav="script.html">
       <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m8 6-6 6 6 6M16 6l6 6-6 6"></path></svg></span>
       <span class="lbl">Script</span>
     </a>
-    <a href="tester.html" class="bottom-nav-item" data-nav="tester.html">
-      <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg></span>
-      <span class="lbl">Tester</span>
-    </a>
-    <a href="faq.html" class="bottom-nav-item" data-nav="faq.html">
-      <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"></circle><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 .8-1 1.7M12 17v.01"></path></svg></span>
-      <span class="lbl">FAQ</span>
-    </a>
+    <button type="button" class="bottom-nav-item" data-nav-menu aria-haspopup="true" aria-expanded="false" aria-controls="site-menu">
+      <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"></path></svg></span>
+      <span class="lbl">Semua bab</span>
+    </button>
   </nav>
   <div class="site-menu" id="site-menu" hidden>
     <div class="site-menu-in">
@@ -152,6 +151,7 @@
         </button>
         <a href="https://github.com/Mochizhouuu/MochiTs" target="_blank" rel="noopener">Kode aplikasi di GitHub</a>
         <a href="https://github.com/Mochizhouuu/MochiTs-Docs" target="_blank" rel="noopener">Sumber dokumentasi</a>
+        <a href="changelog.html">Riwayat perubahan</a>
         <p class="menu-note">Semua halaman bisa dibaca tanpa akun. Proyekmu tetap tersimpan di perangkat.</p>
       </div>
     </div>
@@ -256,6 +256,28 @@
 
       <h2 id="home">Mengenal Home</h2>
       <p>Home adalah pusat proyek. Beberapa elemen penting:</p>
+
+      <figure class="shot">
+        <div class="shot-view">
+          <picture>
+            <source srcset="assets/screens/app-home.avif" type="image/avif">
+            <img class="shot-media" src="assets/screens/app-home.webp" width="720" height="1422" loading="lazy" decoding="async" alt="Layar Home MochiTs berlatar gelap: judul MochiTs dengan subjudul Editor teks &amp; gambar, seksi Recent Projects, kartu Belum Ada Proyek, serta tombol New Project, Open Project, dan Import Image di bagian bawah.">
+          </picture>
+          <span class="spot" style="left:7%;top:13%" aria-hidden="true">1</span>
+          <span class="spot" style="left:92.5%;top:4.5%" aria-hidden="true">2</span>
+          <span class="spot" style="left:8.5%;top:74.5%" aria-hidden="true">3</span>
+          <span class="spot" style="left:8.5%;top:94%" aria-hidden="true">4</span>
+        </div>
+        <figcaption class="shot-cap">Layar Home saat baru pasang: nama aplikasi di atas, Recent Projects kosong, dan tiga tombol utama di bawah.</figcaption>
+      </figure>
+      <ul class="shot-legend">
+          <li><span class="num">1</span><span><strong>Recent Projects</strong> — kartu folder dan proyek terbaru. Sekarang masih kosong ("Belum Ada Proyek").</span></li>
+          <li><span class="num">2</span><span><strong>Menu tiga titik</strong> — berisi Impor ZIP, Kelola folder, dan Pengaturan.</span></li>
+          <li><span class="num">3</span><span><strong>New Project</strong> — membuat kanvas baru; nama, lebar, dan tingginya kamu tentukan sendiri.</span></li>
+          <li><span class="num">4</span><span><strong>Import Image</strong> — memilih gambar dari galeri sebagai halaman; Open Project di antaranya membuka file <code>.mts</code> lama.</span></li>
+        </ul>
+
+
       <div class="table-wrap">
         <table>
           <thead><tr><th>Elemen</th><th>Fungsi</th></tr></thead>
@@ -273,6 +295,26 @@
       </div>
 
       <h2 id="editor">Mengenal Editor</h2>
+
+      <figure class="shot">
+        <div class="shot-view">
+          <picture>
+            <source srcset="assets/screens/app-editor.avif" type="image/avif">
+            <img class="shot-media" src="assets/screens/app-editor.webp" width="720" height="1422" loading="lazy" decoding="async" alt="Layar editor MochiTs berlatar gelap: kanvas halaman aktif di tengah, deretan ikon undo, redo, lapisan, dan simpan di bar atas, serta bar alat bawah dengan label Erase, Text, Effect, Font, dan Style.">
+          </picture>
+          <span class="spot" style="left:50%;top:49%" aria-hidden="true">1</span>
+          <span class="spot" style="left:33%;top:4.5%" aria-hidden="true">2</span>
+          <span class="spot" style="left:50%;top:93.5%" aria-hidden="true">3</span>
+        </div>
+        <figcaption class="shot-cap">Layar editor proyek masih kosong, jadi kanvasnya hitam. Layar yang sama memuat halaman komik saat kamu mengimpor gambar.</figcaption>
+      </figure>
+      <ul class="shot-legend">
+          <li><span class="num">1</span><span><strong>Kanvas</strong> — halaman aktif; cubit untuk perbesar, geser dengan dua jari untuk berpindah halaman.</span></li>
+          <li><span class="num">2</span><span><strong>Bar atas</strong> — kembali, undo/redo, dan panel lapisan.</span></li>
+          <li><span class="num">3</span><span><strong>Bar alat bawah</strong> — lima pintu masuk: Erase, Text, Effect, Font, dan Style. Seluruh anotasi bab ini mengikuti label di bar ini.</span></li>
+        </ul>
+
+
       <ul>
         <li><strong>Kanvas</strong>: cubit untuk memperbesar, geser dengan dua jari untuk berpindah. Ketuk dua kali lapisan teks untuk mengedit isinya.</li>
         <li><strong>Toolbar</strong>: pilih alat seleksi (brush, eraser, lasso, magic wand), alat teks, atau gambar.</li>
@@ -284,10 +326,29 @@
         <strong>Autosave.</strong> Tidak ada tombol simpan. Setiap perubahan disimpan otomatis; kembali ke Home kapan saja.
       </div>
 
+      <figure class="shot">
+        <div class="shot-view">
+          <picture>
+            <source srcset="assets/screens/app-settings.avif" type="image/avif">
+            <img class="shot-media" src="assets/screens/app-settings.webp" width="720" height="1422" loading="lazy" decoding="async" alt="Layar Pengaturan MochiTs: tab Tema, Model, Style, Font, dan Output; kartu Tampilan; pilihan Ikuti Sistem, Biru Terang, dan Biru Gelap; serta seksi Bantuan.">
+          </picture>
+          <span class="spot" style="left:90%;top:14%" aria-hidden="true">1</span>
+          <span class="spot" style="left:50%;top:48%" aria-hidden="true">2</span>
+          <span class="spot" style="left:50%;top:95%" aria-hidden="true">3</span>
+        </div>
+        <figcaption class="shot-cap">Layar Pengaturan: tab Tema sampai Script, pilihan tema, dan seksi Bantuan.</figcaption>
+      </figure>
+      <ul class="shot-legend">
+          <li><span class="num">1</span><span><strong>Tab pengaturan</strong> — Tema, Model, Style, Font, Output, dan Script; tab yang tak terlihat bisa digeser.</span></li>
+          <li><span class="num">2</span><span><strong>Tema aplikasi</strong> — Ikuti Sistem, Biru Terang (Light), atau Biru Gelap (Dark).</span></li>
+          <li><span class="num">3</span><span><strong>Bantuan</strong> — tombol <em>Buka Panduan</em> membuka dokumentasi ini.</span></li>
+        </ul>
+
+
       <h2 id="tips">Tiga kebiasaan yang menghemat waktu</h2>
       <ol>
         <li>Kelompokkan proyek per judul atau chapter memakai folder sejak awal.</li>
-        <li>Simpan naskah TL dalam satu file teks, lalu gunakan <a href="script.html">format script</a> agar balon terisi otomatis.</li>
+        <li>Simpan Script TL dalam satu file teks, lalu gunakan <a href="script.html">format script</a> agar balon terisi otomatis.</li>
         <li>Atur jarak huruf dan baris di panel teks sebelum menyalin gayanya ke balon lain.</li>
       </ol>
       </div>
@@ -326,6 +387,13 @@
       <div class="footer-note">
         <span>Dokumentasi MochiTs · Bahasa Indonesia</span>
         <span>Dibuat untuk Android 10+</span>
+      </div>
+      <div class="footer-meta">
+        <span>Versi dokumen <b>2026.10.26</b></span>
+        <span>Terakhir diperbarui <time datetime="2026-10-26">26 Okt 2026</time></span>
+        <a class="meta-edit" href="https://github.com/Mochizhouuu/MochiTs-Docs/edit/main/mulai.html" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m15 4 5 5L9 20H4v-5Z"></path></svg>Sunting halaman ini
+        </a>
       </div>
     </div>
   </footer>

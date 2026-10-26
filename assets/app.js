@@ -10,9 +10,23 @@
   var searchSummary = doc.getElementById("search-summary");
   var menu = doc.getElementById("site-menu");
   var menuBtn = doc.querySelector(".menu-btn");
+  var navMenuBtns = all("[data-nav-menu]");
   var progressBar = doc.querySelector(".reading-progress span");
   var path = location.pathname.replace(/\/index\.html$/, "/");
   var lastFocused = null;
+
+  /* ---------- Service worker (klaim offline dibuat nyata) ---------- */
+  if ("serviceWorker" in navigator) {
+    var swUrl = "sw.js";
+    var lokal = location.protocol === "https:" || location.hostname === "localhost" || location.hostname === "127.0.0.1";
+    if (lokal) {
+      window.addEventListener("load", function () {
+        navigator.serviceWorker.register(swUrl).catch(function () {
+          /* Registrasi gagal (mis. mode incognito/perangkat lama); situs tetap normal */
+        });
+      });
+    }
+  }
 
   /* ---------- Tema terang / gelap ---------- */
   var themeButtons = all("[data-theme-toggle]");
@@ -85,17 +99,24 @@
 
   /* ---------- Menu ---------- */
   function setMenu(open, restoreFocus) {
-    if (!menu || !menuBtn) return;
+    if (!menu) return;
     menu.hidden = !open;
-    menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
-    menuBtn.setAttribute("aria-label", open ? "Tutup menu" : "Buka menu");
+    /* Setiap pengendali menu harus selaras: tombol "Semua bab" di
+       bottom-nav dan tombol menu di header. */
+    navMenuBtns.forEach(function (button) {
+      button.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+    if (menuBtn) {
+      menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+      menuBtn.setAttribute("aria-label", open ? "Tutup menu" : "Buka menu");
+    }
     body.classList.toggle("menu-open", open);
     if (open) {
       setSearch(false);
       var first = menu.querySelector("a, button");
       if (first) first.focus();
     } else if (restoreFocus) {
-      menuBtn.focus();
+      (navMenuBtns[0] || menuBtn).focus();
     }
   }
 
@@ -122,8 +143,8 @@
   var activeResult = -1;
   var quickLinks = [
     { page: "mulai.html", pageTitle: "Mulai", title: "Memasang aplikasi", id: "instalasi", text: "Panduan memasang MochiTs dan membuat proyek pertama." },
-    { page: "script.html", pageTitle: "Script TL", title: "Format script TL", id: "contoh", text: "Contoh naskah, pemisah halaman, simbol, dan entri terhubung." },
-    { page: "tester.html", pageTitle: "Tester", title: "Tester script", id: "parser", text: "Uji naskah TL langsung di browser tanpa memasang aplikasi." },
+    { page: "script.html", pageTitle: "Script TL", title: "Format Script TL", id: "contoh", text: "Contoh naskah, pemisah halaman, simbol, dan entri terhubung." },
+    { page: "tester.html", pageTitle: "Tester", title: "Tester Script TL", id: "parser", text: "Uji naskah TL langsung di browser tanpa memasang aplikasi." },
     { page: "faq.html", pageTitle: "FAQ", title: "Pertanyaan umum", id: "script", text: "Jawaban singkat untuk masalah yang paling sering muncul." }
   ];
 
@@ -351,7 +372,7 @@
    */
   function assignStagger() {
     ['.hero-copy', '.hero-visual', '.section-heading', '.start-card',
-     '.chapter-row', '.feature-card', '.workflow-row', '.closing-grid',
+     '.chapter-row', 'figure.shot', '.ba', '.mini-tester', '.closing-grid',
      '.doc-masthead', '.mobile-toc', '.doc-body', '.doc-pager',
      '.menu-group a', '.menu-foot > *'
     ].forEach(function (selector) {
@@ -431,9 +452,96 @@
     }
   });
 
+  /* ---------- Perbandingan sebelum / sesudah (beranda) ---------- */
+  /* Tanpa JS: panel tampil bertumpuk vertikal (.ba tanpa kelas "on").
+     Dengan JS: panel ditumpuk lalu panel kanan dipotong dari kiri oleh
+     clip-path --ba-x; input range transparan mengendalikan potongan itu,
+     termasuk saat dikendalikan pemain keyboard. */
+  all("[data-ba]").forEach(function (wrap) {
+    var range = wrap.querySelector(".ba-range");
+    var stack = wrap.querySelector(".ba-stack");
+    if (!range || !stack) return;
+    wrap.classList.add("on");
+    var update = function () {
+      stack.style.setProperty("--ba-x", range.value + "%");
+      var pct = Math.round(range.value);
+      range.setAttribute("aria-valuetext", pct + "% — panel hasil typeset terlihat di sisi kanan");
+    };
+    update();
+    on(range, "input", update);
+  });
+
+  /* ---------- Tester mini di beranda ---------- */
+  /* Memakai ulang parser tester.html (normalize/parseMappings/parseScript);
+     konfigurasi dikunci ke bawaan aplikasi supaya kartunya tetap ramping. */
+  var demoInput = doc.getElementById("demo-input");
+  if (demoInput) {
+    var DEMO_MAPPINGS = "[]\n-\n//- = terhubung\n//[] = terhubung\n#\n*\n**\n<>";
+    var DEMO_SEPARATOR = "P\\d+";
+    var demoOutput = doc.getElementById("demo-output");
+    var demoStats = doc.getElementById("demo-stats");
+    var demoWarnings = doc.getElementById("demo-warnings");
+    var demoTimer = null;
+
+    var renderMini = function () {
+      var mappings = parseMappings(DEMO_MAPPINGS);
+      var parsed = parseScript(demoInput.value, mappings, DEMO_SEPARATOR);
+      var total = 0;
+      var linked = 0;
+      var html = "";
+
+      parsed.pages.forEach(function (page, index) {
+        total += page.entries.length;
+        html += '<div class="result-page">';
+        html += '<div class="page-label">' + escapeHtml(page.label || ("Halaman " + (index + 1))) + "</div>";
+        if (!page.entries.length) {
+          html += '<div class="empty-note">Tidak ada entri.</div>';
+        }
+        page.entries.forEach(function (entry) {
+          if (entry.parent) linked++;
+          html += '<div class="entry">';
+          html += '<span class="sym' + (entry.parent ? " linked" : "") + '">' + escapeHtml(entry.symbol) + "</span>";
+          html += '<span class="body">' + escapeHtml(entry.text || "(kosong)");
+          if (entry.parent) html += '<span class="parent">terhubung ke ' + escapeHtml(entry.parent) + "</span>";
+          html += "</span></div>";
+        });
+        html += "</div>";
+      });
+
+      if (demoOutput) demoOutput.innerHTML = html;
+      if (demoStats) {
+        demoStats.innerHTML =
+          '<span class="stat"><b>' + parsed.pages.length + "</b> halaman</span>" +
+          '<span class="stat"><b>' + total + "</b> entri</span>" +
+          '<span class="stat"><b>' + linked + "</b> terhubung</span>";
+      }
+      if (demoWarnings) {
+        demoWarnings.innerHTML = parsed.warnings.map(function (warning) {
+          return '<div class="' + (warning.type === "warn" ? "warn" : "") + '">' + escapeHtml(warning.text) + "</div>";
+        }).join("");
+      }
+    };
+
+    on(demoInput, "input", function () {
+      clearTimeout(demoTimer);
+      demoTimer = setTimeout(renderMini, 140);
+    });
+    renderMini();
+  }
+
   /* ---------- Transisi tombol bottom nav ---------- */
   all(".bottom-nav-item").forEach(function (item) {
     item.addEventListener('click', function (event) {
+      /* Tombol "Semua bab" membuka menu penuh, tanpa berpindah halaman */
+      if (item.hasAttribute('data-nav-menu')) {
+        event.preventDefault();
+        item.classList.remove('is-animating');
+        void item.offsetWidth;
+        item.classList.add('is-animating');
+        setTimeout(function () { item.classList.remove('is-animating'); }, 400);
+        setMenu(true, false);
+        return;
+      }
       var dest = item.getAttribute('data-nav') || item.getAttribute('href');
       if (!dest) return;
       var url = new URL(dest, location.href);

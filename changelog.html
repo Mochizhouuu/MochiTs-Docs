@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Riwayat perubahan | MochiTs Docs</title>
+  <meta name="description" content="Riwayat perubahan dokumentasi MochiTs Docs: optimasi beranda, screenshot aplikasi asli, offline, font self-host, dan perbaikan metadata.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#f7f9ff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0f141d" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://mochits.my.id/changelog.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="MochiTs Docs">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:title" content="Riwayat perubahan | MochiTs Docs">
+  <meta property="og:description" content="Riwayat perubahan dokumentasi MochiTs Docs: optimasi beranda, screenshot aplikasi asli, offline, font self-host, dan perbaikan metadata.">
+  <meta property="og:url" content="https://mochits.my.id/changelog.html">
+  <meta property="og:image" content="https://mochits.my.id/assets/og-cover.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Logo MochiTs dan tulisan Panduan MochiTs">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Riwayat perubahan | MochiTs Docs">
+  <meta name="twitter:description" content="Riwayat perubahan dokumentasi MochiTs Docs: optimasi beranda, screenshot aplikasi asli, offline, font self-host, dan perbaikan metadata.">
+  <meta name="twitter:image" content="https://mochits.my.id/assets/og-cover.png">
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="assets/icon-48.png" sizes="48x48" type="image/png">
+  <link rel="icon" href="assets/icon-192.png" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="sitemap" type="application/xml" href="https://mochits.my.id/sitemap.xml">
+  <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <script>
+    (function () {
+      var theme = "light";
+      try {
+        var saved = localStorage.getItem("mochits-theme");
+        if (saved === "dark" || saved === "light") theme = saved;
+        else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) theme = "dark";
+      } catch (error) { /* penyimpanan diblokir */ }
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
+  <link rel="stylesheet" href="assets/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://mochits.my.id/changelog.html",
+    "url": "https://mochits.my.id/changelog.html",
+    "name": "Riwayat perubahan | MochiTs Docs",
+    "description": "Riwayat perubahan dokumentasi MochiTs Docs: optimasi beranda, screenshot aplikasi asli, offline, font self-host, dan perbaikan metadata.",
+    "inLanguage": "id",
+    "isPartOf": { "@id": "https://mochits.my.id/#website" },
+    "dateModified": "2026-10-26",
+    "about": { "@id": "https://mochits.my.id/#website" }
+  }
+  </script>
+</head>
+<body class="has-progress" data-page="changelog.html">
+  <a class="skip-link" href="#main">Lewati ke konten</a>
+  <header class="site-header">
+    <div class="header-in">
+      <a class="brand" href="index.html" aria-label="MochiTs Docs, beranda">
+        <img class="brand-logo" src="assets/logo-mark.png" alt="" width="34" height="34">
+        <span class="brand-word">Mochi<span>Ts</span></span>
+        <span class="brand-tag">Docs</span>
+      </a>
+      <nav class="site-nav" aria-label="Utama">
+        <a href="mulai.html">Mulai</a>
+        <a href="script.html">Script</a>
+        <a href="tester.html">Tester</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+      <div class="header-tools">
+        <button class="search-btn" type="button" aria-label="Cari dokumentasi">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>
+          <span>Cari</span>
+          <kbd>/</kbd>
+        </button>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Aktifkan mode gelap" title="Mode gelap">
+          <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3a6.5 6.5 0 0 0 9.8 9.8Z"></path></svg>
+          <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>
+        </button>
+        <a class="header-link" href="https://github.com/Mochizhouuu/MochiTs" target="_blank" rel="noopener" aria-label="MochiTs di GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .7a11.3 11.3 0 0 0-3.6 22c.6.1.8-.3.8-.6v-2.2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.2-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11 11 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.9 1.2 1.9 1.2 3.2 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.3 11.3 0 0 0 12 .7Z"></path></svg>
+          <span>GitHub</span>
+        </a>
+        <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Buka menu">
+          <span class="menu-btn-lines" aria-hidden="true"></span>
+        </button>
+      </div>
+      <div class="reading-progress" aria-hidden="true"><span></span></div>
+    </div>
+  </header>
+
+  <nav class="bottom-nav" aria-label="Navigasi utama">
+    <a href="index.html" class="bottom-nav-item" data-nav="index.html">
+      <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m3 12 9-9 9 9M5 10v10a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V10"></path></svg></span>
+      <span class="lbl">Beranda</span>
+    </a>
+    <a href="mulai.html" class="bottom-nav-item" data-nav="mulai.html">
+      <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5h16M4 12h16M4 19h10"></path></svg></span>
+      <span class="lbl">Mulai</span>
+    </a>
+    <a href="teks.html" class="bottom-nav-item" data-nav="teks.html">
+      <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 4h14M5 8h14M7 14h10M7 18h6"></path></svg></span>
+      <span class="lbl">Teks</span>
+    </a>
+    <a href="script.html" class="bottom-nav-item" data-nav="script.html">
+      <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m8 6-6 6 6 6M16 6l6 6-6 6"></path></svg></span>
+      <span class="lbl">Script</span>
+    </a>
+    <button type="button" class="bottom-nav-item" data-nav-menu aria-haspopup="true" aria-expanded="false" aria-controls="site-menu">
+      <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"></path></svg></span>
+      <span class="lbl">Semua bab</span>
+    </button>
+  </nav>
+
+  <div class="site-menu" id="site-menu" hidden>
+    <div class="site-menu-in">
+      <nav class="menu-group" aria-label="Isi panduan">
+        <div class="menu-label">Isi panduan</div>
+        <a href="mulai.html"><span class="no">01</span><span>Mulai</span><span class="desc">Pasang aplikasi, buat proyek, kenali layar editor.</span></a>
+        <a href="folder-zip.html"><span class="no">02</span><span>Folder &amp; ZIP</span><span class="desc">Rapikan proyek dan impor satu chapter sekaligus.</span></a>
+        <a href="teks.html"><span class="no">03</span><span>Teks &amp; spasi</span><span class="desc">Huruf, warna, efek, dan cara membersihkan balon.</span></a>
+        <a href="script.html"><span class="no">04</span><span>Script TL</span><span class="desc">Ubah naskah terjemahan menjadi daftar balon.</span></a>
+        <a href="tester.html"><span class="no">05</span><span>Tester</span><span class="desc">Coba naskah dan pemisah halaman langsung di browser.</span></a>
+        <a href="ekspor.html"><span class="no">06</span><span>Ekspor</span><span class="desc">Simpan gambar jadi atau file proyek yang bisa diedit.</span></a>
+        <a href="faq.html"><span class="no">07</span><span>FAQ</span><span class="desc">Jawaban singkat untuk masalah yang sering muncul.</span></a>
+      </nav>
+      <div class="menu-foot">
+        <button class="search-wide" type="button" aria-label="Buka pencarian">
+          <span>Cari di dokumentasi</span>
+          <span aria-hidden="true">/</span>
+        </button>
+        <a href="https://github.com/Mochizhouuu/MochiTs" target="_blank" rel="noopener">Kode aplikasi di GitHub</a>
+        <a href="https://github.com/Mochizhouuu/MochiTs-Docs" target="_blank" rel="noopener">Sumber dokumentasi</a>
+        <a href="changelog.html">Riwayat perubahan</a>
+        <p class="menu-note">Semua halaman bisa dibaca tanpa akun. Proyekmu tetap tersimpan di perangkat.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="search-overlay" id="search-overlay" hidden>
+    <div class="search-box" role="dialog" aria-modal="true" aria-labelledby="search-title">
+      <div class="search-head">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>
+        <h2 class="visually-hidden" id="search-title">Cari dokumentasi</h2>
+        <input id="search-input" type="search" aria-label="Cari dokumentasi" placeholder="Cari bab, fitur, atau masalah..." autocomplete="off" spellcheck="false">
+        <button class="search-close" type="button" data-search-close aria-label="Tutup pencarian">Esc</button>
+      </div>
+      <div class="search-results" id="search-results" aria-live="polite"></div>
+      <div class="search-foot">
+        <span id="search-summary">Mulai dari sini</span>
+        <span>↑↓ pilih · ↵ buka · esc tutup</span>
+      </div>
+    </div>
+  </div>
+
+  <main class="docs-shell" id="main">
+      <aside class="docs-side">
+        <div class="side-label">Panduan</div>
+        <nav class="side-nav" aria-label="Bab panduan">
+        <a href="mulai.html"><span class="no">01</span><span>Mulai</span></a>
+        <a href="folder-zip.html"><span class="no">02</span><span>Folder &amp; ZIP</span></a>
+        <a href="teks.html"><span class="no">03</span><span>Teks &amp; spasi</span></a>
+        <a href="script.html"><span class="no">04</span><span>Script TL</span></a>
+        </nav>
+        <div class="side-label">Alat &amp; output</div>
+        <nav class="side-nav" aria-label="Alat dan output">
+        <a href="tester.html"><span class="no">05</span><span>Tester</span></a>
+        <a href="ekspor.html"><span class="no">06</span><span>Ekspor</span></a>
+        <a href="faq.html"><span class="no">07</span><span>FAQ</span></a>
+        </nav>
+        <div class="side-help">
+          <strong>Baru mulai?</strong>
+          Baca berurutan dari Bab 01 agar alur impor, teks, dan ekspor tidak terlewat.
+          <a href="mulai.html">Mulai dari awal</a>
+        </div>
+      </aside>
+
+    <article class="docs-article" aria-labelledby="doc-title">
+      <header class="doc-masthead">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Manual</a><span class="sep">/</span><span>Riwayat perubahan</span>
+        </nav>
+        <h1 id="doc-title">Riwayat perubahan</h1>
+        <p class="doc-lead">Catatan perubahan dokumen pada situs MochiTs Docs. Versi dokumen tercatat di footer tiap halaman.</p>
+        <div class="doc-meta"><span>Bab 00</span><span>Situs</span><span>±2 menit baca</span></div>
+      </header>
+
+      <div class="doc-body">
+        <h2 id="v-2026-10-26">Versi 2026.10.26</h2>
+        <p>Dokumen diperbarui pada <time datetime="2026-10-26">26 Okt 2026</time>.</p>
+        <h3 id="v-2026-10-26-1">Beranda lebih ringat dan padat</h3>
+        <ul>
+          <li>Seksi fitur lama dihapus; beranda kini memakai hero dengan screenshot aplikasi asli, seksi banding before/after, seksi <em>Mulai cepat</em> 3 kartu, daftar bab, demo tester mini, dan penutup.</li>
+          <li>Seksi <em>Alur kerja</em> digabung ke dalam narasi beranda, tanpa duplikasi pesan.</li>
+        </ul>
+        <h3 id="v-2026-10-26-2">Screenshot asli dari aplikasi</h3>
+        <ul>
+          <li>Hero beranda memakai screenshot editor asli (layar gelap) dari <code>assets/screens/</code> dengan preload webp.</li>
+          <li>Mulai dan teks memakai screenshot beranotasi: alat editor, bar alat <em>Hapus/Teks/Efek/Huruf/Gaya</em>, dan tab pengaturan.</li>
+        </ul>
+        <h3 id="v-2026-10-26-3">Memperbaiki klaim situs</h3>
+        <ul>
+          <li>Service worker didaftarkan: aset statis di-precache dan dilayani cache-first, sehingga klaim <em>bisa dibaca offline</em> benar.</li>
+          <li>Font self-host (Inter + JetBrains Mono, subset latin, woff2) dengan preload; font Google Fonts tidak lagi dipakai.</li>
+        </ul>
+
+        <h2 id="v-2025-10-20">Versi sebelumnya</h2>
+        <p>Perubahan pada <time datetime="2026-10-20">20 Okt 2026</time> (riwayat sebagian tercatat di halaman FAQ dan changelog awal): penulisan tutorial Bahasa Indonesia penuh, mode gelap, dan tester Script TL.</p>
+      </div>
+
+      <nav class="doc-pager" aria-label="Navigasi bab">
+        <a class="prev" href="index.html"><span class="lbl">Sebelumnya</span><span class="ttl">Beranda</span></a>
+        <a class="next" href="faq.html"><span class="lbl">Selanjutnya</span><span class="ttl">FAQ</span></a>
+      </nav>
+    </article>
+
+    <aside class="docs-toc">
+      <div class="side-label">Di halaman ini</div>
+      <nav class="toc-nav" aria-label="Di halaman ini">
+          <a href="#v-2026-10-26">Versi 2026.10.26</a>
+          <a href="#v-2026-10-26-1">Beranda lebih ringat dan padat</a>
+          <a href="#v-2026-10-26-2">Screenshot asli dari aplikasi</a>
+          <a href="#v-2026-10-26-3">Memperbaiki klaim situs</a>
+          <a href="#v-2025-10-20">Versi sebelumnya</a>
+      </nav>
+      <a class="toc-top" href="#main">Kembali ke atas ↑</a>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-in">
+        <div class="footer-brand"><img src="assets/logo-mark.png" alt="" width="26" height="26">MochiTs <span>Panduan pengguna</span></div>
+        <div class="footer-links">
+          <a href="index.html">Beranda</a>
+          <a href="mulai.html">Mulai</a>
+          <a href="script.html">Script</a>
+          <a href="tester.html">Tester</a>
+          <a href="https://github.com/Mochizhouuu/MochiTs" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <div class="footer-note">
+        <span>Dokumentasi MochiTs · Bahasa Indonesia</span>
+        <span>Dibuat untuk Android 10+</span>
+      </div>
+      <div class="footer-meta">
+        <span>Versi dokumen <b>2026.10.26</b></span>
+        <span>Terakhir diperbarui <time datetime="2026-10-26">26 Okt 2026</time></span>
+        <a class="meta-edit" href="https://github.com/Mochizhouuu/MochiTs-Docs/edit/main/changelog.html" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m15 4 5 5L9 20H4v-5L15 4Z"></path></svg>Sunting halaman ini
+        </a>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/app.js"></script>
+</body>
+</html>

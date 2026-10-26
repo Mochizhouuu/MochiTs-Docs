@@ -2,20 +2,6 @@
   {
     "page": "index.html",
     "pageTitle": "Beranda",
-    "title": "Alur kerja",
-    "id": "alur",
-    "text": "Empat tahap di dalam aplikasi: impor halaman, bersihkan balon, isi teks, lalu ekspor. Semua tersimpan dalam satu proyek."
-  },
-  {
-    "page": "index.html",
-    "pageTitle": "Beranda",
-    "title": "Fitur MochiTs",
-    "id": "fitur",
-    "text": "Naskah TL menjadi daftar balon, pembersihan balon dengan Telea atau LaMa, serta ekspor gambar dan file proyek yang bisa diedit lagi."
-  },
-  {
-    "page": "index.html",
-    "pageTitle": "Beranda",
     "title": "Daftar bab",
     "id": "isi",
     "text": "Tujuh bab panduan: Mulai, Folder & ZIP, Teks & spasi, Script TL, Tester, Ekspor, dan FAQ."
@@ -25,7 +11,7 @@
     "pageTitle": "Beranda",
     "title": "Tiga langkah pertama",
     "id": "cepat",
-    "text": "Masukkan halaman dari galeri atau ZIP, rapikan balon dan isi teks dari naskah TL, lalu simpan sebagai PNG, JPEG, WEBP, atau file proyek."
+    "text": "Impor halaman dari galeri atau ZIP, bersihkan balon, isi isian dari Script TL, lalu ekspor hasilnya. Tiga langkah: impor, bersihkan dan isi, simpan."
   },
   {
     "page": "index.html",
@@ -33,6 +19,20 @@
     "title": "Panduan MochiTs",
     "id": "main",
     "text": "Panduan resmi MochiTs untuk typeset komik di Android. Impor halaman, bersihkan balon, isi naskah terjemahan, atur huruf, lalu ekspor."
+  },
+  {
+    "page": "index.html",
+    "pageTitle": "Beranda",
+    "title": "Bandingkan sebelum dan sesudah",
+    "id": "banding",
+    "text": "Geser slider sebelum dan sesudah: teks asing dihapus dengan Erase, isian diisi dari Script TL, dan hasil typeset berbahasa Indonesia."
+  },
+  {
+    "page": "index.html",
+    "pageTitle": "Beranda",
+    "title": "Demo tester Script TL",
+    "id": "demo",
+    "text": "Uji naskah Script TL dan pemisah halaman langsung di browser dari demo kecil di beranda."
   },
   {
     "page": "mulai.html",
@@ -425,5 +425,12 @@
     "title": "Aplikasi versi apa yang saya pakai?",
     "id": "aplikasi-versi-apa-yang-saya-pakai",
     "text": "Versi saat ini 1.0 . Bisa dilihat di Pengaturan aplikasi. File dari GitHub Actions adalah versi uji; pasang ulang APK terbaru untuk mendapatkan perbaikan."
+  },
+  {
+    "page": "changelog.html",
+    "pageTitle": "Riwayat perubahan",
+    "title": "Versi 2026.10.26",
+    "id": "v-2026-10-26",
+    "text": "Riwayat perubahan dokumen MochiTs Docs: beranda lebih ringat, screenshot asli, offline, font self-host, dan perbaikan metadata."
   }
 ]

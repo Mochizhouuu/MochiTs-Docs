@@ -15,7 +15,7 @@ tersedia dalam mode terang serta gelap.
 | `folder-zip.html` | Folder proyek, impor gambar, dan ZIP |
 | `teks.html` | Teks, font, efek, clipping mask, dan inpainting |
 | `script.html` | Format Script TL, simbol, dan pemisah halaman |
-| `tester.html` | Tester naskah dan pola pemisah di browser |
+| `tester.html` | Tester Script TL dan pola pemisah di browser |
 | `ekspor.html` | PNG, JPEG, WEBP, dan file proyek MTS |
 | `faq.html` | Pertanyaan yang sering muncul |
 | `404.html` | Halaman error (tidak diindeks mesin pencari) |
@@ -24,12 +24,19 @@ tersedia dalam mode terang serta gelap.
 
 - **Tema biru** yang mengikuti warna aplikasi, dengan mode terang dan gelap.
   Pilihan pengguna disimpan di `localStorage`; tanpa pilihan, tema mengikuti
-  pengaturan sistem.
+  pengaturan sistem. Semua klaim kontras diperiksa pada kedua tema (WCAG AA).
 - **Logo aplikasi** dipakai di header, footer, favicon, ikon PWA, dan gambar
   pratinjau media sosial.
 - **Pencarian cepat** lewat tombol Cari, tombol `/`, atau `Ctrl`/`Cmd` + `K`.
   Hasil diambil dari `search-index.json`. Alamat `/?q=kata` juga didukung agar
   bisa dipakai sebagai `SearchAction` di data terstruktur.
+- **Offline-first** lewat service worker (`sw.js`): semua aset statis diprecache
+  saat install, lalu dilayani cache-first. Klaim "bisa dibaca offline" kini benar.
+- **Font self-hosted** (subset latin, woff2): Inter (variable 400–800) dan
+  JetBrains Mono (400–600) di `assets/fonts/`, dengan preload untuk menekan LCP.
+- **Beranda padat**: hero dengan screenshot aplikasi asli, seksi banding
+  before/after, kartu <em>Mulai cepat</em>, daftar bab dengan thumbnail, demo
+  tester Script TL inline, dan penutup CTA.
 - **Animasi halus** saat berpindah halaman dan membuka menu, dengan dukungan
   `prefers-reduced-motion`.
 - **SEO** melalui canonical, Open Graph, Twitter Card, JSON-LD, `robots.txt`,
@@ -39,10 +46,12 @@ tersedia dalam mode terang serta gelap.
 
 ```text
 .
-├── *.html                  halaman dokumentasi
+├── *.html                  halaman dokumentasi (termasuk changelog.html)
 ├── assets/
 │   ├── style.css           tema, komponen, dan animasi
-│   ├── app.js              menu, pencarian, tema, TOC, dan tester
+│   ├── app.js              menu, pencarian, tema, TOC, tester, before/after
+│   ├── fonts/              font self-hosted (Inter + JetBrains Mono, woff2)
+│   ├── screens/            screenshot aplikasi asli + thumbnail bab
 │   ├── logo.png            logo lengkap
 │   ├── logo-mark.png       logo untuk header dan footer
 │   ├── favicon-*.png       favicon
@@ -53,6 +62,7 @@ tersedia dalam mode terang serta gelap.
 ├── site.webmanifest        manifes PWA
 ├── robots.txt
 ├── sitemap.xml
+├── sw.js                   service worker (precache + cache-first)
 └── _headers                aturan cache dan header keamanan
 ```
 
