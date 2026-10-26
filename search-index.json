@@ -432,5 +432,68 @@
     "title": "Versi 2026.10.26",
     "id": "v-2026-10-26",
     "text": "Riwayat perubahan dokumen MochiTs Docs: beranda lebih ringat, screenshot asli, offline, font self-host, dan perbaikan metadata."
+  },
+  {
+    "page": "mulai.html",
+    "pageTitle": "Mulai",
+    "title": "New Project: membuat kanvas",
+    "id": "new-project",
+    "text": "Jendela New Project MochiTs: atur nama proyek, lebar dan tinggi kanvas dalam piksel, centang Kanvas Transparan bila ingin latar kosong, lalu tekan Buat."
+  },
+  {
+    "page": "mulai.html",
+    "pageTitle": "Mulai",
+    "title": "Tab Font: kelola font bawaan",
+    "id": "pengaturan-font",
+    "text": "Tab Font di Pengaturan: daftar font bawaan dan impor file .ttf atau .otf dari penyimpanan HP, lengkap dengan bobot Regular, Bold, Italic, dan Bold Italic."
+  },
+  {
+    "page": "ekspor.html",
+    "pageTitle": "Ekspor",
+    "title": "Jendela Save As: pilih format ekspor",
+    "id": "save-as",
+    "text": "Jendela Save As MochiTs: pilih folder tujuan, nama file, format PNG/JPG/WEBP, dan resolusi hasil akhir."
+  },
+  {
+    "page": "ekspor.html",
+    "pageTitle": "Ekspor",
+    "title": "Tab Output: atur kualitas ekspor",
+    "id": "pengaturan-output",
+    "text": "Tab Output di Pengaturan: opsi nama file otomatis, format ekspor, dan kualitas gambar saat menyimpan proyek."
+  },
+  {
+    "page": "script.html",
+    "pageTitle": "Script TL",
+    "title": "Panel Script: muat naskah .txt/.docx",
+    "id": "panel-script",
+    "text": "Panel Script TL di editor: tombol Muat file, pilihan naskah .txt atau .docx, dan hasil parsing isi balon otomatis."
+  },
+  {
+    "page": "teks.html",
+    "pageTitle": "Teks",
+    "title": "Panel Style: warna, stroke, glow",
+    "id": "panel-style",
+    "text": "Panel Style di editor: warna isi teks, Opacity, Stroke, Drop shadow, Glow, dan Gradient untuk balon teks."
+  },
+  {
+    "page": "teks.html",
+    "pageTitle": "Teks",
+    "title": "Panel Effect: blend mode & clipping",
+    "id": "panel-effect",
+    "text": "Panel Effect di editor: pilihan blend mode, clipping mask, dan efek visual untuk lapisan teks maupun gambar."
+  },
+  {
+    "page": "teks.html",
+    "pageTitle": "Teks",
+    "title": "Panel Layer: susunan lapisan",
+    "id": "panel-layer",
+    "text": "Panel Layer di editor: daftar lapisan gambar dan teks pada halaman, dengan ikon kunci, visibilitas, dan susunan lapisan."
+  },
+  {
+    "page": "teks.html",
+    "pageTitle": "Teks",
+    "title": "Panel Erase: hapus teks lama",
+    "id": "panel-erase",
+    "text": "Panel Erase di editor: tombol Hapus objek (Bersihkan, Invert Seleksi, Hapus Area Terpilih) untuk menghapus teks lama sebelum inpainting."
   }
 ]

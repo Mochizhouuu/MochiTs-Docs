@@ -20,7 +20,7 @@
    pengunjung menerima salinan terbaru.
    ========================================================================== */
 
-var CACHE = "mochits-docs-v2026.10.27";
+var CACHE = "mochits-docs-v2026.10.27b";
 
 /* Nama file dokumen. Di-serve dengan redirect .html -> extensionless. */
 var PAGES = [
@@ -61,6 +61,20 @@ var ASSETS = [
   "assets/screens/thumb-bab06.webp",
   "assets/screens/thumb-bab07.webp",
   "assets/screens/shot-editor-bar.webp",
+  "assets/screens/font.webp",
+  "assets/screens/style.webp",
+  "assets/screens/effect.webp",
+  "assets/screens/layer.webp",
+  "assets/screens/erase.webp",
+  "assets/screens/script.webp",
+  "assets/screens/save-as.webp",
+  "assets/screens/new-project.webp",
+  "assets/screens/pengaturan-font.webp",
+  "assets/screens/pengaturan-model.webp",
+  "assets/screens/pengaturan-style.webp",
+  "assets/screens/pengaturan-script.webp",
+  "assets/screens/pengaturan-output.webp",
+  "assets/screens/text.webp",
   "assets/screens/shot-settings-font.webp",
   "search-index.json",
   "site.webmanifest",
