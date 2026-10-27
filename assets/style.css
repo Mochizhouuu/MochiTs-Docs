@@ -1187,14 +1187,18 @@ figcaption.shot-cap {
   transition: color .2s ease, background-color .2s ease, transform .2s cubic-bezier(.2, .7, .3, 1);
   overflow: hidden;
 }
-/* Item berupa tombol (Semua bab) meniru tautan lain */
+/* Item berupa tombol (Semua bab) meniru tautan lain.
+   Jangan pakai shorthand `font: inherit` — urutan kaskadennya menang
+   atas font-size/font-weight .bottom-nav-item sehingga label tombol
+   tampil lebih besar daripada item lain. */
 button.bottom-nav-item {
   appearance: none;
   -webkit-appearance: none;
   background: none;
   border: 0;
   cursor: pointer;
-  font: inherit;
+  font-family: inherit;
+  text-align: center;
 }
 .bottom-nav-item .icon {
   width: 20px;
