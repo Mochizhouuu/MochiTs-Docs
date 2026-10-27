@@ -365,7 +365,7 @@
           <thead><tr><th>Kontrol</th><th>Fungsi</th></tr></thead>
           <tbody>
             <tr><td><strong>Blend mode</strong></td><td>Mengatur cara warna lapisan bercampur dengan lapisan di bawahnya. Contohnya, <em>Multiply</em> membuat hasil lebih gelap seperti tinta spidol, sedangkan <em>Screen</em> membuatnya lebih terang.</td></tr>
-            <tr><td><strong>Clipping mask</strong></td><td>Lapisan ini hanya terlihat di bagian yang tertutup bentuk lapisan di bawahnya. Anggap lapisan bawah sebagai cetakan: bagian gambar di luar cetakan disembunyikan. Cocok untuk memasukkan foto ke dalam huruf atau bentuk balon. Aktifkan lewat sakelar di panel Effect atau ikon rantai di daftar lapisan.</td></tr>
+            <tr><td><strong>Clipping mask</strong></td><td>Lapisan ini hanya terlihat di bagian yang tertutup bentuk lapisan di bawahnya. Anggap lapisan bawah sebagai cetakan: bagian gambar di luar cetakan disembunyikan. Cocok untuk memasukkan foto ke dalam huruf atau bentuk balon. Aktifkan lewat ikon rantai di panel Layers.</td></tr>
             <tr><td><strong>Radial blur</strong></td><td>Bagian tengah tetap tajam, tepinya memutar atau memancar. Pilih mode Putar atau Zoom. Untuk gambar, atur juga titik pusatnya.</td></tr>
             <tr><td><strong>Texture</strong></td><td>Menambahkan tekstur halus seperti butiran, kertas, atau kanvas. Atur kekuatan dan ukurannya. Bagian gambar yang transparan tetap transparan.</td></tr>
           </tbody>
@@ -385,7 +385,7 @@
         <div class="shot-view">
           <picture>
             <source srcset="assets/screens/erase.avif" type="image/avif">
-            <img class="shot-media" src="assets/screens/erase.webp" width="720" height="1363" loading="lazy" decoding="async" alt="Panel Erase di layar editor MochiTs: tombol Hapus objek (Bersihkan, Invert Seleksi, Hapus Area Terpilih) untuk menghapus teks lama sebelum mengisi ulang.">
+            <img class="shot-media" src="assets/screens/erase.webp" width="720" height="1363" loading="lazy" decoding="async" alt="Panel Erase di layar editor MochiTs: alat seleksi Brush, Eraser, Lasso, Magic Wand, serta tombol Bersihkan, Invert Seleksi, dan Hapus Area Terpilih.">
           </picture>
         </div>
         <figcaption class="shot-cap">Panel Erase: tandai area teks lama, lalu hapus untuk inpainting.</figcaption>
@@ -399,7 +399,7 @@
         <li><strong>Lasso</strong>: membuat area seleksi bebas dengan menarik garis.</li>
         <li><strong>Magic Wand</strong>: mengetuk satu titik, lalu memilih area di sekitarnya yang warnanya mirip. Naikkan toleransi bila ingin mencakup lebih banyak warna.</li>
       </ul>
-      <p>Panel <strong>Hapus Objek</strong> berisi tombol <strong>Bersihkan</strong>, <strong>Invert Seleksi</strong>, dan <strong>Hapus Area Terpilih</strong>. Tombol hapus baru aktif setelah ada area yang dipilih.</p>
+      <p>Panel <strong>Erase</strong> berisi alat seleksi serta tombol <strong>Bersihkan</strong>, <strong>Invert Seleksi</strong>, dan <strong>Hapus Area Terpilih</strong>. Tombol hapus baru aktif setelah ada area yang dipilih.</p>
       <p>Setelah area seleksi siap, pilih cara menambalnya:</p>
       <ul>
         <li><strong>Telea (OpenCV)</strong>: cepat dan sepenuhnya offline. Cocok untuk latar yang sederhana.</li>
@@ -417,10 +417,10 @@
           <span class="spot" style="left:72%;top:50%" aria-hidden="true">4</span>
           <span class="spot" style="left:89%;top:50%" aria-hidden="true">5</span>
         </div>
-        <figcaption class="shot-cap">Bar alat bawah editor: lima tombol yang menurunkan panel masing-masing. Bar ini juga dipakai untuk Hapus objek.</figcaption>
+        <figcaption class="shot-cap">Bar alat bawah editor: lima tombol yang menurunkan panel masing-masing.</figcaption>
       </figure>
       <ul class="shot-legend">
-          <li><span class="num">1</span><span><strong>Erase</strong> — panel Hapus objek: Bersihkan, Invert Seleksi, dan Hapus Area Terpilih.</span></li>
+          <li><span class="num">1</span><span><strong>Erase</strong> — panel seleksi &amp; hapus: Bersihkan, Invert Seleksi, dan Hapus Area Terpilih.</span></li>
           <li><span class="num">2</span><span><strong>Text</strong> — editor isi balon; teks bisa diedit langsung di kanvas.</span></li>
           <li><span class="num">3</span><span><strong>Effect</strong> — pengaturan blend mode, clipping mask, dan efek visual.</span></li>
           <li><span class="num">4</span><span><strong>Font</strong> — font, ukuran, dan bobot huruf pada balon terpilih.</span></li>

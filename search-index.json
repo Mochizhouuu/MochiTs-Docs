@@ -494,6 +494,6 @@
     "pageTitle": "Teks",
     "title": "Panel Erase: hapus teks lama",
     "id": "panel-erase",
-    "text": "Panel Erase di editor: tombol Hapus objek (Bersihkan, Invert Seleksi, Hapus Area Terpilih) untuk menghapus teks lama sebelum inpainting."
+    "text": "Panel Erase di editor: alat seleksi memakai brush, wand, lasso, dan tombol Bersihkan, Invert Seleksi, Hapus Area Terpilih untuk menghapus teks lama sebelum inpainting."
   }
 ]
