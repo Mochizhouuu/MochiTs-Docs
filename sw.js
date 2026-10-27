@@ -20,7 +20,12 @@
    pengunjung menerima salinan terbaru.
    ========================================================================== */
 
-var CACHE = "mochits-docs-v2026.10.27b";
+var CACHE = "mochits-docs-v2026.10.28";
+
+/* Query anti-cache: memaksa revalidasi ke server saat precache, jadi
+   aset yang ber-Cache-Control immutable di cache browser lama tidak
+   ikut terbawa ke cache SW yang baru. */
+var STAMP = "?v=" + CACHE;
 
 /* Nama file dokumen. Di-serve dengan redirect .html -> extensionless. */
 var PAGES = [
@@ -125,21 +130,23 @@ function findInCache(requestUrl) {
 function precacheOne(cache, name) {
   var candidates = [];
   if (PAGES.indexOf(name) !== -1) {
-    candidates.push(name.replace(/\.html$/, "").length ? name.replace(/\.html$/, "") : name);
+    var ext = name.replace(/\.html$/, "");
+    if (ext === "" || ext === "index") candidates.push("/");
+    else candidates.push(ext);
     candidates.push(name);
   } else {
     candidates.push(name);
   }
   return candidates.reduce(function (chain, u) {
     return chain.catch(function () {
-      return fetch(u).then(function (r) {
+      return fetch(u + STAMP).then(function (r) {
         if (!r.ok) throw new Error("HTTP " + r.status + " untuk " + u);
         /* simpan di bawah key yang dinormalisasi */
         var keyUrl = new URL(u, self.location.origin).toString();
         if (PAGES.indexOf(name) !== -1) {
-          /* pakai URL tanpa ekstensi sebagai key supaya konsistensi
+          /* pakai URL tanpa ekstensi sebagai key supaya konsisten
              dengan runtime .html */
-          var kurl = new URL(normKey(u), self.location.origin).toString();
+          var kurl = new URL(normKey(name), self.location.origin).toString();
           return cache.put(kurl, r);
         }
         return cache.put(keyUrl, r);
@@ -157,7 +164,7 @@ self.addEventListener("install", function (event) {
         PAGES.forEach(function (p) { jobs.push(precacheOne(cache, p)); });
         ASSETS.forEach(function (a) {
           jobs.push(
-            fetch(a).then(function (r) {
+            fetch(a + STAMP).then(function (r) {
               if (!r.ok) throw new Error("HTTP " + r.status + " untuk " + a);
               return cache.put(a, r);
             })
