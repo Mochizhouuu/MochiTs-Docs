@@ -20,7 +20,7 @@
    pengunjung menerima salinan terbaru.
    ========================================================================== */
 
-var CACHE = "mochits-docs-v2026.10.28";
+var CACHE = "mochits-docs-v2026.11.18";
 
 /* Query anti-cache: memaksa revalidasi ke server saat precache, jadi
    aset yang ber-Cache-Control immutable di cache browser lama tidak
