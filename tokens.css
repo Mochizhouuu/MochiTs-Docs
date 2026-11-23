@@ -1,0 +1,122 @@
+/* MochiTs tokens — one calm blue accent, hue-tinted neutrals. */
+:root {
+  color-scheme: light;
+  --accent-h: 230;
+  --neutral-h: var(--accent-h);
+
+  --bg: oklch(0.985 0.004 var(--neutral-h));
+  --surface: oklch(0.960 0.006 var(--neutral-h));
+  --surface-2: oklch(0.925 0.008 var(--neutral-h));
+  --surface-hover: oklch(0.950 0.007 var(--neutral-h));
+  --text: oklch(0.22 0.012 var(--neutral-h));
+  --text-muted: oklch(0.47 0.010 var(--neutral-h));
+  --border: oklch(0.875 0.008 var(--neutral-h));
+  --border-strong: oklch(0.62 0.014 var(--neutral-h));
+  --disabled-bg: oklch(0.960 0.005 var(--neutral-h));
+  --disabled-text: oklch(0.60 0.008 var(--neutral-h));
+
+  --accent: oklch(0.48 0.11 var(--accent-h));
+  --accent-hover: oklch(0.52 0.11 var(--accent-h));
+  --accent-contrast: oklch(0.99 0.003 var(--accent-h));
+  --focus-ring: oklch(0.48 0.13 var(--accent-h));
+  --success: oklch(0.47 0.11 150);
+  --warning: oklch(0.50 0.10 75);
+  --danger: oklch(0.50 0.16 25);
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+
+  --font-sans: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Consolas, monospace;
+  --step--1: clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem);
+  --step-0: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
+  --step-1: clamp(1.2rem, 1.12rem + 0.4vw, 1.375rem);
+  --step-2: clamp(1.44rem, 1.3rem + 0.7vw, 1.75rem);
+  --step-3: clamp(1.73rem, 1.5rem + 1.1vw, 2.25rem);
+  --leading-body: 1.7;
+  --leading-heading: 1.2;
+
+  --radius-sm: 0.25rem;
+  --radius-control: 0.5rem;
+  --control-h: 2.75rem;
+  --control-pad-x: 1rem;
+  --icon-size: 1.25rem;
+  --icon-gap: 0.5rem;
+  --measure: 70ch;
+  --container: 72rem;
+  --header-h: 3.5rem;
+  --ease: cubic-bezier(0.2, 0, 0, 1);
+  --dur-1: 120ms;
+}
+
+:root[data-theme="light"] { color-scheme: light; }
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: oklch(0.16 0.012 var(--neutral-h));
+  --surface: oklch(0.21 0.012 var(--neutral-h));
+  --surface-2: oklch(0.26 0.014 var(--neutral-h));
+  --surface-hover: oklch(0.25 0.014 var(--neutral-h));
+  --text: oklch(0.92 0.006 var(--neutral-h));
+  --text-muted: oklch(0.65 0.010 var(--neutral-h));
+  --border: oklch(0.33 0.012 var(--neutral-h));
+  --border-strong: oklch(0.50 0.015 var(--neutral-h));
+  --disabled-bg: oklch(0.22 0.010 var(--neutral-h));
+  --disabled-text: oklch(0.55 0.010 var(--neutral-h));
+  --accent: oklch(0.75 0.09 var(--accent-h));
+  --accent-hover: oklch(0.80 0.08 var(--accent-h));
+  --accent-contrast: oklch(0.18 0.02 var(--accent-h));
+  --focus-ring: oklch(0.78 0.11 var(--accent-h));
+  --success: oklch(0.76 0.12 150);
+  --warning: oklch(0.80 0.11 75);
+  --danger: oklch(0.76 0.14 25);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: oklch(0.16 0.012 var(--neutral-h));
+    --surface: oklch(0.21 0.012 var(--neutral-h));
+    --surface-2: oklch(0.26 0.014 var(--neutral-h));
+    --surface-hover: oklch(0.25 0.014 var(--neutral-h));
+    --text: oklch(0.92 0.006 var(--neutral-h));
+    --text-muted: oklch(0.65 0.010 var(--neutral-h));
+    --border: oklch(0.33 0.012 var(--neutral-h));
+    --border-strong: oklch(0.50 0.015 var(--neutral-h));
+    --disabled-bg: oklch(0.22 0.010 var(--neutral-h));
+    --disabled-text: oklch(0.55 0.010 var(--neutral-h));
+    --accent: oklch(0.75 0.09 var(--accent-h));
+    --accent-hover: oklch(0.80 0.08 var(--accent-h));
+    --accent-contrast: oklch(0.18 0.02 var(--accent-h));
+    --focus-ring: oklch(0.78 0.11 var(--accent-h));
+    --success: oklch(0.76 0.12 150);
+    --warning: oklch(0.80 0.11 75);
+    --danger: oklch(0.76 0.14 25);
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-padding-top: calc(var(--header-h) + var(--space-4)); }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: var(--step-0);
+  line-height: var(--leading-body);
+}
+img, svg { max-width: 100%; }
+:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
