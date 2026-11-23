@@ -9,8 +9,8 @@
   <script>
     (function(){try{var t=localStorage.getItem("mochits-theme");if(t!=="light"&&t!=="dark")t=window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t)}catch(e){}})();
   </script>
-  <link rel="stylesheet" href="tokens.css">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="tokens-v3.css">
+  <link rel="stylesheet" href="styles-v3.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Lewati ke konten</a>
@@ -27,7 +27,7 @@
       <button type="button" class="icon-btn" data-search-open aria-label="Cari dokumentasi">
         <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>
       </button>
-      <button type="button" class="icon-btn" data-theme aria-label="Ganti tema">
+      <button type="button" class="icon-btn" data-theme-toggle aria-label="Ganti tema">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3a6.5 6.5 0 0 0 9.8 9.8Z"></path></svg>
       </button>
       <button type="button" class="icon-btn menu-btn" data-menu-open aria-expanded="false" aria-controls="drawer" aria-label="Buka menu">
@@ -286,7 +286,7 @@ P2
     <a href="#/changelog">Rilis</a>
   </footer>
 
-  <script src="cek-script.js"></script>
-  <script src="app.js"></script>
+  <script src="cek-script-v3.js"></script>
+  <script src="app-v3.js"></script>
 </body>
 </html>

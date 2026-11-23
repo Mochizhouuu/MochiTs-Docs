@@ -12,7 +12,7 @@
 
   /* Tema */
   (function () {
-    var btn = doc.querySelector("[data-theme]");
+    var btn = doc.querySelector("[data-theme-toggle]");
     function current() { return doc.documentElement.getAttribute("data-theme") || "light"; }
     function paint() {
       var t = current();

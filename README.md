@@ -16,10 +16,10 @@ Semua halaman ada di `index.html` dan dipilih lewat hash:
 ## File
 
 - `index.html` — konten dan struktur halaman.
-- `tokens.css` — warna, spasi, tipografi, dan state token.
-- `styles.css` — layout responsif dan komponen.
-- `app.js` — router, tema, pencarian, drawer, daftar isi, salin kode, dan pengambilan rilis.
-- `cek-script.js` — pemeriksa Script TL yang mengikuti `ScriptParser.kt` aplikasi.
+- `tokens-v3.css` — warna, spasi, tipografi, dan state token.
+- `styles-v3.css` — layout responsif dan komponen.
+- `app-v3.js` — router, tema, pencarian, drawer, daftar isi, salin kode, dan pengambilan rilis.
+- `cek-script-v3.js` — pemeriksa Script TL yang mengikuti `ScriptParser.kt` aplikasi.
 - `logo-mochits.png` — logo yang sama dengan aplikasi.
 - `_headers` — header Cloudflare Pages, termasuk CSP.
 
