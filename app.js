@@ -30,16 +30,20 @@
   })();
 
   var routes = {
-    "": "home", "cek-script": "cek", "panduan": "panduan", "faq": "faq"
+    "": "home", "cek-script": "cek", "panduan": "panduan",
+    "faq": "faq", "developer": "developer", "changelog": "changelog"
   };
   var titles = {
-    home: "Beranda", cek: "Cek Script", panduan: "Panduan penggunaan editor", faq: "FAQ"
+    home: "Beranda", cek: "Cek Script", panduan: "Penggunaan editor",
+    faq: "FAQ & troubleshooting", developer: "Build dari sumber", changelog: "Riwayat perubahan"
   };
   var chapters = [
     { key: "home", title: "Beranda", group: "Mulai" },
     { key: "cek", title: "Cek Script", group: "Mulai" },
-    { key: "panduan", title: "Panduan penggunaan editor", group: "Panduan" },
-    { key: "faq", title: "FAQ", group: "Bantuan" }
+    { key: "panduan", title: "Penggunaan editor", group: "Panduan" },
+    { key: "developer", title: "Build dari sumber", group: "Pengembang" },
+    { key: "faq", title: "FAQ & troubleshooting", group: "Bantuan" },
+    { key: "changelog", title: "Riwayat perubahan", group: "Rilis" }
   ];
 
   var views = Array.prototype.slice.call(doc.querySelectorAll(".view"));
@@ -57,7 +61,8 @@
   }
 
   function headingsFor(view) {
-    return Array.prototype.slice.call(view.querySelectorAll("h2[id], h3[id]"));
+    return Array.prototype.slice.call(view.querySelectorAll("h2[id], h3[id]"))
+      .filter(function (h) { return h.textContent.trim() !== ""; });
   }
 
   function routeOf(key) {
@@ -68,7 +73,7 @@
     [sideNav, drawerNav].forEach(function (host) {
       if (!host) return;
       host.textContent = "";
-      ["Mulai", "Panduan", "Bantuan"].forEach(function (group) {
+      ["Mulai", "Panduan", "Pengembang", "Bantuan", "Rilis"].forEach(function (group) {
         var wrap = el("div", "nav-group");
         wrap.appendChild(el("p", "side-label", group));
         chapters.filter(function (c) { return c.group === group; }).forEach(function (c) {
@@ -111,15 +116,21 @@
   }
 
   function renderOnPage(activeView) {
-    if (!onpageNav) return;
-    onpageNav.textContent = "";
-    if (!activeView) return;
+    var hosts = [onpageNav, doc.getElementById("drawer-toc-nav")].filter(Boolean);
+    hosts.forEach(function (host) { host.textContent = ""; });
+    var box = doc.getElementById("drawer-toc");
+    if (!activeView) { if (box) box.hidden = true; return; }
+    var key = activeView.getAttribute("data-view");
+    var routeName = key === "cek" ? "cek-script" : key;
     headingsFor(activeView).forEach(function (h) {
-      var a = el("a", "", h.textContent);
-      a.href = "#/" + (activeView.getAttribute("data-view") === "cek" ? "cek-script" : activeView.getAttribute("data-view")) + "#" + h.id;
-      a.setAttribute("data-target", h.id);
-      onpageNav.appendChild(a);
+      hosts.forEach(function (host) {
+        var a = el("a", "", h.textContent);
+        a.href = "#/" + (key === "home" ? "" : routeName) + "#" + h.id;
+        if (host === onpageNav) a.setAttribute("data-target", h.id);
+        host.appendChild(a);
+      });
     });
+    if (box) box.hidden = headingsFor(activeView).length === 0;
     updateOnPage();
   }
 
@@ -148,6 +159,7 @@
     renderNav(key, target);
     renderBreadcrumb(target, key);
     renderOnPage(target);
+    if (key === "changelog") loadRelease();
     closeMenu();
     if (r.anchor) {
       var elm = doc.getElementById(r.anchor);
@@ -269,6 +281,36 @@
     table.parentElement.insertBefore(wrap, table);
     wrap.appendChild(table);
   });
+
+  /* Rilis terbaru dari GitHub (tapi mati bila tak ada rilis / offline). */
+  var releaseLoaded = false;
+  function loadRelease() {
+    if (releaseLoaded) return;
+    releaseLoaded = true;
+    var status = doc.getElementById("release-status");
+    var card = doc.getElementById("release-card");
+    if (!status || !card) return;
+    status.textContent = "Memuat rilis terbaru…";
+    fetch("https://api.github.com/repos/Mochizhouuu/MochiTs/releases/latest")
+      .then(function (r) {
+        if (!r.ok) throw new Error(r.status === 404 ? "Belum ada rilis publik." : "Gagal memuat rilis.");
+        return r.json();
+      })
+      .then(function (d) {
+        status.textContent = "";
+        doc.getElementById("release-title").textContent = d.tag_name || "Rilis terbaru";
+        doc.getElementById("release-meta").textContent =
+          (d.name ? d.name + " · " : "") + (d.published_at || "").slice(0, 10);
+        var body = doc.getElementById("release-body");
+        body.textContent = (d.body || "Tidak ada catatan rilis.").slice(0, 3000);
+        card.hidden = false;
+      })
+      .catch(function (e) {
+        status.textContent = e.message === "Belum ada rilis publik."
+          ? "Belum ada rilis publik."
+          : "Rilis tidak dapat dimuat. Cek tautan GitHub di bawah.";
+      });
+  }
 
   if (window.MochiCekScript) window.MochiCekScript.init();
   route();
