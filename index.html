@@ -5,23 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="color-scheme" content="light dark">
   <title>MochiTs</title>
-  <meta name="description" content="Panduan MochiTs, editor Android untuk typeset komik: pasang APK, buat proyek, hapus balon, isi teks, dan ekspor hasil.">
+  <meta name="description" content="Panduan MochiTs: editor Android untuk typeset komik. Pasang APK, buat proyek, bersihkan balon, isi teks, dan ekspor hasil.">
   <script>
     (function(){try{var t=localStorage.getItem("mochits-theme");if(t!=="light"&&t!=="dark")t=window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t)}catch(e){}})();
   </script>
-  <link rel="stylesheet" href="tokens-v3.css">
-  <link rel="stylesheet" href="styles-v3.css">
+  <link rel="stylesheet" href="/tokens-v4.css">
+  <link rel="stylesheet" href="/styles-v4.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Lewati ke konten</a>
 
   <header class="topbar">
-    <a class="brand" href="#/"><img src="logo-mochits.png" alt="MochiTs" width="34" height="34"></a>
+    <a class="brand" href="/"><img src="/logo-mochits.png" alt="MochiTs" width="34" height="34"></a>
     <nav class="topnav" aria-label="Navigasi utama">
-      <a href="#/" data-nav="home">Beranda</a>
-      <a href="#/cek-script" data-nav="cek">Cek Script</a>
-      <a href="#/panduan" data-nav="panduan">Panduan</a>
-      <a href="#/faq" data-nav="faq">FAQ</a>
+      <a href="/" data-nav="home">Beranda</a>
+      <a href="/cek-script/" data-nav="cek">Cek Script</a>
+      <a href="/panduan/" data-nav="guide">Panduan</a>
+      <a href="/faq/" data-nav="faq">FAQ</a>
     </nav>
     <div class="tools">
       <button type="button" class="icon-btn" data-search-open aria-label="Cari dokumentasi">
@@ -38,7 +38,7 @@
 
   <div class="search" id="search" hidden>
     <div class="search-inner" role="dialog" aria-modal="true" aria-label="Cari dokumentasi">
-      <input type="search" id="search-input" placeholder="Cari topik" aria-label="Cari dokumentasi" autocomplete="off">
+      <input type="search" id="search-input" placeholder="Cari langkah, tombol, atau masalah" aria-label="Cari dokumentasi" autocomplete="off">
       <button type="button" class="text-btn" data-search-close>Tutup</button>
       <div class="search-results" id="search-results"></div>
     </div>
@@ -65,33 +65,45 @@
 
       <div>
         <section class="view is-active" id="view-home" data-view="home">
-          <div class="page-head">
-            <img class="masthead-logo" src="logo-mochits.png" alt="Logo MochiTs" width="96" height="96">
+          <div class="page-head home-head">
+            <img class="masthead-logo" src="/logo-mochits.png" alt="Logo MochiTs" width="64" height="64">
             <p class="eyebrow">Dokumentasi aplikasi Android</p>
-            <h1>MochiTs</h1>
-            <p class="lead">Editor teks &amp; gambar untuk typeset komik di Android. Berjalan di Android 10 (API 29) atau lebih baru.</p>
+            <h1>Apa yang ingin kamu lakukan?</h1>
+            <p class="lead">Cari langkah, tombol, atau solusi. MochiTs berjalan di Android 10 (API 29) atau lebih baru.</p>
+            <button type="button" class="home-search" data-search-open>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>
+              Cari dokumentasi
+              <kbd>/</kbd>
+            </button>
           </div>
-          <div class="prose">
-            <p>Pakai MochiTs untuk mengganti teks asing pada halaman komik dengan terjemahan Indonesia. Kamu bisa menghapus balon lama, menulis teks baru, memilih font, lalu menyimpan proyek atau mengekspor gambar.</p>
-            <div class="actions download-actions">
-              <a class="btn primary" href="https://github.com/Mochizhouuu/MochiTs/releases" rel="noopener noreferrer" target="_blank">Unduh APK</a>
-              <a class="btn" href="https://github.com/Mochizhouuu/MochiTs" rel="noopener noreferrer" target="_blank">Repo GitHub</a>
+          <div class="prose home-body">
+            <div class="home-download">
+              <p class="eyebrow">Mulai pakai</p>
+              <h2>Pasang MochiTs di Android</h2>
+              <p>Unduh APK dari rilis GitHub, lalu buka berkasnya di perangkat.</p>
+              <div class="actions download-actions">
+                <a class="btn primary" href="https://github.com/Mochizhouuu/MochiTs/releases" rel="noopener noreferrer" target="_blank">Unduh APK</a>
+                <a class="btn" href="https://github.com/Mochizhouuu/MochiTs" rel="noopener noreferrer" target="_blank">Repo GitHub</a>
+              </div>
             </div>
-            <h2 id="mulai">Mulai dari mana</h2>
-            <ol>
-              <li><a href="#/panduan#instalasi">Pasang APK</a>, lalu <a href="#/panduan#proyek">buat proyek</a>.</li>
-              <li><a href="#/panduan#halaman">Impor halaman</a> dan <a href="#/panduan#balon">bersihkan balon</a>.</li>
-              <li><a href="#/panduan#teks">Tambah teks</a>, <a href="#/panduan#font">atur font</a>, lalu <a href="#/panduan#ekspor">ekspor</a>.</li>
-            </ol>
-            <p>Sebelum memakai naskah terjemahan, cek dulu di <a href="#/cek-script">Cek Script</a>. Alat ini berjalan di browser tanpa mengirim teks ke server.</p>
+            <h2 id="populer">Paling sering dibuka</h2>
+            <nav class="task-list" aria-label="Tugas populer">
+              <a class="task-row" href="/panduan/instalasi/"><span class="task-no">01</span><span class="task-main"><strong>Pasang APK</strong><small>Unduh berkas dan izinkan pemasangan.</small></span><span class="task-arrow" aria-hidden="true">→</span></a>
+              <a class="task-row" href="/panduan/proyek/"><span class="task-no">02</span><span class="task-main"><strong>Buat proyek</strong><small>Isi nama, lebar, dan tinggi kanvas.</small></span><span class="task-arrow" aria-hidden="true">→</span></a>
+              <a class="task-row" href="/panduan/halaman/"><span class="task-no">03</span><span class="task-main"><strong>Impor halaman</strong><small>Gambar tunggal atau satu ZIP.</small></span><span class="task-arrow" aria-hidden="true">→</span></a>
+              <a class="task-row" href="/panduan/balon/"><span class="task-no">04</span><span class="task-main"><strong>Bersihkan balon</strong><small>Seleksi dan hapus teks lama.</small></span><span class="task-arrow" aria-hidden="true">→</span></a>
+              <a class="task-row" href="/panduan/teks/"><span class="task-no">05</span><span class="task-main"><strong>Isi teks</strong><small>Tambah balon terjemahan.</small></span><span class="task-arrow" aria-hidden="true">→</span></a>
+              <a class="task-row" href="/panduan/ekspor/"><span class="task-no">06</span><span class="task-main"><strong>Ekspor hasil</strong><small>Simpan PNG, JPEG, atau WEBP.</small></span><span class="task-arrow" aria-hidden="true">→</span></a>
+              <a class="task-row" href="/cek-script/"><span class="task-no">07</span><span class="task-main"><strong>Cek Script</strong><small>Periksa naskah sebelum dipakai.</small></span><span class="task-arrow" aria-hidden="true">→</span></a>
+            </nav>
+            <div class="admonition tip"><strong>Tips.</strong> Ikuti tautan "Langkah berikutnya" di bawah setiap halaman panduan.</div>
           </div>
         </section>
-
         <section class="view" id="view-cek" data-view="cek">
           <div class="page-head">
             <p class="eyebrow">Alat</p>
             <h1>Cek Script</h1>
-            <p class="lead">Periksa naskah Script TL sebelum dipakai di editor. Semua proses berjalan di browser.</p>
+            <p class="lead">Periksa naskah Script TL sebelum dipakai. Semua proses berjalan di browser.</p>
           </div>
           <div class="prose">
             <h2 id="cara">Aturan naskah</h2>
@@ -102,9 +114,8 @@
               <li>Baris tanpa simbol menjadi lanjutan entri terakhir. Jika belum ada entri, baris itu diabaikan dan dicatat di peringatan.</li>
               <li>Spasi sampai kolom teks simbol dibuang. Indentasi yang lebih dalam tetap dipertahankan.</li>
             </ul>
-
             <h2 id="contoh">Contoh lengkap</h2>
-            <p>Tempel naskah ini lalu bandingkan dengan hasilnya. Baris <code>Judul proyek</code> sengaja diletakkan sebelum <code>P1</code> untuk menunjukkan bahwa kepala file dibuang.</p>
+            <p>Baris <code>Judul proyek</code> sengaja diletakkan sebelum <code>P1</code> untuk menunjukkan bahwa kepala file dibuang.</p>
             <pre><code id="contoh-naskah">Judul proyek — dibuang
 P1
 - Halo, kota hujan.
@@ -116,12 +127,10 @@ P2
 ** Tegasan suara.
 &lt;&gt; Efek khusus.
 * Catatan kecil.</code></pre>
-            <p><strong>Hasil:</strong> 2 halaman, 7 entri, 1 entri terhubung, 0 peringatan. Entri <code>//-</code> terhubung ke entri <code>[]</code> di bawahnya.</p>
+            <p><strong>Hasil:</strong> 2 halaman, 7 entri, 1 entri terhubung, 0 peringatan.</p>
             <button type="button" class="btn" id="muat-contoh">Muat contoh ke kolom input</button>
-
             <h2 id="batas">Batas input</h2>
             <p>Maksimal 20.000 karakter dan 2.000 baris. Input kosong atau terlalu panjang diberi pesan yang menyebut penyebabnya.</p>
-
             <div class="cek-panel">
               <label for="cek-input">Naskah Script TL</label>
               <textarea id="cek-input" spellcheck="false" placeholder="P1&#10;- Teks balon pertama.&#10;   lanjutan balon.&#10;P2&#10;[] Balon berikutnya."></textarea>
@@ -132,45 +141,23 @@ P2
           </div>
         </section>
 
-        <section class="view" id="view-panduan" data-view="panduan">
+        <section class="view" id="view-guide" data-view="guide">
           <div class="page-head">
             <p class="eyebrow">Panduan</p>
-            <h1>Penggunaan editor</h1>
-            <p class="lead">Delapan langkah dari APK terpasang sampai gambar jadi. Setiap langkah memakai tombol yang ada di aplikasi.</p>
+            <h1>Alur kerja editor</h1>
+            <p class="lead">Pilih satu tugas. Setiap halaman dimulai dari hasil yang harus kamu dapatkan.</p>
           </div>
           <div class="prose">
-            <h2 id="instalasi">1. Pasang APK</h2>
-            <p>Unduh APK dari halaman <a href="https://github.com/Mochizhouuu/MochiTs/releases" rel="noopener noreferrer" target="_blank">rilis GitHub</a>, lalu buka berkasnya di Android. MochiTs butuh Android 10 atau lebih baru. Jika sistem meminta izin, izinkan pemasangan dari sumber yang tidak dikenal untuk aplikasi yang kamu pakai membuka berkas.</p>
-            <figure class="shot-placeholder" data-shot="APK dibuka di Android"><span>Screenshot: layar konfirmasi pemasangan APK</span></figure>
-
-            <h2 id="proyek">2. Buat proyek</h2>
-            <p>Di Home, ketuk <strong>NEW PROJECT</strong>. Isi <strong>Nama Proyek</strong>, <strong>Lebar (px)</strong>, dan <strong>Tinggi (px)</strong>. Pilih cepat salah satu rasio: <code>1:1</code>, <code>9:16</code>, <code>16:9</code>, atau <code>3:4</code>. Centang <strong>Kanvas Transparan</strong> jika latar boleh kosong.</p>
-            <figure class="shot-placeholder" data-shot="dialog Buat Proyek Baru"><span>Screenshot: dialog Buat Proyek Baru</span></figure>
-
-            <h2 id="halaman">3. Impor halaman</h2>
-            <p>Di Home, ketuk <strong>IMPORT IMAGE</strong> untuk satu atau beberapa gambar, atau <strong>Impor ZIP</strong> untuk satu chapter sekaligus. Halaman yang masuk muncul sebagai lapisan gambar di editor.</p>
-            <figure class="shot-placeholder" data-shot="halaman hasil impor di kanvas"><span>Screenshot: halaman hasil impor di kanvas</span></figure>
-
-            <h2 id="balon">4. Atur balon</h2>
-            <p>Buka panel <strong>Erase</strong>. Pilih <strong>Brush</strong> untuk menambah area seleksi, <strong>Eraser</strong> untuk menguranginya, <strong>Lasso</strong> untuk seleksi bebas, atau <strong>Magic Wand</strong> untuk memilih warna dengan satu ketukan. Setelah area siap, ketuk <strong>Hapus Area Terpilih</strong>. Pilih <strong>Telea (Cepat)</strong> untuk hasil langsung atau <strong>LaMa (AI)</strong> untuk hasil yang lebih halus; model LaMa diunduh saat pertama dipakai.</p>
-            <figure class="shot-placeholder" data-shot="balon sebelum dan sesudah erase"><span>Screenshot/GIF: balon sebelum dan sesudah Erase</span></figure>
-
-            <h2 id="teks">5. Tambah dan edit teks</h2>
-            <p>Ketuk tombol <strong>+</strong> di bar atas, lalu pilih <strong>Tambah Teks</strong>. Di panel <strong>Text</strong>, ketuk <strong>Tambah Teks ke Kanvas</strong> untuk membuat layer baru atau <strong>Edit Teks</strong> untuk mengubah layer yang sedang dipilih. Atur isi di bagian <strong>Content</strong>, posisi di <strong>Layout</strong>, dan bentuk huruf di <strong>Style &amp; Size</strong>.</p>
-            <figure class="shot-placeholder" data-shot="panel Text saat mengisi balon"><span>Screenshot: panel Text saat mengisi balon</span></figure>
-
-            <h2 id="font">6. Atur font</h2>
-            <p>Buka panel <strong>Font</strong> untuk memilih font. Untuk memakai font sendiri, ketuk <strong>Impor font</strong> dan pilih berkas <code>.ttf</code> atau <code>.otf</code>. Font kustom juga bisa ditambahkan dari <strong>Pengaturan → Font Manager → Tambah Font TTF/OTF Baru</strong>.</p>
-            <figure class="shot-placeholder" data-shot="panel Font dengan font kustom"><span>Screenshot: panel Font dengan font kustom</span></figure>
-
-            <h2 id="simpan">7. Simpan proyek</h2>
-            <p>Ketuk ikon <strong>Save</strong> di bar atas. Pada dialog <strong>Save As</strong>, isi <strong>Nama Output / Nama Proyek</strong>, pilih format <code>MTS</code>, lalu simpan. Bundel <code>.mts</code> bisa dibuka lagi lewat <strong>OPEN PROJECT</strong> di Home.</p>
-            <figure class="shot-placeholder" data-shot="dialog Save As dengan format MTS"><span>Screenshot: dialog Save As dengan format MTS</span></figure>
-
-            <h2 id="ekspor">8. Ekspor hasil</h2>
-            <p>Pada dialog <strong>Save As</strong>, pilih <code>PNG</code>, <code>JPEG</code>, atau <code>WEBP</code>. <code>PNG</code> cocok untuk latar transparan. <code>JPEG</code> dan <code>WEBP</code> punya slider <strong>Kualitas</strong> 10–100%. Pilih <strong>Folder Output</strong> sebelum menyimpan.</p>
-            <figure class="shot-placeholder" data-shot="hasil ekspor PNG di galeri"><span>Screenshot: hasil ekspor PNG di galeri</span></figure>
-
+            <div class="task-grid">
+              <a class="task-card" href="/panduan/instalasi/"><span>01</span><strong>Pasang APK</strong><small>Android 10 atau lebih baru.</small></a>
+              <a class="task-card" href="/panduan/proyek/"><span>02</span><strong>Buat proyek</strong><small>Nama, ukuran, rasio.</small></a>
+              <a class="task-card" href="/panduan/halaman/"><span>03</span><strong>Impor halaman</strong><small>Gambar atau ZIP.</small></a>
+              <a class="task-card" href="/panduan/balon/"><span>04</span><strong>Atur balon</strong><small>Erase dengan Telea atau LaMa.</small></a>
+              <a class="task-card" href="/panduan/teks/"><span>05</span><strong>Tambah teks</strong><small>Isi balon terjemahan.</small></a>
+              <a class="task-card" href="/panduan/font/"><span>06</span><strong>Atur font</strong><small>Pilih atau impor TTF/OTF.</small></a>
+              <a class="task-card" href="/panduan/simpan/"><span>07</span><strong>Simpan proyek</strong><small>Bundel .mts yang bisa diedit lagi.</small></a>
+              <a class="task-card" href="/panduan/ekspor/"><span>08</span><strong>Ekspor hasil</strong><small>PNG, JPEG, atau WEBP.</small></a>
+            </div>
             <h2 id="alat">Tabel alat editor</h2>
             <div class="table-wrap">
               <table>
@@ -180,7 +167,7 @@ P2
                   <tr><td>Eraser</td><td>Mengurangi area seleksi.</td><td>Kurangi seleksi yang terkena goresan ilustrasi.</td></tr>
                   <tr><td>Lasso</td><td>Seleksi bebas dengan tarikan.</td><td>Pilih balon berbentuk awan.</td></tr>
                   <tr><td>Magic Wand</td><td>Memilih warna dengan satu ketukan.</td><td>Ketuk latar putih polos di sekitar balon.</td></tr>
-                  <tr><td>Hapus Area Terpilih</td><td>Menutup area yang sudah dipilih.</td><td>Hapus teks asing menggunakan Telea atau LaMa.</td></tr>
+                  <tr><td>Hapus Area Terpilih</td><td>Menutup area yang sudah dipilih.</td><td>Hapus teks asing dengan Telea atau LaMa.</td></tr>
                   <tr><td>Tambah Teks</td><td>Membuat layer teks baru dari menu <strong>+</strong>.</td><td>Isi balon dengan terjemahan.</td></tr>
                   <tr><td>Edit Teks</td><td>Mengubah isi layer teks yang dipilih.</td><td>Revisi kata sebelum ekspor.</td></tr>
                   <tr><td>Impor font</td><td>Memasang font <code>.ttf</code> atau <code>.otf</code>.</td><td>Pakai font komik kustom.</td></tr>
@@ -189,85 +176,162 @@ P2
                 </tbody>
               </table>
             </div>
-            <p class="note">Perintah build dan GitHub Actions tidak dipakai saat mengedit. Lihat <a href="#/developer">halaman pengembang</a>.</p>
+            <div class="admonition note"><strong>Catatan.</strong> Perintah build dan GitHub Actions ada di <a href="/developer/">halaman pengembang</a>.</div>
+          </div>
+        </section>
 
-            <details class="shot-list">
-              <summary>Screenshot yang masih perlu disiapkan</summary>
-              <ol>
-                <li>Konfirmasi pemasangan APK di Android.</li>
-                <li>Dialog Buat Proyek Baru.</li>
-                <li>Halaman hasil impor di kanvas.</li>
-                <li>Balon sebelum dan sesudah Erase (GIF lebih membantu).</li>
-                <li>Panel Text saat mengisi balon.</li>
-                <li>Panel Font dengan font kustom.</li>
-                <li>Dialog Save As dengan format MTS.</li>
-                <li>Hasil ekspor PNG di galeri.</li>
-              </ol>
-            </details>
+        <section class="view" id="view-instalasi" data-view="instalasi">
+          <div class="page-head">
+            <p class="eyebrow">Langkah 1</p>
+            <h1>Pasang APK</h1>
+            <p class="lead">Hasil: MochiTs terpasang dan siap dibuka.</p>
+          </div>
+          <div class="prose">
+            <ol>
+              <li>Unduh APK dari <a href="https://github.com/Mochizhouuu/MochiTs/releases" rel="noopener noreferrer" target="_blank">halaman rilis GitHub</a>.</li>
+              <li>Buka berkas APK di perangkat Android 10 atau lebih baru.</li>
+              <li>Jika Android memblokir pemasangan, izinkan aplikasi yang membuka berkas untuk memasang aplikasi dari sumber yang tidak dikenal.</li>
+              <li>Ketuk <strong>Install</strong>, lalu buka MochiTs.</li>
+            </ol>
+            <div class="admonition warning"><strong>Perhatian.</strong> APK dari GitHub Actions adalah hasil build otomatis. Untuk penggunaan harian, pakai rilis yang sudah dirilis resmi bila tersedia.</div>
+            <p class="pager"><a href="/panduan/proyek/">Langkah berikutnya: Buat proyek →</a></p>
+          </div>
+        </section>
+
+        <section class="view" id="view-proyek" data-view="proyek">
+          <div class="page-head"><p class="eyebrow">Langkah 2</p><h1>Buat proyek</h1><p class="lead">Hasil: kanvas baru siap diedit.</p></div>
+          <div class="prose">
+            <ol>
+              <li>Di Home, ketuk <strong>NEW PROJECT</strong>.</li>
+              <li>Isi <strong>Nama Proyek</strong>, <strong>Lebar (px)</strong>, dan <strong>Tinggi (px)</strong>.</li>
+              <li>Pilih cepat rasio <code>1:1</code>, <code>9:16</code>, <code>16:9</code>, atau <code>3:4</code> bila sesuai.</li>
+              <li>Centang <strong>Kanvas Transparan</strong> jika latar boleh kosong.</li>
+              <li>Ketuk <strong>Buat Proyek</strong>.</li>
+            </ol>
+            <p class="pager"><a href="/panduan/halaman/">Langkah berikutnya: Impor halaman →</a></p>
+          </div>
+        </section>
+
+        <section class="view" id="view-halaman" data-view="halaman">
+          <div class="page-head"><p class="eyebrow">Langkah 3</p><h1>Impor halaman</h1><p class="lead">Hasil: halaman komik muncul sebagai lapisan gambar.</p></div>
+          <div class="prose">
+            <ol>
+              <li>Di Home, ketuk <strong>IMPORT IMAGE</strong> untuk satu atau beberapa gambar.</li>
+              <li>Untuk satu chapter sekaligus, ketuk <strong>Impor ZIP</strong>.</li>
+              <li>Pilih berkas dari galeri atau pengelola berkas.</li>
+              <li>Tunggu halaman terbuka di editor.</li>
+            </ol>
+            <p class="pager"><a href="/panduan/balon/">Langkah berikutnya: Atur balon →</a></p>
+          </div>
+        </section>
+
+        <section class="view" id="view-balon" data-view="balon">
+          <div class="page-head"><p class="eyebrow">Langkah 4</p><h1>Atur balon</h1><p class="lead">Hasil: teks asing hilang dan area siap diisi terjemahan.</p></div>
+          <div class="prose">
+            <ol>
+              <li>Buka panel <strong>Erase</strong>.</li>
+              <li>Pilih <strong>Brush</strong> untuk menambah seleksi, <strong>Eraser</strong> untuk menguranginya, <strong>Lasso</strong> untuk seleksi bebas, atau <strong>Magic Wand</strong> untuk memilih warna dengan satu ketukan.</li>
+              <li>Atuk <strong>Hapus Area Terpilih</strong>. Pilih <strong>Telea (Cepat)</strong> atau <strong>LaMa (AI)</strong>. Model LaMa diunduh saat pertama dipakai.</li>
+              <li>Gunakan <strong>Bersihkan</strong> untuk mengosongkan seleksi atau <strong>Invert Seleksi</strong> bila perlu.</li>
+            </ol>
+            <div class="admonition tip"><strong>Tips.</strong> Untuk latar polos, <strong>Magic Wand</strong> lebih cepat. Atur <strong>Toleransi</strong> dan <strong>Perluas</strong> bila pinggiran masih tersisa.</div>
+            <p class="pager"><a href="/panduan/teks/">Langkah berikutnya: Tambah teks →</a></p>
+          </div>
+        </section>
+
+        <section class="view" id="view-teks" data-view="teks">
+          <div class="page-head"><p class="eyebrow">Langkah 5</p><h1>Tambah dan edit teks</h1><p class="lead">Hasil: balon berisi terjemahan Indonesia.</p></div>
+          <div class="prose">
+            <ol>
+              <li>Ketuk tombol <strong>+</strong> di bar atas, lalu pilih <strong>Tambah Teks</strong>.</li>
+              <li>Atau buka panel <strong>Text</strong> dan ketuk <strong>Tambah Teks ke Kanvas</strong>.</li>
+              <li>Ketuk <strong>Edit Teks</strong> untuk mengubah layer yang sedang dipilih.</li>
+              <li>Isi teks di <strong>Content</strong>, atur posisi di <strong>Layout</strong>, dan bentuk huruf di <strong>Style &amp; Size</strong>.</li>
+            </ol>
+            <p class="pager"><a href="/panduan/font/">Langkah berikutnya: Atur font →</a></p>
+          </div>
+        </section>
+
+        <section class="view" id="view-font" data-view="font">
+          <div class="page-head"><p class="eyebrow">Langkah 6</p><h1>Atur font</h1><p class="lead">Hasil: teks memakai font yang diinginkan.</p></div>
+          <div class="prose">
+            <ol>
+              <li>Buka panel <strong>Font</strong> dan pilih font yang tersedia.</li>
+              <li>Untuk font sendiri, ketuk <strong>Impor font</strong> dan pilih berkas <code>.ttf</code> atau <code>.otf</code>.</li>
+              <li>Font kustom juga bisa ditambahkan di <strong>Pengaturan → Font Manager → Tambah Font TTF/OTF Baru</strong>.</li>
+            </ol>
+            <p class="pager"><a href="/panduan/simpan/">Langkah berikutnya: Simpan proyek →</a></p>
+          </div>
+        </section>
+
+        <section class="view" id="view-simpan" data-view="simpan">
+          <div class="page-head"><p class="eyebrow">Langkah 7</p><h1>Simpan proyek</h1><p class="lead">Hasil: berkas <code>.mts</code> yang bisa dibuka dan diedit lagi.</p></div>
+          <div class="prose">
+            <ol>
+              <li>Ketuk ikon <strong>Save</strong> di bar atas.</li>
+              <li>Pada dialog <strong>Save As</strong>, isi <strong>Nama Output / Nama Proyek</strong>.</li>
+              <li>Pilih format <code>MTS</code>.</li>
+              <li>Pilih <strong>Folder Output</strong>, lalu simpan.</li>
+              <li>Untuk membuka kembali, ketuk <strong>OPEN PROJECT</strong> di Home dan pilih berkas <code>.mts</code>.</li>
+            </ol>
+            <p class="pager"><a href="/panduan/ekspor/">Langkah berikutnya: Ekspor hasil →</a></p>
+          </div>
+        </section>
+
+        <section class="view" id="view-ekspor" data-view="ekspor">
+          <div class="page-head"><p class="eyebrow">Langkah 8</p><h1>Ekspor hasil</h1><p class="lead">Hasil: gambar siap dibagikan.</p></div>
+          <div class="prose">
+            <ol>
+              <li>Buka dialog <strong>Save As</strong>.</li>
+              <li>Pilih <code>PNG</code> untuk latar transparan, atau <code>JPEG</code> / <code>WEBP</code> untuk berkas lebih ringan.</li>
+              <li>Untuk JPEG dan WEBP, atur slider <strong>Kualitas</strong> 10–100%.</li>
+              <li>Pilih <strong>Folder Output</strong>, lalu simpan.</li>
+            </ol>
+            <div class="admonition warning"><strong>Perhatian.</strong> JPEG tidak menyimpan transparansi. Pakai PNG bila latar harus tetap kosong.</div>
+            <p class="pager"><a href="/faq/#faq-ekspor">Butuh bantuan? Lihat troubleshooting ekspor →</a></p>
           </div>
         </section>
 
         <section class="view" id="view-developer" data-view="developer">
-          <div class="page-head">
-            <p class="eyebrow">Pengembang</p>
-            <h1>Build dari sumber</h1>
-            <p class="lead">Catatan untuk yang ingin membangun APK sendiri. Tidak diperlukan untuk memakai aplikasi.</p>
-          </div>
+          <div class="page-head"><p class="eyebrow">Pengembang</p><h1>Build dari sumber</h1><p class="lead">Catatan untuk yang ingin membangun APK sendiri.</p></div>
           <div class="prose">
             <h2 id="build">Perintah build</h2>
             <pre><code>./gradlew assembleDebug</code></pre>
             <p>Gunakan JDK 17. Hasil debug ada di <code>app/build/outputs/apk/debug/</code>.</p>
             <h2 id="actions">GitHub Actions</h2>
-            <p>Workflow <strong>Android Build &amp; Sign</strong> berjalan pada push ke <code>main</code>. Pilih run yang sukses, lalu unduh artifact <code>mochits-debug</code> atau <code>mochits-release</code> bila tersedia.</p>
+            <p>Workflow <strong>Android Build &amp; Sign</strong> berjalan pada push ke <code>main</code>. Pilih run yang sukses, lalu unduh artifact <code>mochits-debug</code> atau <code>mochits-release</code>.</p>
             <h2 id="format-mts">Format .mts</h2>
-            <p>Bundel proyek <code>.mts</code> adalah arsip ZIP yang berisi seluruh folder proyek dan metadata. Ekstensi ini ditetapkan di <code>ProjectBundle.EXTENSION</code>.</p>
+            <p>Bundel proyek <code>.mts</code> adalah arsip ZIP yang berisi folder proyek dan metadata. Ekstensi ini ditetapkan di <code>ProjectBundle.EXTENSION</code>.</p>
+            <p class="pager"><a href="/changelog/">Lihat build terbaru →</a></p>
           </div>
         </section>
 
         <section class="view" id="view-faq" data-view="faq">
-          <div class="page-head">
-            <p class="eyebrow">Bantuan</p>
-            <h1>FAQ &amp; troubleshooting</h1>
-            <p class="lead">Masalah yang sering muncul dan cara menanganinya.</p>
-          </div>
+          <div class="page-head"><p class="eyebrow">Bantuan</p><h1>FAQ &amp; troubleshooting</h1><p class="lead">Masalah yang sering muncul dan cara menanganinya.</p></div>
           <div class="prose">
             <h2 id="faq-install">APK gagal dipasang</h2>
-            <p>Cek versi Android: MochiTs butuh Android 10 atau lebih baru. Unduh ulang APK jika berkas terpotong. Jika pemasangan diblokir, izinkan aplikasi yang membuka berkas untuk memasang aplikasi dari sumber yang tidak dikenal, lalu ketuk APK lagi.</p>
-
+            <p>Cek versi Android: MochiTs butuh Android 10 atau lebih baru. Unduh ulang APK jika berkas terpotong. Jika pemasangan diblokir, izinkan aplikasi yang membuka berkas untuk memasang aplikasi dari sumber yang tidak dikenal.</p>
             <h2 id="faq-izin">Izin sumber tidak dikenal tidak ada</h2>
-            <p>Buka Pengaturan Android → Keamanan atau Privasi → Pasang aplikasi tidak dikenal. Pilih browser atau pengelola berkas yang kamu pakai, lalu aktifkan izinnya. Setelah selesai, kembali ke APK dan pasang ulang.</p>
-
+            <p>Buka Pengaturan Android → Keamanan atau Privasi → Pasang aplikasi tidak dikenal. Pilih browser atau pengelola berkas yang kamu pakai, lalu aktifkan izinnya.</p>
             <h2 id="faq-mts">File .mts tidak bisa dibuka</h2>
-            <p>Jangan membuka <code>.mts</code> sebagai gambar. Di Home, ketuk <strong>OPEN PROJECT</strong>, lalu pilih berkas <code>.mts</code>. Jika impor gagal, periksa apakah berkas tersebut benar-benar bundel proyek MochiTs.</p>
-
+            <p>Jangan membuka <code>.mts</code> sebagai gambar. Di Home, ketuk <strong>OPEN PROJECT</strong>, lalu pilih berkas <code>.mts</code>.</p>
             <h2 id="faq-teks">Teks tidak tampil di kanvas</h2>
-            <p>Buka panel <strong>Layers</strong> dan pastikan layer teks tidak disembunyikan. Periksa warna teks terhadap latar, lalu cek apakah font kustom sudah terpasang di panel <strong>Font</strong>. Untuk balon yang tertutup, hapus area lama lewat panel <strong>Erase</strong> terlebih dahulu.</p>
-
+            <p>Buka panel <strong>Layers</strong> dan pastikan layer teks tidak disembunyikan. Periksa warna teks terhadap latar, lalu cek apakah font kustom sudah terpasang di panel <strong>Font</strong>.</p>
             <h2 id="faq-ekspor">Hasil ekspor tidak sesuai</h2>
-            <p>Pada dialog <strong>Save As</strong>, pastikan format yang dipilih benar. <code>PNG</code> mempertahankan latar transparan; <code>JPEG</code> tidak. Untuk <code>JPEG</code> dan <code>WEBP</code>, naikkan slider <strong>Kualitas</strong>. Pilih <code>MTS</code> jika kamu masih ingin mengedit proyek nanti.</p>
-
+            <p>Pada dialog <strong>Save As</strong>, pastikan format yang dipilih benar. <code>PNG</code> mempertahankan latar transparan; <code>JPEG</code> tidak. Untuk JPEG dan WEBP, naikkan slider <strong>Kualitas</strong>.</p>
             <h2 id="faq-lama">Model LaMa gagal diunduh</h2>
-            <p>Di <strong>Pengaturan → Model Inpainting</strong>, ketuk <strong>Unduh Ulang</strong>. Sambungkan ke internet lalu coba lagi. Sementara itu, pakai <strong>Telea (Cepat)</strong> yang sudah tersedia.</p>
-
+            <p>Di <strong>Pengaturan → Model Inpainting</strong>, ketuk <strong>Unduh Ulang</strong> dengan internet aktif. Sementara itu, pakai <strong>Telea (Cepat)</strong>.</p>
             <h2 id="faq-script">Naskah Script TL terbaca aneh</h2>
-            <p>Cek di <a href="#/cek-script">Cek Script</a>. Perhatikan pemisah halaman <code>P1</code>, simbol di awal baris, dan baris lanjutan yang harus berada setelah entri. Baris sebelum pemisah pertama sengaja dibuang.</p>
+            <p>Cek di <a href="/cek-script/">Cek Script</a>. Perhatikan pemisah <code>P1</code>, simbol di awal baris, dan baris lanjutan setelah entri.</p>
           </div>
         </section>
 
         <section class="view" id="view-changelog" data-view="changelog">
-          <div class="page-head">
-            <p class="eyebrow">Rilis</p>
-            <h1>Riwayat perubahan</h1>
-            <p class="lead">Data diambil dari rilis terbaru di GitHub. Bila belum ada rilis, halaman ini menampilkan tautan ke daftar rilis.</p>
-          </div>
+          <div class="page-head"><p class="eyebrow">Rilis</p><h1>Build terbaru</h1><p class="lead">Data diambil dari artifact GitHub Actions.</p></div>
           <div class="prose">
-            <div id="release-status" role="status" aria-live="polite"></div>
-            <article id="release-card" class="release-card" hidden>
-              <h2 id="release-title"></h2>
-              <p id="release-meta" class="hint"></p>
-              <div id="release-body"></div>
-            </article>
-            <p><a href="https://github.com/Mochizhouuu/MochiTs/releases" rel="noopener noreferrer" target="_blank">Lihat semua rilis di GitHub</a></p>
+            <div id="build-status" role="status" aria-live="polite"></div>
+            <ul id="build-list" class="build-list"></ul>
+            <p><a href="https://github.com/Mochizhouuu/MochiTs/actions/workflows/android-build.yml" rel="noopener noreferrer" target="_blank">Lihat semua build di GitHub</a></p>
           </div>
         </section>
       </div>
@@ -282,11 +346,12 @@ P2
   <footer class="footer">
     <span>© MochiTs</span>
     <a href="https://github.com/Mochizhouuu/MochiTs" rel="noopener noreferrer" target="_blank">GitHub</a>
-    <a href="#/developer">Pengembang</a>
-    <a href="#/changelog">Rilis</a>
+    <a href="/developer/">Pengembang</a>
+    <a href="/changelog/">Build</a>
+    <a href="https://github.com/Mochizhouuu/MochiTs-Docs/edit/main/index.html" rel="noopener noreferrer" target="_blank">Edit halaman ini</a>
   </footer>
 
-  <script src="cek-script-v3.js"></script>
-  <script src="app-v3.js"></script>
+  <script src="/cek-script-v4.js"></script>
+  <script src="/app-v4.js"></script>
 </body>
 </html>
