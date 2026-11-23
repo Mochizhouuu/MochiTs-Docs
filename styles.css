@@ -115,3 +115,10 @@ th { font-family: var(--font-mono); font-weight: 700; }
 body.menu-open { overflow: hidden; }
 @media (min-width: 64em) { .topnav { display: flex; } .menu-btn { display: none; } }
 @media (forced-colors: active) { .icon-btn, .text-btn, .btn { border: 1px solid ButtonText; } :focus-visible { outline: 2px solid Highlight; } }
+
+/* Navigasi bertingkat dan breadcrumb (pola struktur dokumentasi). */
+.nav-group + .nav-group { margin-top: var(--space-5); }
+.nav-group > .side-label { margin-bottom: var(--space-2); }
+.breadcrumb { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-bottom: var(--space-3); font-family: var(--font-mono); font-size: var(--step--1); color: var(--text-muted); }
+.breadcrumb .sep { color: var(--border-strong); }
+.side-sub a { min-height: var(--control-h); }

@@ -36,10 +36,10 @@
     home: "Beranda", cek: "Cek Script", panduan: "Panduan penggunaan editor", faq: "FAQ"
   };
   var chapters = [
-    { key: "home", title: "Beranda" },
-    { key: "cek", title: "Cek Script" },
-    { key: "panduan", title: "Panduan penggunaan editor" },
-    { key: "faq", title: "FAQ" }
+    { key: "home", title: "Beranda", group: "Mulai" },
+    { key: "cek", title: "Cek Script", group: "Mulai" },
+    { key: "panduan", title: "Panduan penggunaan editor", group: "Panduan" },
+    { key: "faq", title: "FAQ", group: "Bantuan" }
   ];
 
   var views = Array.prototype.slice.call(doc.querySelectorAll(".view"));
@@ -60,26 +60,54 @@
     return Array.prototype.slice.call(view.querySelectorAll("h2[id], h3[id]"));
   }
 
+  function routeOf(key) {
+    return key === "home" ? "#/" : "#/" + (key === "cek" ? "cek-script" : key);
+  }
+
   function renderNav(activeKey, activeView) {
     [sideNav, drawerNav].forEach(function (host) {
       if (!host) return;
       host.textContent = "";
-      chapters.forEach(function (c) {
-        var a = el("a", "", c.title);
-        a.href = c.key === "home" ? "#/" : "#/" + (c.key === "cek" ? "cek-script" : c.key);
-        if (c.key === activeKey) a.setAttribute("aria-current", "page");
-        host.appendChild(a);
-        if (c.key === activeKey && host === sideNav && activeView) {
-          var sub = el("div", "side-sub");
-          headingsFor(activeView).forEach(function (h) {
-            var s = el("a", "", h.textContent);
-            s.href = "#/" + (activeKey === "cek" ? "cek-script" : activeKey) + "#" + h.id;
-            sub.appendChild(s);
-          });
-          host.appendChild(sub);
-        }
+      ["Mulai", "Panduan", "Bantuan"].forEach(function (group) {
+        var wrap = el("div", "nav-group");
+        wrap.appendChild(el("p", "side-label", group));
+        chapters.filter(function (c) { return c.group === group; }).forEach(function (c) {
+          var a = el("a", "", c.title);
+          a.href = routeOf(c.key);
+          if (c.key === activeKey) a.setAttribute("aria-current", "page");
+          wrap.appendChild(a);
+          if (c.key === "panduan") {
+            var guide = doc.getElementById("view-panduan");
+            var sub = el("div", "side-sub");
+            if (guide) {
+              headingsFor(guide).forEach(function (h) {
+                var link = el("a", "", h.textContent);
+                link.href = "#/panduan#" + h.id;
+                sub.appendChild(link);
+              });
+            }
+            wrap.appendChild(sub);
+          }
+        });
+        host.appendChild(wrap);
       });
     });
+  }
+
+  function renderBreadcrumb(view, key) {
+    if (!view) return;
+    var head = view.querySelector(".page-head");
+    if (!head) return;
+    var old = head.querySelector(".breadcrumb");
+    if (old) old.remove();
+    var crumb = el("nav", "breadcrumb");
+    crumb.setAttribute("aria-label", "Breadcrumb");
+    var names = [ "MochiTs", chapters.filter(function (c) { return c.key === key; })[0].group, titles[key] ];
+    names.forEach(function (name, i) {
+      if (i) crumb.appendChild(el("span", "sep", "/"));
+      crumb.appendChild(el("span", "", name));
+    });
+    head.insertBefore(crumb, head.firstChild);
   }
 
   function renderOnPage(activeView) {
@@ -118,6 +146,7 @@
       else a.removeAttribute("aria-current");
     });
     renderNav(key, target);
+    renderBreadcrumb(target, key);
     renderOnPage(target);
     closeMenu();
     if (r.anchor) {
